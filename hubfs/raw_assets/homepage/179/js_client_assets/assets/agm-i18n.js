@@ -335,12 +335,33 @@
     );
   }
 
+  function navHtml(opts) {
+    opts = opts || {};
+    var fleet = opts.fleetHref || "/en/our-fleet/";
+    return (
+      '<a class="a" href="/en/" data-i18n="nav.home">Home</a>' +
+      '<a class="a" href="' + fleet + '" data-i18n="nav.fleet">Fleet</a>' +
+      '<a class="a" href="/en/about/" data-i18n="nav.about">About</a>' +
+      '<a class="a" href="/en/services/" data-i18n="nav.services">Services</a>' +
+      '<a class="a" href="/en/blue-economy/" data-i18n="nav.blue">Blue Economy</a>' +
+      switcherHtml() +
+      '<a class="a agm-nav-cta" href="/en/enquire/" data-i18n="nav.enquire">Enquire</a>'
+    );
+  }
+
   function bindBox(box) {
+    if (!box) return;
     box.querySelectorAll("[data-agm-lang]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        set(btn.getAttribute("data-agm-lang"));
-      });
+      btn.setAttribute("type", "button");
     });
+  }
+
+  function onLangClick(event) {
+    var btn = event.target.closest("[data-agm-lang]");
+    if (!btn || !btn.closest(".agm-langs")) return;
+    event.preventDefault();
+    event.stopPropagation();
+    set(btn.getAttribute("data-agm-lang"));
   }
 
   function mount() {
@@ -354,7 +375,6 @@
         var cta = nav.querySelector(".agm-nav-cta");
         if (cta) nav.insertBefore(desk, cta);
         else nav.appendChild(desk);
-        bindBox(desk);
       }
       var burger = bar.querySelector("#burger");
       if (burger && burger.parentNode && !burger.parentNode.querySelector(".agm-langs")) {
@@ -363,7 +383,6 @@
         var mobile = hold.firstElementChild;
         mobile.classList.add("is-compact");
         burger.parentNode.insertBefore(mobile, burger);
-        bindBox(mobile);
       }
     }
     var drawer = document.querySelector(".agm-drawer nav");
@@ -372,12 +391,14 @@
       boxHold.innerHTML = switcherHtml();
       var box = boxHold.firstElementChild;
       drawer.insertBefore(box, drawer.firstChild);
-      bindBox(box);
     }
+    document.querySelectorAll(".agm-langs").forEach(bindBox);
     apply(read());
   }
 
-  window.AGM_I18N = { t: t, get: read, set: set, apply: apply, mount: mount };
+  window.AGM_I18N = { t: t, get: read, set: set, apply: apply, mount: mount, navHtml: navHtml };
+
+  document.addEventListener("click", onLangClick, true);
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", mount);

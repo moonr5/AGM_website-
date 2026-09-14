@@ -16,8 +16,14 @@
   }
 
   function setAppbarScrolled() {
+    var hero = document.querySelector(".agm-hero");
+    var overHero = false;
+    if (hero) {
+      overHero = hero.getBoundingClientRect().bottom > 88;
+    }
     document.querySelectorAll(".appbar-wrapper").forEach(function (bar) {
-      bar.classList.add("is-scrolled");
+      bar.classList.toggle("is-over-hero", overHero);
+      bar.classList.toggle("is-scrolled", !overHero);
     });
   }
 

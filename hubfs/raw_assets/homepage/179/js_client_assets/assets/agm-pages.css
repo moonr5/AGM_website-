@@ -446,6 +446,19 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
   letter-spacing: 0.22em;
 }
 
+.agm-endfoot-brand {
+  justify-items: center;
+  align-content: start;
+  gap: 10px;
+}
+
+.agm-endfoot-logo {
+  display: block;
+  width: auto;
+  height: 56px;
+  filter: brightness(0) invert(1);
+}
+
 .agm-endfoot-cols div:nth-child(3) {
   justify-items: end;
 }
@@ -1741,6 +1754,11 @@ a.agm-contact-card:focus-visible {
   .agm-endfoot-cols div:nth-child(3) {
     text-align: left;
     justify-items: start;
+  }
+
+  .agm-endfoot-brand {
+    justify-items: center;
+    text-align: center;
   }
 
   .agm-contact-cards,

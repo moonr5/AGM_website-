@@ -31,6 +31,8 @@
   object-fit: cover;
   /* Biased right so the vessel sits clear of the headline. */
   object-position: 62% 44%;
+  will-change: transform;
+  transform-origin: 62% 44%;
 }
 
 .agm-hero:before {
@@ -64,6 +66,7 @@
   width: 100%;
   padding: 140px var(--agm-gutter) 72px;
   box-sizing: border-box;
+  will-change: transform, opacity;
 }
 
 .agm-hero-inner .agm-eyebrow {
@@ -274,13 +277,17 @@
 /* Four service cards under the hero. The old hairline columns read as a
    cheap spreadsheet strip; these sit as a quiet row of editorial cards. */
 .agm-hero-facts {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
-  margin: 0;
-  padding: 22px var(--agm-inset) 28px;
+  margin: -28px 0 0;
+  padding: 28px var(--agm-inset) 28px;
+  border-radius: 32px 32px 0 0;
   background:
     linear-gradient(180deg, #f3f6f9 0%, #eef3f7 100%);
+  box-shadow: 0 -24px 60px rgba(6, 16, 28, 0.18);
   box-sizing: border-box;
 }
 

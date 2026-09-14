@@ -167,12 +167,21 @@
     if (!nav || nav.dataset.agmTravelo === "1") return;
     nav.dataset.agmTravelo = "1";
     nav.innerHTML =
-      '<a class="a" href="/en/" data-i18n="nav.home">Home</a>' +
-      '<a class="a" href="#range" data-i18n="nav.fleet">Fleet</a>' +
-      '<a class="a" href="/en/about/" data-i18n="nav.about">About</a>' +
-      '<a class="a" href="/en/services/" data-i18n="nav.services">Services</a>' +
-      '<a class="a" href="/en/blue-economy/" data-i18n="nav.blue">Blue Economy</a>' +
-      '<a class="a agm-nav-cta" href="/en/enquire/" data-i18n="nav.enquire">Enquire</a>';
+      window.AGM_I18N && typeof window.AGM_I18N.navHtml === "function"
+        ? window.AGM_I18N.navHtml({ fleetHref: "#range" })
+        : '<a class="a" href="/en/" data-i18n="nav.home">Home</a>' +
+          '<a class="a" href="#range" data-i18n="nav.fleet">Fleet</a>' +
+          '<a class="a" href="/en/about/" data-i18n="nav.about">About</a>' +
+          '<a class="a" href="/en/services/" data-i18n="nav.services">Services</a>' +
+          '<a class="a" href="/en/blue-economy/" data-i18n="nav.blue">Blue Economy</a>' +
+          '<div class="agm-langs" role="group" aria-label="Language">' +
+          '<button type="button" data-agm-lang="en">EN</button>' +
+          '<button type="button" data-agm-lang="id">ID</button>' +
+          "</div>" +
+          '<a class="a agm-nav-cta" href="/en/enquire/" data-i18n="nav.enquire">Enquire</a>';
+    if (window.AGM_I18N && typeof window.AGM_I18N.apply === "function") {
+      window.AGM_I18N.apply(window.AGM_I18N.get());
+    }
   }
 
   function bindStories() {
@@ -485,14 +494,35 @@
   }
 
   function pinNav() {
+    var hero = document.querySelector(".agm-hero");
+    var overHero = hero ? hero.getBoundingClientRect().bottom > 88 : false;
     document.querySelectorAll(".appbar-wrapper").forEach(function (bar) {
-      bar.classList.add("is-scrolled");
+      bar.classList.toggle("is-over-hero", overHero);
+      bar.classList.toggle("is-scrolled", !overHero);
     });
+  }
+
+  function scrollHero() {
+    var hero = document.querySelector(".agm-hero");
+    if (!hero) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var media = hero.querySelector(".agm-hero-media");
+    var inner = hero.querySelector(".agm-hero-inner");
+    var rect = hero.getBoundingClientRect();
+    var p = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height * 0.82, 1)));
+    if (media) {
+      media.style.transform = "scale(" + (1 + p * 0.14) + ") translate3d(0," + (p * 12) + "%,0)";
+    }
+    if (inner) {
+      inner.style.opacity = String(Math.max(0, 1 - p * 1.2));
+      inner.style.transform = "translate3d(0," + (p * -36) + "px,0)";
+    }
   }
 
   function run() {
     restyleNav();
     pinNav();
+    scrollHero();
     unpinBelow();
     mountPage();
     bindStories();
@@ -505,6 +535,23 @@
     bindCloserForm();
     if (window.AGM_I18N && typeof window.AGM_I18N.mount === "function") {
       window.AGM_I18N.mount();
+    }
+    if (!window.__agmHeroScroll) {
+      window.__agmHeroScroll = true;
+      var ticking = false;
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            pinNav();
+            scrollHero();
+            ticking = false;
+          });
+        },
+        { passive: true }
+      );
     }
   }
 

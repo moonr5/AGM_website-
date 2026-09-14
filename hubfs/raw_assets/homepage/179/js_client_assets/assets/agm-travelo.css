@@ -30,6 +30,20 @@ html.agm-travelo .appbar-wrapper.is-scrolled #appbar.appbar {
   border: 1px solid rgba(11, 28, 51, 0.08) !important;
   border-radius: 999px !important;
   color: #0b1c33 !important;
+  transition:
+    background 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.35s ease !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar.appbar {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  color: #fff !important;
 }
 
 html.agm-travelo #appbar.appbar > div {
@@ -39,9 +53,15 @@ html.agm-travelo #appbar.appbar > div {
 
 html.agm-travelo .agm-brand-logo,
 html.agm-travelo #appbar .section:first-child a img {
+  display: block !important;
   height: 34px !important;
   max-width: 40px !important;
   filter: none !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-brand-logo,
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .section:first-child a img {
+  filter: brightness(0) invert(1) !important;
 }
 
 html.agm-travelo #appbar .agm-brand-name,
@@ -51,11 +71,21 @@ html.agm-travelo .agm-brand-name {
   color: #0b1c33 !important;
 }
 
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .agm-brand-name,
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-brand-name {
+  color: #fff !important;
+}
+
 html.agm-travelo #appbar .agm-brand-sub,
 html.agm-travelo .agm-brand-sub {
   font-size: 10px !important;
   letter-spacing: 0.2em !important;
   color: rgba(11, 28, 51, 0.48) !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .agm-brand-sub,
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-brand-sub {
+  color: rgba(255, 255, 255, 0.62) !important;
 }
 
 html.agm-travelo #appbar .agm-nav {
@@ -74,6 +104,11 @@ html.agm-travelo #appbar .section:nth-child(2) .a {
   font-weight: 500 !important;
   letter-spacing: 0.02em !important;
   color: rgba(11, 28, 51, 0.72) !important;
+  background: transparent !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .agm-nav > .a:not(.agm-nav-cta) {
+  color: rgba(255, 255, 255, 0.82) !important;
 }
 
 html.agm-travelo #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
@@ -81,7 +116,13 @@ html.agm-travelo #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
   color: #0b1c33 !important;
 }
 
-html.agm-travelo #appbar .agm-nav-cta,
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+}
+
+html.agm-travelo #appbar .agm-nav > .a.agm-nav-cta,
+html.agm-travelo #appbar .section:nth-child(2) .a.agm-nav-cta,
 html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"] {
   min-height: 40px !important;
   padding: 0 18px !important;
@@ -99,11 +140,23 @@ html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"] {
   box-shadow: none;
 }
 
-html.agm-travelo #appbar .agm-nav-cta:hover,
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .agm-nav > .a.agm-nav-cta {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+  color: #fff !important;
+}
+
+html.agm-travelo #appbar .agm-nav > .a.agm-nav-cta:hover,
+html.agm-travelo #appbar .section:nth-child(2) .a.agm-nav-cta:hover,
 html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"]:hover {
   background: #0a62a8 !important;
   border-color: #0a62a8 !important;
   color: #fff !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero #appbar .agm-nav > .a.agm-nav-cta:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: #fff !important;
 }
 
 html.agm-travelo #burger {
@@ -113,18 +166,36 @@ html.agm-travelo #burger {
 }
 
 html.agm-travelo .agm-langs {
-  margin: 0 8px 0 12px;
+  display: inline-flex !important;
+  margin: 0 10px 0 8px;
+  border-color: rgba(11, 28, 51, 0.1);
+  background: rgba(11, 28, 51, 0.04);
 }
 
 html.agm-travelo .agm-langs button {
-  min-height: 44px;
-  padding: 0 9px;
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.5) !important;
+  min-height: 28px;
+  padding: 0 10px;
+  font-size: 11px;
+  color: rgba(11, 28, 51, 0.42) !important;
 }
 
 html.agm-travelo .agm-langs button[aria-pressed="true"] {
+  background: #0b1c33 !important;
   color: #fff !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs button {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs button[aria-pressed="true"] {
+  background: #96f878 !important;
+  color: #14251c !important;
 }
 
 html.agm-travelo #hero ._manifestContainer_biyw3_107,
@@ -482,6 +553,7 @@ html.agm-has-cookie #agm-briefs.agm-travelo-section {
 
 html.agm-travelo #agm-about.agm-about-stage {
   position: relative;
+  z-index: 2;
   width: 100%;
   max-width: none;
   margin: 0;
@@ -1623,7 +1695,7 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
     font-size: 13px !important;
   }
 
-  html.agm-travelo #appbar .agm-nav-cta {
+  html.agm-travelo #appbar .agm-nav > .a.agm-nav-cta {
     margin-left: 8px;
     padding: 0 14px !important;
   }
@@ -2788,6 +2860,19 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
   letter-spacing: 0.22em;
 }
 
+.agm-endfoot-brand {
+  justify-items: center;
+  align-content: start;
+  gap: 10px;
+}
+
+.agm-endfoot-logo {
+  display: block;
+  width: auto;
+  height: 56px;
+  filter: brightness(0) invert(1);
+}
+
 .agm-endfoot-cols div:nth-child(3) {
   justify-items: end;
 }
@@ -2828,5 +2913,10 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
   .agm-endfoot-cols div:nth-child(3) {
     text-align: left;
     justify-items: start;
+  }
+
+  .agm-endfoot-brand {
+    justify-items: center;
+    text-align: center;
   }
 }

@@ -22,7 +22,7 @@
   function headerHtml() {
     return (
       '<div id="appbar-corporate">' +
-      '<div id="appbar-wrapper" class="appbar-wrapper">' +
+      '<div id="appbar-wrapper" class="appbar-wrapper is-scrolled">' +
       '<div id="appbar" class="appbar">' +
       "<div>" +
       '<div class="section agm-brand">' +
@@ -31,9 +31,18 @@
       '<span class="agm-brand-text"><span class="agm-brand-name">AGARA</span><span class="agm-brand-sub">GLOBAL MARITIM</span></span>' +
       "</a></div>" +
       '<div class="section agm-nav">' +
-      '<a class="a" href="/en/our-fleet/" data-i18n="nav.fleet">Fleet</a>' +
-      '<a class="a" href="/en/blue-economy/" data-i18n="nav.blue">Blue Economy</a>' +
-      '<a class="a agm-nav-cta" href="/en/contacts/" data-i18n="nav.contact">Contact</a>' +
+      (window.AGM_I18N && typeof window.AGM_I18N.navHtml === "function"
+        ? window.AGM_I18N.navHtml()
+        : '<a class="a" href="/en/" data-i18n="nav.home">Home</a>' +
+          '<a class="a" href="/en/our-fleet/" data-i18n="nav.fleet">Fleet</a>' +
+          '<a class="a" href="/en/about/" data-i18n="nav.about">About</a>' +
+          '<a class="a" href="/en/services/" data-i18n="nav.services">Services</a>' +
+          '<a class="a" href="/en/blue-economy/" data-i18n="nav.blue">Blue Economy</a>' +
+          '<div class="agm-langs" role="group" aria-label="Language">' +
+          '<button type="button" data-agm-lang="en">EN</button>' +
+          '<button type="button" data-agm-lang="id">ID</button>' +
+          "</div>" +
+          '<a class="a agm-nav-cta" href="/en/enquire/" data-i18n="nav.enquire">Enquire</a>') +
       "</div>" +
       '<div class="section uppercase"></div>' +
       '<div class="section"><img id="burger" src="/hubfs/raw_assets/public/appbar/assets/burger_menu.svg" alt="Menu"></div>' +
@@ -88,7 +97,7 @@
       '<a href="/en/our-fleet/" data-i18n="nav.fleet">Fleet</a>' +
       '<a href="/en/services/" data-i18n="nav.services">Services</a>' +
       "</div>" +
-      "<div><strong>AGARA</strong><span>GLOBAL MARITIM</span></div>" +
+      '<div class="agm-endfoot-brand"><img class="agm-endfoot-logo" src="/en/p61.png" alt="AGM" width="72" height="56"><strong>AGARA</strong><span>GLOBAL MARITIM</span></div>' +
       "<div>" +
       '<a href="/en/contacts/" data-i18n="nav.contacts">Contacts</a>' +
       '<a href="/en/enquire/" data-i18n="nav.enquire">Enquire</a>' +
