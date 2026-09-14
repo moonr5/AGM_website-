@@ -1,0 +1,3 @@
+/* @deprecated — split into agm-hero-desktop.css + agm-hero-mobile.css */
+@import url("agm-hero-desktop.css");
+@import url("agm-hero-mobile.css");

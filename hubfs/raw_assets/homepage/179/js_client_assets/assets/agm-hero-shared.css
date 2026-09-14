@@ -1,0 +1,70 @@
+/**
+ * AGM hero — SHARED (all breakpoints)
+ * Video visibility, carousel timer chrome. Do not add layout/typography here.
+ */
+#hero ._video_ty1x2_6 > div:not(._overlay_ty1x2_22) {
+  opacity: 1 !important;
+  clip-path: inset(0 0 0 0) !important;
+  -webkit-clip-path: inset(0 0 0 0) !important;
+}
+
+#hero ._video_ty1x2_6 video {
+  opacity: 1 !important;
+}
+
+/* Hide HubSpot SSR-fail copy until the island hydrates */
+#seaLiving:has(> template[data-msg]),
+#range:has(> template[data-msg]),
+#below:has(> template[data-msg]) {
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  visibility: hidden !important;
+}
+
+#hero ._heroImages_biyw3_32 {
+  display: none !important;
+}
+
+#hero ._video_ty1x2_6 {
+  background: #071018 url("/en/hero-poster.webp") center / cover no-repeat;
+}
+
+#hero ._smallVideo_ty1x2_64 {
+  display: none !important;
+}
+
+/* Hide NEXT label, progress bars, and arrow controls — slides still auto-rotate */
+#hero ._trailing_ty1x2_78 {
+  display: none !important;
+}
+
+/* Shared manifest resets (no card box, no logo) */
+#hero ._manifestContainer_biyw3_107 {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#hero ._manifestContainer_biyw3_107 img[src*="p61."] {
+  display: none !important;
+}
+
+#hero ._manifestContainer_biyw3_107 ._text_174va_29,
+#hero ._manifestContainer_biyw3_107 .agm-manifest-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}

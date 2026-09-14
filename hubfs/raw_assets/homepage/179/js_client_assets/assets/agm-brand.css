@@ -1,0 +1,468 @@
+/* AGM brand layer: colour and type tokens shared by every page.
+ *
+ * The layout language follows the SAG reference site: a serif display face for
+ * headings over a geometric sans for everything else, wide section rhythm, and
+ * a single high-visibility pill for calls to action. Colours stay on AGM's
+ * navy and blue; the pill is the one borrowed accent.
+ *
+ * Load this before any other AGM stylesheet so the tokens resolve everywhere.
+ */
+
+:root {
+  --agm-sans: "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --agm-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --agm-script: "Great Vibes", "Palatino Linotype", cursive;
+
+  /* Hull and water. */
+  --agm-navy: #0b1c33;
+  --agm-navy-deep: #06101c;
+  --agm-navy-soft: #16324f;
+  --agm-blue: #0a62a8;
+  --agm-blue-light: #9fd0f0;
+
+  /* Paper. --agm-tint is the full-bleed pale band the reference site uses to
+     separate a section without going to a dark panel; theirs is a tint of the
+     accent, ours is a tint of AGM blue. */
+  --agm-paper: #fff;
+  --agm-paper-alt: #f4f7fa;
+  --agm-tint: #e4f1fb;
+  --agm-rule: rgba(11, 28, 51, 0.14);
+
+  /* Ink. */
+  --agm-ink: #06101c;
+  --agm-ink-muted: rgba(6, 16, 28, 0.66);
+  --agm-ink-faint: rgba(6, 16, 28, 0.5);
+
+  /* The single accent, reserved for calls to action so it keeps its impact. */
+  --agm-accent: #96f878;
+  --agm-accent-hover: #71dc68;
+  --agm-accent-ink: #14251c;
+  --agm-accent-fill: rgba(150, 248, 120, 0.48);
+  --agm-accent-fill-hover: rgba(150, 248, 120, 0.82);
+  --agm-accent-line: rgba(255, 255, 255, 0.42);
+
+  /* Rhythm. Page gutters collapse to a fixed inset on small screens and centre
+     a 1180px measure once there is room. */
+  --agm-measure: 1180px;
+  /* The floor rises with the viewport so that on tablet and small-desktop the
+     content lines up with the appbar, whose logo sits at a fixed 64px inset.
+     A flat 24px floor left headings hanging well to the left of the bar at
+     every width below about 1280px. Phones still get a tight 20px. */
+  /* The smallest gutter a band may have, before the measure starts centring. */
+  --agm-inset: clamp(20px, 5vw, 64px);
+  /* Width for a centred content column. Every band on the page must size to
+     this (or pad by --agm-gutter, which is the same figure expressed as an
+     inset) so their text all starts at the same x. Bands were previously split
+     between a 1120px and an 1180px measure with different floors, which left
+     neighbouring sections 16-40px out of step and made the page read as a
+     stack of unrelated blocks. */
+  --agm-content: min(var(--agm-measure), calc(100% - 2 * var(--agm-inset)));
+  --agm-gutter: max(var(--agm-inset), calc((100% - var(--agm-measure)) / 2));
+  /* Same value, but resolved against the viewport instead of the parent. Use
+     this inside full-bleed bands, where the percentage in --agm-gutter would
+     measure the band's own column rather than the page. */
+  --agm-gutter-vw: max(clamp(20px, 5vw, 64px), calc((100vw - var(--agm-measure)) / 2));
+  --agm-content-vw: min(var(--agm-measure), calc(100vw - 2 * var(--agm-inset)));
+  --agm-section-y: clamp(64px, 8vw, 120px);
+  --agm-radius: 22px;
+  --agm-radius-lg: 28px;
+  --agm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Type scale. Display sizes are deliberately large and set at regular weight,
+     which is what gives the reference site its editorial feel. */
+  --agm-size-display: clamp(40px, 6vw, 84px);
+  --agm-size-h1: clamp(34px, 4.6vw, 60px);
+  --agm-size-h2: clamp(28px, 3.4vw, 46px);
+  --agm-size-h3: clamp(19px, 1.5vw, 24px);
+  --agm-size-lead: clamp(17px, 1.35vw, 21px);
+  --agm-size-body: 16px;
+  --agm-size-eyebrow: 11px;
+}
+
+/* Display headings: serif, light weight, leading set solid.
+ *
+ * These three values are what carry the reference site's editorial voice, and
+ * they are measured from it rather than guessed: weight 300, line-height 1.0,
+ * and no negative tracking. Going to 400 or opening the leading loses the look
+ * immediately, so the fonts are subset from 300 to keep this available. */
+.agm-display,
+.agm-h1,
+.agm-h2 {
+  font-family: var(--agm-serif);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--agm-navy);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.agm-display {
+  font-size: var(--agm-size-display);
+}
+
+.agm-h1 {
+  font-size: var(--agm-size-h1);
+}
+
+.agm-h2 {
+  font-size: var(--agm-size-h2);
+}
+
+/* Eyebrow: the small uppercase label that sits above every heading. */
+.agm-eyebrow {
+  margin: 0 0 14px;
+  font-family: var(--agm-sans);
+  font-size: var(--agm-size-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--agm-blue);
+}
+
+.agm-eyebrow-light {
+  color: var(--agm-blue-light);
+}
+
+/* Lead paragraph: one step up from body, narrow measure. */
+.agm-lead {
+  margin: 0;
+  font-family: var(--agm-sans);
+  font-size: var(--agm-size-lead);
+  line-height: 1.55;
+  color: var(--agm-ink-muted);
+  max-width: 42em;
+}
+
+/* The accent button. Solid accent for the primary action, outlined for the
+   secondary, both with an arrow that steps right on hover.
+ *
+ * Shape and casing are measured from the reference site: a softly squared
+ * 15px corner rather than a full 999px pill, set uppercase and bold at 16px.
+ * The squared corner is what stops it reading as a generic rounded button. */
+.agm-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 1px solid var(--agm-accent-line);
+  border-radius: 999px;
+  background: var(--agm-accent-fill);
+  color: var(--agm-accent-ink);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s var(--agm-ease), border-color 0.25s var(--agm-ease),
+    transform 0.25s var(--agm-ease), box-shadow 0.25s var(--agm-ease);
+}
+
+.agm-pill:hover {
+  background: var(--agm-accent-fill-hover);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--agm-accent-ink);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 24px rgba(150, 248, 120, 0.22);
+}
+
+.agm-pill:after {
+  content: "";
+  width: 14px;
+  height: 8px;
+  flex: none;
+  background: currentColor;
+  /* Arrow glyph as a mask so it always matches the label colour. */
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'><path d='M0 4h11M8 1l3 3-3 3' fill='none' stroke='black' stroke-width='1.4'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'><path d='M0 4h11M8 1l3 3-3 3' fill='none' stroke='black' stroke-width='1.4'/></svg>") center / contain no-repeat;
+  transition: transform 0.25s var(--agm-ease);
+}
+
+.agm-pill:hover:after {
+  transform: translateX(3px);
+}
+
+.agm-pill-ghost {
+  background: transparent;
+  border-color: var(--agm-rule);
+  color: var(--agm-navy);
+}
+
+.agm-pill-ghost:hover {
+  background: var(--agm-navy);
+  border-color: var(--agm-navy);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* On dark backgrounds the ghost pill inverts. */
+.agm-on-dark .agm-pill-ghost {
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #fff;
+}
+
+.agm-on-dark .agm-pill-ghost:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--agm-navy);
+}
+
+/* No-arrow variant for pills that are not forward navigation. */
+.agm-pill-plain:after {
+  display: none;
+}
+
+/* Full-bleed pale band. Breaks out of the centred measure so the colour runs
+   edge to edge while the content inside stays on the grid. */
+.agm-band-tint {
+  background: var(--agm-tint);
+  padding-block: var(--agm-section-y);
+  padding-inline: var(--agm-gutter);
+}
+
+.agm-cookie-bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1400;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: var(--agm-navy);
+  color: #fff;
+  box-shadow: 0 18px 50px rgba(6, 16, 28, 0.35);
+}
+
+.agm-cookie-bar-copy {
+  flex: 1 1 280px;
+}
+
+.agm-cookie-bar-copy strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--agm-serif);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.agm-cookie-bar-copy p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.agm-cookie-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.agm-cookie-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #fff;
+  font: 700 12px/1 var(--agm-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.agm-cookie-bar-btn.is-solid {
+  background: var(--agm-accent);
+  border-color: var(--agm-accent);
+  color: var(--agm-accent-ink);
+}
+
+@media (max-width: 900px) {
+  .agm-cookie-bar {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 10px 8px;
+    gap: 8px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .agm-cookie-bar-copy {
+    flex: none;
+  }
+
+  .agm-cookie-bar-copy strong {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .agm-cookie-bar-copy p {
+    display: none;
+  }
+
+  .agm-cookie-bar-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .agm-cookie-bar-btn {
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .agm-cookie-bar-actions a.agm-cookie-bar-btn {
+    grid-column: 1 / -1;
+    min-height: 0;
+    padding: 4px;
+    border: 0;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    opacity: 0.72;
+  }
+}
+
+.agm-partners {
+  position: relative;
+  padding: 64px var(--agm-inset, 24px) 72px;
+  background: #f7f8fa;
+}
+
+.agm-partners-inner {
+  width: min(880px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.agm-partners-kicker {
+  margin: 0 0 12px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--agm-blue);
+}
+
+.agm-partners h2 {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  color: var(--agm-navy);
+}
+
+.agm-partners-lede {
+  margin: 12px auto 0;
+  max-width: 38em;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--agm-ink-muted, rgba(6, 16, 28, 0.68));
+}
+
+.agm-partners-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0 0;
+}
+
+.agm-partner-card {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agm-partner-plate {
+  display: grid;
+  place-items: center;
+  padding: 8px 48px;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.agm-partner-card + .agm-partner-card .agm-partner-plate {
+  border-left: 1px solid rgba(11, 28, 51, 0.12);
+}
+
+.agm-partner-float {
+  display: block;
+}
+
+.agm-partner-plate img {
+  display: block;
+  width: auto;
+  height: 56px;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.agm-partner-card[data-partner="yamaha"] img {
+  height: 52px;
+}
+
+.agm-partner-name {
+  display: none;
+}
+
+.agm-partner-plate:hover,
+.agm-partner-plate:focus-visible {
+  opacity: 0.78;
+}
+
+@media (max-width: 768px) {
+  .agm-partners {
+    padding: 44px 16px 52px;
+  }
+
+  .agm-partners-row {
+    margin-top: 28px;
+  }
+
+  .agm-partner-plate {
+    padding: 6px 18px;
+  }
+
+  .agm-partner-plate img,
+  .agm-partner-card[data-partner="yamaha"] img {
+    height: 40px;
+    max-width: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agm-pill,
+  .agm-pill:after {
+    transition: none;
+  }
+
+  .agm-pill:hover,
+  .agm-pill-ghost:hover {
+    transform: none;
+  }
+
+}

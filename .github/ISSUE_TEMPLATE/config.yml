@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Production site
+    url: https://agmaritim.com
+    about: Verify behavior on the live website
+  - name: Deployment guide
+    url: https://github.com/moonr5/AGM-WEB/blob/main/docs/DEPLOYMENT.md
+    about: How changes reach agmaritim.com

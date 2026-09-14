@@ -1,0 +1,377 @@
+<!doctype html><html><head>
+  <meta charset="utf-8">
+  
+  <meta name="description" content="Error Page">
+  
+    <link rel="shortcut icon" href="/hubfs/fav.png">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="">
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+    
+
+    
+    <link rel="canonical" href="/404">
+
+<script type="text/javascript" src="https://embeds.iubenda.com/widgets/5cb8c1b9-6b61-42da-b4d4-b2961f13d8e9.js"></script>
+<script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+
+<meta property="og:image" content="/hubfs/raw_assets/public/appbar/assets/logo_black.svg">
+<meta property="twitter:image" content="/hubfs/raw_assets/public/appbar/assets/logo_black.svg">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NQHXT6B4');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sanlorenzo Yacht",
+    "description": "Sanlorenzo builds made to measure yachts since 1958.",
+    "legalName": "Sanlorenzo Spa",
+    "url": "https://www.sanlorenzoyacht.com",
+    "logo": "/hubfs/raw_assets/public/appbar/assets/logo_black.svg",
+    "image": "/hubfs/raw_assets/homepage/76/js_client_assets/assets/9_Loader_Manifesto-D7fJBKYS.jpg",
+    "foundingDate": "1958",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Gianfranco Cecchi"
+      },
+      {
+        "@type": "Person",
+        "name": "Giuliano Pecchia"
+      }
+    ],
+    "foundingLocation": {
+      "@type": "Place",
+      "address": "Firenze"
+    },
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Sede principale Sanlorenzo Yacht",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Armezzone, 3, Ameglia (SP)",
+          "postalCode": "19031",
+          "addressLocality": "Ameglia, La Spezia",
+          "addressRegion": "SP",
+          "addressCountry": "Italy"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Sede Centrale",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Armezzone, 3",
+          "postalCode": "19031",
+          "addressLocality": "Ameglia, La Spezia",
+          "addressRegion": "SP",
+          "addressCountry": "Italy"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Cantiere",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Luigi Salvatori, 56/58",
+          "postalCode": "55049",
+          "addressLocality": "Viareggio",
+          "addressRegion": "LU",
+          "addressCountry": "Italy"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Cantiere",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Viale San Bartolomeo 362",
+          "postalCode": "19100",
+          "addressLocality": "La Spezia",
+          "addressRegion": "SP",
+          "addressCountry": "Italy"
+        }
+      }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+39 01876181",
+        "email": "welcome@sanlorenzoyacht.com"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+39 058438071",
+        "email": "welcome@sanlorenzoyacht.com"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+39 0187545700",
+        "email": "welcome@sanlorenzoyacht.com"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/sanlorenzoyacht/",
+      "https://www.instagram.com/sanlorenzoyacht/",
+      "https://www.linkedin.com/company/sanlorenzoyacht/",
+      "https://www.youtube.com/c/SanlorenzoYachtOfficial/featured",
+      "https://it.wikipedia.org/wiki/Sanlorenzo",
+      "https://www.wikidata.org/wiki/Q27580296",
+      "https://www.teleborsa.it/azioni/sanlorenzo-sl-it0003549422-SVQwMDAzNTQ5NDIy"
+    ]
+  }
+</script>
+<meta property="og:url" content="/404">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+<link rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/368115561721/1771861305144/template_iubenda.min.css">
+
+
+
+
+  <style>
+    @font-face {
+      font-family: 'PPNeueMontreal';
+      src: url('/hubfs/fonts/PPNeueMontreal/PPNeueMontreal-Variable.woff2')
+        format('woff2-variations'),
+        url('/hubfs/fonts/PPNeueMontreal/PPNeueMontreal-Variable.woff')
+        format('woff-variations'),
+        url('/fonts/PPNeueMontreal-Variablewoff2') format('woff2-variations'),
+        url('/fonts/PPNeueMontreal-Variable.woff') format('woff-variations');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'PPNeueMontreal';
+      color: white;
+    }
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      position: relative;
+      width: min(1920px, 100%);
+      height: min(1080px, 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+    }
+    .container > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .container > .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.54%, rgba(0, 0, 0, 0.25) 62.96%);
+    }
+    .texts {
+      z-index: 3;
+      width: 100%;
+      max-width: 852px;
+      margin-left: 150px;
+      display: flex;
+      flex-direction: column;
+    }
+    h1 {
+      all: unset;
+      font-weight: 200;
+      font-size: 60px;
+      line-height: 64px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      text-align: start;
+    }
+    h2 {
+      all: unset;
+      font-weight: 375;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0;
+      text-align: start;
+      max-width: 623px;
+      margin-bottom: 16px;
+    }
+    a {
+      all: unset;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    .appbar-wrapper {
+      z-index: 3;
+      position: fixed;
+      height: 50px;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+    }
+    .appbar-container {
+      width: min(1920px, 100%);
+      height: 100%;
+      display: flex;
+      justify-content: start;
+      padding-left: 80px;
+    }
+    appbar-container a {
+      all: unset;
+      cursor: pointer;
+    }
+    .appbar-container img {
+      width: 251px;
+    }
+    @media (max-width: 1200px) {
+      h1 {
+       font-size: 48px; 
+      }
+      h2 {
+       font-size: 14px; 
+      }
+      .texts {
+        max-width: unset; 
+        margin-left: 0;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .container {
+        align-items: center; 
+      }
+      .appbar-container {
+        padding-left: 24px;
+      }
+    }
+  </style>
+<meta name="generator" content="HubSpot"></head>
+<body>
+  <div class="wrapper">
+    <div class="appbar-wrapper">
+      <div class="appbar-container">
+        <a href="https://test.sanlorenzoyacht.com/en" target="_self"><img src="/hubfs/raw_assets/public/404/assets/logo.svg"></a>
+      </div>
+    </div>
+    <div class="container">
+      <img src="/hubfs/raw_assets/public/404/assets/background.jpg">
+      <div class="overlay"></div>
+      <div class="texts">
+        <h1>
+        This route does not exist.
+        </h1>
+        <h2>
+          The page you are looking for is not available or has changed destination. Please return to the homepage to continue your navigation.
+        </h2>
+        <a id="home-link" href="https://sanlorenzoyacht.com" target="_self">
+          Return to Homepage
+          <img src="/hubfs/raw_assets/public/404/assets/link.svg">
+        </a>
+        <script>
+          (function() {
+            var origin = window.location.origin;
+            document.getElementById('home-link').href = origin;
+          })();
+        </script>
+      </div>
+    </div>
+  </div>
+  
+<!-- HubSpot performance collection script -->
+<script defer src="/hs/hsstatic/content-cwv-embed/static-1.1293/embed.js"></script>
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "standard-page"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.sanlorenzoyacht.com\/404"]);
+_hsq.push(["setPageId", ""]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": null,
+    "legacyPageId": null,
+    "contentFolderId": null,
+    "contentGroupId": null,
+    "abTestId": null,
+    "languageVariantId": null,
+    "languageCode": "en",
+    
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/146466316.js"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    render_id: "c95d5a0e-8417-4750-9e2f-23c0aa254332",
+    ticks: 1780575075129,
+    page_id: 0,
+    
+    content_group_id: 0,
+    portal_id: 146466316,
+    app_hs_base_url: "https://app-eu1.hubspot.com",
+    cp_hs_base_url: "https://cp-eu1.hubspot.com",
+    language: "en",
+    analytics_page_type: "standard-page",
+    scp_content_type: "",
+    
+    analytics_page_id: "null",
+    category_id: 1,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.640/js/index.js"></script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQHXT6B4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+</body></html>

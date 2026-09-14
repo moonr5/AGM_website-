@@ -1,0 +1,419 @@
+/* Homepage hero.
+ *
+ * Full-bleed photograph with a single left-aligned copy block sitting in the
+ * middle of the frame, following the SAG reference: headline, one short line,
+ * one call to action, and nothing else competing with the picture.
+ *
+ * The scrim is weighted to the left rather than the bottom. That keeps the
+ * white copy legible over water while leaving the right-hand two thirds of the
+ * photograph almost untouched, which is what stops the hero reading as a dark
+ * panel with a picture behind it.
+ */
+
+.agm-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100svh;
+  padding: 0;
+  overflow: hidden;
+  background: var(--agm-navy);
+  color: #fff;
+}
+
+.agm-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Biased right so the vessel sits clear of the headline. */
+  object-position: 62% 44%;
+}
+
+.agm-hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 16, 28, 0.74) 0%,
+      rgba(6, 16, 28, 0.46) 34%,
+      rgba(6, 16, 28, 0.1) 66%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(6, 16, 28, 0.46) 0%,
+      rgba(6, 16, 28, 0.08) 26%,
+      rgba(6, 16, 28, 0.1) 74%,
+      rgba(6, 16, 28, 0.3) 100%
+    );
+}
+
+.agm-hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+  align-items: end;
+  gap: clamp(28px, 5vw, 80px);
+  width: 100%;
+  padding: 140px var(--agm-gutter) 72px;
+  box-sizing: border-box;
+}
+
+.agm-hero-inner .agm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 18px;
+  padding: 6px 12px;
+  border: 1px solid rgba(159, 208, 240, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #d7ebf8;
+  letter-spacing: 0.16em;
+}
+
+.agm-hero h1 {
+  margin: 0 0 8px;
+  max-width: 11ch;
+  font-family: var(--agm-sans);
+  font-size: clamp(46px, 7vw, 92px);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.agm-hero-line,
+.agm-hero-lux {
+  display: block;
+}
+
+.agm-hero-lux {
+  position: relative;
+  width: fit-content;
+  margin-top: 0.06em;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  color: #ead7a4;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.agm-hero-lux:after {
+  content: "";
+  position: absolute;
+  left: 0.06em;
+  right: 0.18em;
+  bottom: 0.06em;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ead7a4 10%, #ead7a4 88%, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.agm-hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.42em);
+  filter: blur(8px);
+}
+
+.agm-hero.is-ready .agm-hero-word {
+  animation: agmHeroWord 0.92s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--delay, 0ms) + (var(--i, 0) * 78ms));
+}
+
+.agm-hero.is-ready .agm-hero-lux:after {
+  animation: agmLuxRule 0.7s 0.86s ease forwards;
+}
+
+@keyframes agmHeroWord {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes agmLuxRule {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.agm-hero-script {
+  display: flex;
+  align-items: baseline;
+  min-height: 1.45em;
+  margin: 4px 0 18px;
+  font-family: var(--agm-script);
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  color: #f3e6bf;
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.38);
+}
+
+.agm-hero-script-text {
+  white-space: pre;
+}
+
+.agm-hero-caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 0.72em;
+  margin-left: 4px;
+  background: #ead7a4;
+  vertical-align: -0.04em;
+  animation: agmCaret 0.78s steps(1) infinite;
+}
+
+@keyframes agmCaret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.agm-hero.is-ready .agm-hero-inner .agm-eyebrow {
+  animation: agmHeroFade 0.7s 0.04s ease both;
+}
+
+.agm-hero.is-ready .agm-hero-lede {
+  animation: agmHeroFade 0.75s 1.12s ease both;
+}
+
+.agm-hero.is-ready .agm-hero-actions {
+  animation: agmHeroFade 0.75s 1.28s ease both;
+}
+
+@keyframes agmHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.agm-hero-lede {
+  display: grid;
+  gap: 10px;
+  max-width: 28rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.agm-hero-right {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+  padding-bottom: 8px;
+}
+
+.agm-hero-statement {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.agm-hero-lead {
+  margin: 0;
+  max-width: 36ch;
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.012em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.agm-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.agm-hero .agm-pill {
+  background: var(--agm-accent-fill) !important;
+  border-color: var(--agm-accent-line) !important;
+  color: var(--agm-accent-ink) !important;
+}
+
+/* The scrim is dark here, so the outlined pill has to invert. */
+.agm-hero .agm-pill-ghost {
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.agm-hero .agm-pill-ghost:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--agm-navy);
+}
+
+/* Four service cards under the hero. The old hairline columns read as a
+   cheap spreadsheet strip; these sit as a quiet row of editorial cards. */
+.agm-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 22px var(--agm-inset) 28px;
+  background:
+    linear-gradient(180deg, #f3f6f9 0%, #eef3f7 100%);
+  box-sizing: border-box;
+}
+
+.agm-hero-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 22px 22px;
+  border: 1px solid rgba(11, 28, 51, 0.07);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(11, 28, 51, 0.045);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.28s var(--agm-ease), box-shadow 0.28s var(--agm-ease), border-color 0.28s ease;
+}
+
+.agm-hero-fact:hover,
+.agm-hero-fact:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(10, 98, 168, 0.22);
+  box-shadow: 0 18px 40px rgba(11, 28, 51, 0.1);
+}
+
+.agm-hero-fact-n {
+  font-family: var(--agm-serif);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #b8954a;
+}
+
+.agm-hero-fact strong {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(20px, 1.6vw, 26px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--agm-navy);
+}
+
+.agm-hero-fact > span:last-child {
+  font-family: var(--agm-sans);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--agm-ink-muted);
+}
+
+@media (max-width: 900px) {
+  .agm-hero {
+    min-height: 100svh;
+    align-items: flex-end;
+  }
+
+  .agm-hero-media {
+    object-position: 72% 42%;
+  }
+
+  .agm-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 88px 16px 28px;
+  }
+
+  html.agm-has-cookie .agm-hero-inner {
+    padding-bottom: 108px;
+  }
+
+  .agm-hero h1 {
+    max-width: none;
+    font-size: clamp(32px, 9vw, 46px);
+  }
+
+  .agm-hero-facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px 20px;
+  }
+
+  html.agm-has-cookie .agm-hero-facts {
+    padding-bottom: 88px;
+  }
+
+  .agm-hero-fact {
+    min-height: 0;
+    padding: 14px 12px;
+  }
+
+  .agm-hero-actions .agm-pill {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 46px;
+  }
+
+  .agm-hero-script {
+    font-size: clamp(22px, 6.6vw, 34px);
+  }
+
+  .agm-hero-lede {
+    max-width: 28rem;
+    padding-left: 12px;
+  }
+
+  .agm-hero-lead {
+    max-width: none;
+    font-size: 14.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agm-hero-word,
+  .agm-hero-inner .agm-eyebrow,
+  .agm-hero-lede,
+  .agm-hero-actions,
+  .agm-hero-lux:after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .agm-hero-lux:after {
+    transform: scaleX(1);
+  }
+
+  .agm-hero-caret {
+    display: none;
+  }
+
+  .agm-hero-fact,
+  .agm-hero-fact:hover,
+  .agm-hero-fact:focus-visible {
+    transform: none;
+  }
+}

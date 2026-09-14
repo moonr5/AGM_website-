@@ -1,0 +1,517 @@
+/**
+ * AGM homepage sections — MOBILE ONLY (max-width: 768px)
+ * Compact, edge-to-edge layout with tight vertical rhythm (no full-viewport gaps).
+ */
+@media (max-width: 768px) {
+  :root {
+    --agm-mobile-pad: max(16px, var(--agm-safe-left, 0px));
+    --agm-mobile-pad-r: max(16px, var(--agm-safe-right, 0px));
+    --agm-mobile-section-gap: 0;
+  }
+
+  /* Homepage wrapper — no extra vertical gutters between islands */
+  .body-wrapper.page {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #hs_cos_wrapper_hero,
+  #hs_cos_wrapper_seaLiving,
+  #hs_cos_wrapper_range,
+  #hs_cos_wrapper_below,
+  #seaLiving,
+  #range,
+  #below {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    isolation: isolate;
+  }
+
+  /* GSAP pin-spacer for services — keep scroll distance, never collapse */
+  .pin-spacer:has(#seaLiving),
+  .pin-spacer:has(._container_1im41_1) {
+    overflow: visible !important;
+  }
+
+  /* ── seaLiving (services) — scroll-pinned 3-slide carousel ── */
+  #seaLiving ._container_1im41_1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    overflow: hidden !important;
+  }
+
+  /* GSAP slides backgrounds via bottom — do not set inset/bottom/position here */
+  #seaLiving ._section_1im41_10 {
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  #seaLiving ._headingContainer_1im41_31 {
+    left: 0 !important;
+    margin-top: max(52px, calc(var(--agm-safe-top, 0px) + 8px)) !important;
+    margin-left: var(--agm-mobile-pad) !important;
+    margin-right: var(--agm-mobile-pad-r) !important;
+    max-width: 100% !important;
+  }
+
+  #seaLiving ._headingContainer_1im41_31 > :first-child {
+    font-size: clamp(9px, 2.4vw, 11px) !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  #seaLiving ._headingContainer_1im41_31 > :last-child {
+    font-size: clamp(16px, 4.8vw, 22px) !important;
+    line-height: 1.2 !important;
+  }
+
+  #seaLiving ._bottomContainer_1im41_56 {
+    height: 76% !important;
+  }
+
+  #seaLiving ._leftContainer_1im41_64 {
+    left: 0 !important;
+    margin-left: var(--agm-mobile-pad) !important;
+    margin-right: var(--agm-mobile-pad-r) !important;
+    min-width: 0 !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  #seaLiving ._leftContainer_1im41_64 > :nth-child(2),
+  #seaLiving ._leftContainer_1im41_64 > :first-child > :last-child {
+    font-size: clamp(24px, 10vw, 48px) !important;
+    line-height: 1 !important;
+  }
+
+  #seaLiving ._leftContainer_1im41_64 > ._index_1im41_75,
+  #seaLiving ._leftContainer_1im41_64 > ._currentIndex_1im41_86 {
+    display: none !important;
+  }
+
+  #seaLiving ._rightContainer_1im41_117 {
+    left: 0 !important;
+    right: 0 !important;
+    top: 70px !important;
+    margin-left: var(--agm-mobile-pad) !important;
+    margin-right: var(--agm-mobile-pad-r) !important;
+    transform: none !important;
+  }
+
+  #seaLiving ._rightContainer_1im41_117 > div {
+    font-size: clamp(12px, 3.4vw, 14px) !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
+  }
+
+  #seaLiving ._rightContainer_1im41_117 > a {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    min-height: 36px !important;
+    padding: 4px 12px !important;
+  }
+
+  #seaLiving ._imgBox_1im41_154 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: min(42svh, 381px) !important;
+    padding: 24px var(--agm-mobile-pad-r) 0 var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── range (fleet) ── */
+  #range ._rangeSection_ws1t0_1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    position: relative !important;
+  }
+
+  #range ._rangeHeader_ws1t0_9 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px var(--agm-mobile-pad-r) 12px var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  #range ._name_ws1t0_16 {
+    font-size: clamp(9px, 2.4vw, 11px) !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  #range ._description_ws1t0_22 {
+    font-size: clamp(20px, 5.8vw, 28px) !important;
+    line-height: 1.15 !important;
+    max-width: 100% !important;
+  }
+
+  #range ._line_ws1t0_27 {
+    gap: 12px !important;
+  }
+
+  #range ._button_ws1t0_33 {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+  }
+
+  #range ._slLine_ws1t0_76,
+  #range ._slLine_ws1t0_76 > ._namesContainer_ws1t0_135,
+  #range ._slLine_ws1t0_76 ._item_ws1t0_115 {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  #range ._sliderWrapper_ws1t0_231 {
+    margin: 0 !important;
+    padding: 0 var(--agm-mobile-pad-r) 0 var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  #range ._image_ws1t0_66 {
+    width: 92vw !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: 2.15 / 1 !important;
+    margin-left: calc((100% - 92vw) / 2) !important;
+  }
+
+  #range ._iconsContainer_ws1t0_148,
+  #range ._iconsContainer_ws1t0_148 > img {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #range ._rangeTitle_ws1t0_164 {
+    font-size: clamp(18px, 5vw, 24px) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 var(--agm-mobile-pad-r) 12px var(--agm-mobile-pad) !important;
+  }
+
+  #range ._contentWrapper_ws1t0_224 {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    padding: 88px 0 24px !important;
+  }
+
+  html.agm-has-cookie #range ._contentWrapper_ws1t0_224 {
+    padding-bottom: 148px !important;
+  }
+
+  /* ── below (about, services, map, footer) ── */
+  #below ._main_mirx2_1 {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+  }
+
+  #below ._first_mirx2_8,
+  #below ._second_mirx2_56 {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #below ._first_mirx2_8 > h2 {
+    margin: 16px var(--agm-mobile-pad-r) 0 var(--agm-mobile-pad) !important;
+    font-size: clamp(9px, 2.4vw, 11px) !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  #below ._first_mirx2_8 > ._container_mirx2_26 {
+    margin: 10px var(--agm-mobile-pad-r) 14px var(--agm-mobile-pad) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+
+  #below ._first_mirx2_8 > ._container_mirx2_26 ._description_mirx2_36 {
+    font-size: clamp(20px, 5.8vw, 28px) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 10px !important;
+  }
+
+  #below ._discover_mirx2_161 {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+  }
+
+  #below ._second_mirx2_56 {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  #below ._second_mirx2_56 > ._container_mirx2_26 {
+    padding: 0 !important;
+    gap: 0 !important;
+    height: auto !important;
+    position: relative !important;
+  }
+
+  #below ._second_mirx2_56 > ._container_mirx2_26 > ._imgWrapper_mirx2_65 {
+    position: relative !important;
+    height: clamp(220px, 44vh, 320px) !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #below ._texts_mirx2_93 {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    padding: 12px var(--agm-mobile-pad-r) max(12px, var(--agm-safe-bottom, 0px)) var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+    z-index: 2 !important;
+    pointer-events: none;
+  }
+
+  #below ._texts_mirx2_93 * {
+    pointer-events: auto;
+  }
+
+  #below ._texts_mirx2_93 > :first-child {
+    font-size: clamp(10px, 2.8vw, 12px) !important;
+  }
+
+  #below ._texts_mirx2_93 > :nth-child(2) {
+    font-size: clamp(12px, 3.4vw, 14px) !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #below ._texts_mirx2_93 > a {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    min-height: 36px !important;
+  }
+
+  #below ._arrows_mirx2_85 {
+    position: absolute !important;
+    top: 50% !important;
+    bottom: auto !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+    padding-right: var(--agm-mobile-pad-r) !important;
+    padding-left: var(--agm-mobile-pad) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    z-index: 3 !important;
+    pointer-events: none;
+  }
+
+  #below ._arrows_mirx2_85 * {
+    pointer-events: auto;
+  }
+
+  /* Interiors / services grid */
+  #below ._container_1tsw7_1 {
+    width: 100% !important;
+    padding: 16px var(--agm-mobile-pad-r) 18px var(--agm-mobile-pad) !important;
+    margin-bottom: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #below ._headingContainer_1tsw7_15 > h2 {
+    font-size: clamp(9px, 2.4vw, 11px) !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  #below ._headingContainer_1tsw7_15 > div {
+    font-size: clamp(20px, 5.8vw, 28px) !important;
+    line-height: 1.15 !important;
+  }
+
+  #below ._bottomContainer_1tsw7_37 {
+    max-width: 100% !important;
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+    gap: 10px !important;
+  }
+
+  #below ._bottomContainer_1tsw7_37 > div {
+    font-size: clamp(13px, 3.6vw, 15px) !important;
+    line-height: 1.45 !important;
+  }
+
+  #below ._discover_1tsw7_51 {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+  }
+
+  #below ._imgWrapper_1tsw7_65 {
+    width: 100% !important;
+    max-height: clamp(180px, 38vh, 280px) !important;
+    height: auto !important;
+  }
+
+  #below ._imagesRowMobile_1tsw7_170 {
+    margin-top: 10px !important;
+    padding: 0 var(--agm-mobile-pad-r) 0 var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Map / contact */
+  #below ._container_k2jxx_1 {
+    width: 100% !important;
+    margin-top: 0 !important;
+    padding: 14px var(--agm-mobile-pad-r) 16px var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  #below ._headingContainer_k2jxx_24 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-height: none !important;
+  }
+
+  html.agm-travelo #below ._topContainer_k2jxx_18 {
+    padding: 22px 0 18px !important;
+    gap: 18px !important;
+  }
+
+  #below ._heading_k2jxx_10 {
+    font-size: clamp(9px, 2.4vw, 11px) !important;
+    letter-spacing: 0.14em !important;
+    max-width: 100% !important;
+  }
+
+  #below ._title_k2jxx_32 {
+    font-size: clamp(22px, 6.2vw, 30px) !important;
+    line-height: 1.18 !important;
+    max-width: 100% !important;
+    margin-top: 12px !important;
+  }
+
+  .agm-contact-aside {
+    min-width: 0;
+    gap: 14px;
+  }
+
+  .agm-contact-aside dd {
+    font-size: 15px;
+  }
+
+  #below ._enquireContainer_k2jxx_41 {
+    left: 0 !important;
+    position: relative !important;
+    margin-top: 8px !important;
+  }
+
+  #below ._enquire_k2jxx_41 {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+  }
+
+  #below ._topControls_k2jxx_258 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #below ._mapContainer_k2jxx_245 {
+    width: 100% !important;
+    height: clamp(200px, 34vh, 260px) !important;
+    margin-top: 8px !important;
+  }
+
+  #below ._row_k2jxx_91 ._data_k2jxx_113:first-child {
+    margin-left: var(--agm-mobile-pad) !important;
+  }
+
+  #below ._row_k2jxx_91 ._data_k2jxx_113 {
+    flex: 0 0 min(260px, 76vw) !important;
+  }
+
+  #below ._dataTitle_k2jxx_160 {
+    font-size: clamp(14px, 4vw, 17px) !important;
+  }
+
+  #below ._dataValue_k2jxx_171 {
+    font-size: clamp(9px, 2.5vw, 10px) !important;
+  }
+
+  /* Footer */
+  #below ._footerSection_ypmp5_1 {
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  #below ._footerContent_ypmp5_5 {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #below ._footerItem_ypmp5_14 {
+    padding: 28px var(--agm-mobile-pad-r) 28px var(--agm-mobile-pad) !important;
+    box-sizing: border-box !important;
+    min-height: 0 !important;
+    gap: 10px !important;
+  }
+
+  #below ._footerTitle_ypmp5_67 {
+    font-size: clamp(20px, 5.4vw, 26px) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    max-width: 16em !important;
+  }
+
+  #below ._footerDescription_ypmp5_68 {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    max-width: 38ch !important;
+  }
+
+  #below ._footerDivider_ypmp5_91 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #below ._footerBottom_ypmp5_101 {
+    padding: 16px var(--agm-mobile-pad-r) max(16px, var(--agm-safe-bottom, 0px)) var(--agm-mobile-pad) !important;
+    gap: 14px !important;
+  }
+
+  #below ._footerLinks_ypmp5_110,
+  #below ._footerCopyright_ypmp5_128 {
+    font-size: clamp(11px, 3vw, 12px) !important;
+    line-height: 1.45 !important;
+  }
+
+  #below ._linksContainer_ypmp5_139 {
+    column-gap: 20px !important;
+    row-gap: 10px !important;
+  }
+}

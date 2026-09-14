@@ -1,0 +1,51 @@
+DirectoryIndex index.html en/index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^api/dealers/?$ /api/dealers.json [L]
+
+  # Every page lives under /en/. The imported template left behind links to
+  # locale-less paths, so send those to the real page instead of a 404. Only
+  # applies when nothing actually exists at the requested path.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(about|blue-economy|brand-representative|careers|compliance|contacts|cookie-manager|cookie-policy|corporate|enquire|fleet-charter|investors|news-and-events|operations|our-fleet|owner-care|people|privacy-policy|sea-cucumber-trade|services|shipyard|sustainability)(/.*)?$ /en/$1/ [R=301,L]
+  RewriteRule ^videos/services/(.+)$ /en/videos/services/$1 [L]
+  RewriteRule ^(en/)?p8\.mp4$ /en/p8-lite.mp4 [L]
+  RewriteRule ^(en/)?p61\.svg$ /en/p61.png [L]
+  RewriteRule ^p([79])\.mp4$ /en/p$1.mp4 [L]
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+AddType application/javascript .js .mjs
+AddType application/json .json
+AddType text/css .css
+AddType image/svg+xml .svg
+AddType video/mp4 .mp4
+AddType font/woff .woff
+AddType font/woff2 .woff2
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|mjs|jpg|jpeg|png|webp|svg|woff2?|mp4)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+<FilesMatch "^[^.]+$">
+  ForceType text/html
+</FilesMatch>

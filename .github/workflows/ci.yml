@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify homepage assets exist
+        run: |
+          test -f index.html
+          test -f en/index.html
+          test -f hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-mobile.css
+          test -f hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-hero-mobile.css
+          test -f hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-hero-mobile.js
+          test -f hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-home-mobile.css
+          echo "Required assets present."
+
+      - name: Audit mirrored assets (non-blocking)
+        run: npm run audit
+        continue-on-error: true

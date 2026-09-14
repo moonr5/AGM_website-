@@ -1,0 +1,2 @@
+﻿import{jsx as s}from"https://static.hsappstatic.net/cms-js-static/ex/js/react/v18/react-combined.mjs";const a=t=>{if(!t.startsWith("/"))return t;if(typeof window==="undefined")return t;const[,n]=window.location.pathname.split("/");return n!=="it"&&n!=="en"||t.startsWith(`/${n}/`)||t.match(/^\/(it|en)\//)?t:`/${n}${t}`};function l({href:t,children:n,className:e,...r}){const i=a(t),o=/^(https?:)?\/\//.test(t);return s("a",{href:i,className:e,...o&&!r.target?{target:"_blank",rel:"noopener noreferrer"}:{},...r,children:n})}export{l as L};
+

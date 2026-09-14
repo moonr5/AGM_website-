@@ -1,0 +1,21 @@
+node_modules/
+.vscode/
+website_backup/
+*.zip
+en/p8-original.mp4
+en/p8-deploy.mp4
+
+# Enquiry copies written by the form sender
+storage/enquiries/*.json
+storage/enquiries/rate/*.json
+api/enquire-config.php
+
+# Local dev / audit artifacts
+local-server.err
+unused-files-report.json
+tools/_*.txt
+tools/island-from-git.bin
+tools/island-good.js
+tools/island-prev.js
+tools/inspect-*.js
+tools/find-below-module-path.js

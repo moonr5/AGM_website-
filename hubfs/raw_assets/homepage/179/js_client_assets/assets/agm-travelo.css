@@ -1,0 +1,2633 @@
+/* Travelo-inspired homepage. Does not restyle #range boat carousel. */
+
+html.agm-travelo {
+  --agm-navy: #0b1c33;
+  --agm-ink: #142033;
+  --agm-paper: #fff;
+  --agm-card: #ffffff;
+  /* --agm-sans and --agm-serif come from agm-brand.css. */
+  --agm-radius: 28px;
+  background: var(--agm-paper);
+}
+
+html.agm-travelo body {
+  background: var(--agm-paper);
+}
+
+html.agm-travelo #appbar-corporate .appbar-wrapper,
+html.agm-travelo .appbar-wrapper {
+  padding: calc(18px + var(--agm-safe-top, 0px)) 40px 0 !important;
+}
+
+html.agm-travelo #appbar.appbar {
+  max-width: 1440px !important;
+  height: 80px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: #fff !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar.appbar {
+  background: rgba(11, 28, 51, 0.52) !important;
+  backdrop-filter: blur(18px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+  box-shadow: 0 8px 24px rgba(6, 16, 28, 0.18) !important;
+  border-radius: 999px !important;
+}
+
+html.agm-travelo #appbar.appbar > div {
+  padding: 0 20px 0 8px !important;
+  gap: 28px !important;
+}
+
+/* The hero is a dark photograph and the scrolled state is a navy pill, so the
+   bar is white throughout and needs no colour flip. */
+html.agm-travelo .agm-brand-logo,
+html.agm-travelo #appbar .section:first-child a img {
+  height: 50px !important;
+  max-width: 64px !important;
+  filter: brightness(0) invert(1);
+}
+
+html.agm-travelo #appbar .agm-brand-name,
+html.agm-travelo .agm-brand-name {
+  font-size: 22px !important;
+  letter-spacing: 0.2em !important;
+  color: #fff !important;
+}
+
+html.agm-travelo #appbar .agm-brand-sub,
+html.agm-travelo .agm-brand-sub {
+  font-size: 13px !important;
+  letter-spacing: 0.26em !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html.agm-travelo #appbar .agm-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+html.agm-travelo #appbar .agm-nav > .a,
+html.agm-travelo #appbar .section:nth-child(2) .a {
+  min-height: 44px !important;
+  padding: 0 18px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: #fff !important;
+}
+
+html.agm-travelo #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* The bar's call to action uses the site accent, same as every other primary
+   action on the page. */
+html.agm-travelo #appbar .agm-nav-cta,
+html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"] {
+  min-height: 48px !important;
+  padding: 0 28px !important;
+  margin-left: 16px;
+  background: var(--agm-accent-fill) !important;
+  color: var(--agm-accent-ink) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  border: 1px solid var(--agm-accent-line) !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+html.agm-travelo #appbar .agm-nav-cta:hover,
+html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"]:hover {
+  background: var(--agm-accent-fill-hover) !important;
+  color: var(--agm-accent-ink) !important;
+}
+
+html.agm-travelo #burger {
+  width: 48px;
+  height: 48px;
+  filter: brightness(0) invert(1);
+}
+
+html.agm-travelo .agm-langs {
+  margin: 0 8px 0 12px;
+}
+
+html.agm-travelo .agm-langs button {
+  min-height: 44px;
+  padding: 0 9px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+html.agm-travelo .agm-langs button[aria-pressed="true"] {
+  color: #fff !important;
+}
+
+html.agm-travelo #hero ._manifestContainer_biyw3_107,
+html.agm-travelo #hero ._titleContainer_ty1x2_107,
+html.agm-travelo #hero ._content_ty1x2_38,
+html.agm-travelo #hero ._trailing_ty1x2_78,
+html.agm-travelo #hero ._heroText_biyw3_85,
+html.agm-travelo #hero ._title_ty1x2_107,
+html.agm-travelo #hero ._discover_ty1x2_126,
+html.agm-travelo #hero ._title_174va_22,
+html.agm-travelo #hero ._text_174va_29,
+html.agm-travelo #hs_cos_wrapper_seaLiving {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+html.agm-travelo #hs_cos_wrapper_hero {
+  position: relative !important;
+  display: block !important;
+}
+
+html.agm-travelo #hero ._overlay_biyw3_102 {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 28, 51, 0.78) 0%,
+    rgba(11, 28, 51, 0.18) 32%,
+    rgba(11, 28, 51, 0.08) 58%,
+    rgba(11, 28, 51, 0.62) 100%
+  ) !important;
+}
+
+.agm-hero-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 130px 72px 140px;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.agm-hero-ui a,
+.agm-hero-ui button {
+  pointer-events: auto;
+}
+
+.agm-hero-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: end;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.agm-hero-copy h1 {
+  margin: 0 0 20px;
+  max-width: 11em;
+  font-family: var(--agm-serif);
+  font-size: clamp(46px, 6.4vw, 88px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.agm-hero-copy p {
+  margin: 0 0 28px;
+  max-width: 28em;
+  font-family: var(--agm-sans);
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* .agm-hero-actions is owned by agm-hero-blue.css; the rule that used to sit
+   here belonged to a retired hero and was overriding the live one. */
+
+/* The legacy pill now matches the site accent pill so every call to action on
+   the page reads the same. */
+/* Same shape and casing as .agm-pill in the brand layer, so the homepage and
+   the inner pages present one button rather than two. */
+.agm-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--agm-accent-fill);
+  color: var(--agm-accent-ink);
+  border: 1px solid var(--agm-accent-line);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.25s var(--agm-ease), border-color 0.25s var(--agm-ease),
+    transform 0.25s var(--agm-ease);
+}
+
+.agm-btn-pill:hover {
+  background: var(--agm-accent-fill-hover);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--agm-accent-ink);
+  transform: translateY(-1px);
+}
+
+.agm-btn-pill.light {
+  background: #fff;
+  color: var(--agm-navy);
+  border-color: #fff;
+}
+
+.agm-btn-pill.ghost {
+  background: transparent;
+  color: var(--agm-navy);
+  border: 1px solid var(--agm-rule);
+}
+
+.agm-btn-pill.ghost:hover {
+  background: var(--agm-navy);
+  border-color: var(--agm-navy);
+  color: #fff;
+}
+
+/* Bare glyph rather than a coloured disc: the pill already carries the colour,
+   and a blue disc on the accent fill clashed. */
+.agm-btn-pill .arrow {
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  color: currentColor;
+  transition: transform 0.25s var(--agm-ease);
+}
+
+.agm-btn-pill:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.agm-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--agm-navy);
+  font-family: var(--agm-sans);
+  font-size: 13px;
+}
+
+.agm-proof b {
+  font-weight: 700;
+}
+
+.agm-avatars {
+  display: flex;
+}
+
+.agm-avatars span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(11, 28, 51, 0.12);
+  margin-left: -8px;
+  background: #9bb6c9 center / cover no-repeat;
+}
+
+.agm-avatars span:first-child {
+  margin-left: 0;
+  background-image: url("/en/images/services/charter-portrait.webp?v=h2");
+}
+
+.agm-avatars span:nth-child(2) {
+  background-image: url("/en/images/services/shipbuilding-portrait.webp");
+}
+
+.agm-avatars span:nth-child(3) {
+  background-image: url("/en/images/services/support-portrait.webp");
+}
+
+.agm-float-card {
+  width: 230px;
+  padding: 10px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(6, 16, 28, 0.22);
+  color: var(--agm-ink);
+}
+
+.agm-float-card img {
+  display: block;
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.agm-float-card strong {
+  display: block;
+  margin: 10px 8px 2px;
+  font-family: var(--agm-serif);
+  font-size: 16px;
+}
+
+.agm-float-card em {
+  display: block;
+  margin: 0 8px 10px;
+  font-style: normal;
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  color: rgba(20, 32, 51, 0.6);
+}
+
+.agm-hero-mark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 48px 24px 28px;
+  text-align: center;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 20, 34, 0.72) 70%);
+  pointer-events: none;
+}
+
+.agm-hero-mark-rule {
+  width: 72px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #9fd0f0, #fff, #9fd0f0, transparent);
+  background-size: 220% 100%;
+  animation: agmHorizon 4.5s ease-in-out infinite;
+}
+
+@keyframes agmHorizon {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+
+.agm-hero-mark-name,
+.agm-hero-mark-what,
+.agm-hero-mark-where {
+  margin: 0;
+  max-width: 42em;
+}
+
+.agm-hero-mark-name {
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #9fd0f0;
+}
+
+.agm-hero-mark-what {
+  font-family: var(--agm-serif);
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.agm-hero-mark-where {
+  font-family: var(--agm-sans);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.agm-travelo-section {
+  width: var(--agm-content);
+  margin: 0 auto;
+  padding: 88px 0;
+}
+
+/* The briefs band deliberately breaks the shared content measure and runs
+   edge to edge, so the cards get a full-bleed inset rather than the page
+   gutter.
+ *
+ * The band is meant to read as a single screen, so the two media heights are
+ * measured against viewport height rather than width and are budgeted, with
+ * the heading and padding, to total less than 100svh. They are tokens because
+ * the square cards and the wide blue card have to stay in proportion with each
+ * other. The px bounds stop them collapsing in a short window or ballooning on
+ * a tall one. */
+#agm-briefs.agm-travelo-section {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  min-height: 0;
+  padding: 80px var(--agm-inset);
+  background: #eef5fb;
+}
+
+.agm-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(20, 32, 51, 0.45);
+}
+
+.agm-kicker-row:before,
+.agm-kicker-row:after {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: rgba(20, 32, 51, 0.2);
+}
+
+.agm-about-lead {
+  margin: 0 auto 28px;
+  max-width: 38rem;
+  text-align: center;
+  font-family: var(--agm-serif);
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--agm-navy);
+}
+
+.agm-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px 36px;
+  flex-wrap: wrap;
+}
+
+html.agm-travelo #agm-about.agm-about-stage {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 36px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 70% 50% at 82% 18%, rgba(10, 98, 168, 0.32), transparent 58%),
+    radial-gradient(ellipse 40% 30% at 12% 88%, rgba(184, 149, 74, 0.12), transparent 55%),
+    var(--agm-navy);
+  color: #fff;
+}
+
+html.agm-travelo #agm-about.agm-about-stage:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 70% at 70% 35%, #000 10%, transparent 72%);
+}
+
+.agm-about-stage-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: stretch;
+  height: 100svh;
+  max-height: 100svh;
+  padding: 86px var(--agm-inset) 28px;
+  box-sizing: border-box;
+}
+
+.agm-about-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+
+.agm-about-kicker {
+  margin: 0 0 18px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9fd0f0;
+}
+
+.agm-about-copy h2 {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(36px, 4.8vw, 68px);
+  font-weight: 300;
+  line-height: 0.94;
+  letter-spacing: -0.028em;
+  color: #fff;
+}
+
+.agm-about-copy h2 span,
+.agm-about-copy h2 em {
+  display: block;
+}
+
+.agm-about-copy h2 em {
+  width: fit-content;
+  margin-top: 0.04em;
+  font-style: italic;
+  color: #ead7a4;
+}
+
+.agm-about-script {
+  margin: 10px 0 0;
+  font-family: var(--agm-script);
+  font-size: clamp(24px, 2.6vw, 38px);
+  line-height: 1.2;
+  color: #f3e6bf;
+}
+
+.agm-about-deck {
+  margin: 14px 0 0;
+  max-width: 34em;
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.agm-about-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  margin-top: 22px;
+}
+
+.agm-about-where {
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.agm-about-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin: 22px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(234, 215, 164, 0.22);
+}
+
+.agm-about-figures dt {
+  margin: 0 0 4px;
+  font-family: var(--agm-serif);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #ead7a4;
+}
+
+.agm-about-figures dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.agm-about-mosaic {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+  align-self: stretch;
+}
+
+.agm-about-mosaic .is-hero {
+  grid-row: 1 / span 2;
+}
+
+.agm-about-mosaic figure {
+  position: relative;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #16324f;
+}
+
+.agm-about-mosaic img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--agm-ease);
+}
+
+.agm-about-mosaic figure:hover img {
+  transform: scale(1.06);
+}
+
+.agm-about-mosaic figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  font-family: var(--agm-script);
+  font-size: clamp(20px, 1.8vw, 28px);
+  color: #fff;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.agm-about-lanes {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 20px var(--agm-inset) 28px;
+}
+
+.agm-about-lane {
+  position: relative;
+  display: block;
+  min-height: min(44svh, 400px);
+  overflow: hidden;
+  border-radius: 22px;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+}
+
+.agm-about-lane:nth-child(2) {
+  transform: translateY(-28px);
+}
+
+.agm-about-lane img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--agm-ease);
+}
+
+.agm-about-lane:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 16, 28, 0.08) 28%, rgba(6, 16, 28, 0.84) 100%);
+}
+
+.agm-about-lane-n {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 1;
+  font-family: var(--agm-serif);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: #ead7a4;
+}
+
+.agm-about-lane-body {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  display: grid;
+  gap: 4px;
+}
+
+.agm-about-lane-body small {
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.agm-about-lane-body strong {
+  font-family: var(--agm-serif);
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.agm-about-lane-body em {
+  margin-top: 6px;
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ead7a4;
+}
+
+.agm-about-lane:hover img,
+.agm-about-lane:focus-visible img {
+  transform: scale(1.07);
+}
+
+.agm-about-stage.is-ready .agm-about-copy,
+.agm-about-stage.is-ready .agm-about-mosaic figure,
+.agm-about-stage.is-ready .agm-about-lane {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--agm-ease), transform 0.7s var(--agm-ease);
+}
+
+.agm-about-stage.is-ready .agm-about-mosaic figure:nth-child(2) { transition-delay: 90ms; }
+.agm-about-stage.is-ready .agm-about-mosaic figure:nth-child(3) { transition-delay: 160ms; }
+.agm-about-stage.is-ready .agm-about-lane:nth-child(1) { transition-delay: 80ms; }
+.agm-about-stage.is-ready .agm-about-lane:nth-child(2) { transition-delay: 180ms; }
+.agm-about-stage.is-ready .agm-about-lane:nth-child(3) { transition-delay: 280ms; }
+
+.agm-about-stage.is-ready .agm-about-copy.is-in,
+.agm-about-stage.is-ready .agm-about-mosaic figure.is-in,
+.agm-about-stage.is-ready .agm-about-lane.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.agm-about-stage.is-ready .agm-about-lane:nth-child(2).is-in {
+  transform: translateY(-28px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agm-about-stage.is-ready .agm-about-copy,
+  .agm-about-stage.is-ready .agm-about-mosaic figure,
+  .agm-about-stage.is-ready .agm-about-lane,
+  .agm-about-mosaic img,
+  .agm-about-lane img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.agm-feature-grid {
+  width: 100%;
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.agm-feature {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--agm-radius);
+  background: var(--agm-card, #fff);
+  box-shadow: 0 10px 30px rgba(11, 28, 51, 0.06);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.agm-feature:nth-child(1) { transition-delay: 0ms, 0ms, 0ms; }
+.agm-feature:nth-child(2) { transition-delay: 160ms, 160ms, 0ms; }
+.agm-feature:nth-child(3) { transition-delay: 320ms, 320ms, 0ms; }
+
+.agm-feature.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.agm-feature:hover {
+  box-shadow: 0 16px 36px rgba(11, 28, 51, 0.12);
+}
+
+.agm-feature img {
+  display: block;
+  width: 100%;
+  height: clamp(148px, 20svh, 196px);
+  object-fit: cover;
+}
+
+.agm-feature-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 22px 24px;
+}
+
+.agm-feature h3 {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(20px, 1.6vw, 26px);
+  font-weight: 500;
+  color: var(--agm-navy);
+}
+
+.agm-feature p {
+  margin: 0;
+  font-family: var(--agm-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(20, 32, 51, 0.68);
+}
+
+.agm-feature-icon {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agm-feature {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.agm-fleet-intro {
+  background: var(--agm-navy);
+  color: #fff;
+  padding: 72px 24px 28px;
+  text-align: center;
+}
+
+.agm-fleet-intro h2 {
+  margin: 0 auto 12px;
+  max-width: 16ch;
+  font-family: var(--agm-serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.agm-fleet-intro p {
+  margin: 0 auto;
+  max-width: 36em;
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+html.agm-travelo .agm-fleet-intro {
+  display: none;
+}
+
+html.agm-travelo #hs_cos_wrapper_range,
+html.agm-travelo #range,
+html.agm-travelo #range ._rangeSection_ws1t0_1 {
+  background:
+    radial-gradient(ellipse 80% 42% at 50% 88%, rgba(23, 128, 196, 0.32), transparent 58%),
+    radial-gradient(ellipse 50% 30% at 8% 12%, rgba(10, 98, 168, 0.22), transparent 55%),
+    linear-gradient(180deg, #071422 0%, #0b1c33 48%, #061018 100%) !important;
+  color: #fff !important;
+}
+
+html.agm-travelo #range ._rangeSection_ws1t0_1 {
+  position: relative !important;
+  overflow: hidden !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+html.agm-travelo #range ._rangeSection_ws1t0_1:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 88% 22%, transparent 78px, rgba(159, 208, 240, 0.2) 79px, transparent 80px),
+    radial-gradient(circle at 88% 22%, transparent 132px, rgba(159, 208, 240, 0.14) 133px, transparent 134px),
+    radial-gradient(circle at 88% 22%, transparent 186px, rgba(159, 208, 240, 0.1) 187px, transparent 188px),
+    linear-gradient(90deg, rgba(159, 208, 240, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(159, 208, 240, 0.07) 1px, transparent 1px);
+  background-size: auto, auto, auto, 56px 56px, 56px 56px;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 42%, #000 78%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 42%, #000 78%);
+}
+
+html.agm-travelo #range ._rangeSection_ws1t0_1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(42%, 280px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath d='M0 70 Q180 30 360 70 T720 70 T1080 70 T1440 70' fill='none' stroke='%239fd0f0' stroke-opacity='0.35' stroke-width='1.4'/%3E%3Cpath d='M0 108 Q180 68 360 108 T720 108 T1080 108 T1440 108' fill='none' stroke='%239fd0f0' stroke-opacity='0.22' stroke-width='1.2'/%3E%3Cpath d='M0 146 Q180 106 360 146 T720 146 T1080 146 T1440 146' fill='none' stroke='%239fd0f0' stroke-opacity='0.14' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+html.agm-travelo #range ._rangeHeader_ws1t0_9,
+html.agm-travelo #range ._contentWrapper_ws1t0_224 {
+  position: relative;
+  z-index: 1;
+}
+
+html.agm-travelo #range ._name_ws1t0_16 {
+  color: #9fd0f0 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+}
+
+html.agm-travelo #range ._description_ws1t0_22 {
+  font-family: var(--agm-serif) !important;
+  font-size: clamp(28px, 3.6vw, 46px) !important;
+  line-height: 1.05 !important;
+  font-weight: 300 !important;
+  color: #fff !important;
+  max-width: 16em !important;
+}
+
+html.agm-travelo #range ._button_ws1t0_33 {
+  border-radius: 15px !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  background: rgba(10, 98, 168, 0.4) !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  backdrop-filter: blur(12px);
+}
+
+html.agm-travelo #range ._button_ws1t0_33:hover {
+  background: #0a62a8 !important;
+  border-color: #0a62a8 !important;
+}
+
+html.agm-travelo #range ._sliderWrapper_ws1t0_231 {
+  position: relative;
+}
+
+html.agm-travelo #range ._sliderWrapper_ws1t0_231:after {
+  content: "";
+  display: block;
+  width: min(680px, 72%);
+  height: 2px;
+  margin: 4px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(159, 208, 240, 0.75), transparent);
+  box-shadow: 0 12px 40px 8px rgba(10, 98, 168, 0.28);
+}
+
+html.agm-travelo #range ._image_ws1t0_66 {
+  background-color: #fff !important;
+  filter: none;
+  box-shadow: 0 22px 40px rgba(4, 12, 24, 0.28);
+}
+
+/* Only the fleet band is deferred. It is a single viewport tall, so the
+   intrinsic estimate matches what eventually renders and the page height stays
+   honest. The services module is not a candidate: it carries the enquiry panel
+   and the site footer and runs a few thousand pixels, so an 820px estimate left
+   the document far shorter than its contents and the last part of the page,
+   footer included, could not be scrolled to at all. */
+html.agm-travelo #hs_cos_wrapper_range {
+  content-visibility: auto;
+  contain-intrinsic-size: auto calc(100svh + 280px);
+}
+
+html.agm-travelo #below {
+  min-height: 120px;
+}
+
+/* These islands only hydrate once scrolled into view, so their container is
+   empty until then. Hold the height so the page does not jump when the real
+   content arrives. seaLiving is retired in favour of static markup and never
+   hydrates at all, so it is taken out of the flow. */
+html.agm-travelo #range:empty,
+html.agm-travelo #below:empty {
+  min-height: 70vh;
+}
+
+html.agm-travelo #seaLiving:empty,
+html.agm-travelo #hs_cos_wrapper_seaLiving {
+  display: none;
+}
+
+/* The appbar is fixed, so an anchor jump would otherwise park the section
+   heading underneath it. */
+html.agm-travelo #range,
+html.agm-travelo #agm-about {
+  scroll-margin-top: 96px;
+}
+
+html.agm-travelo #range ._rangeTitle_ws1t0_164 {
+  color: #fff !important;
+  font-family: var(--agm-serif) !important;
+  font-size: clamp(22px, 2.6vw, 34px) !important;
+  letter-spacing: 0.04em !important;
+}
+
+html.agm-travelo #range ._rangeTitle_ws1t0_164 > :nth-child(2) {
+  color: #9fd0f0 !important;
+  letter-spacing: 0.18em !important;
+}
+
+html.agm-travelo #range ._chevron_ws1t0_198 {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.32) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  backdrop-filter: blur(10px);
+}
+
+html.agm-travelo #range ._chevron_ws1t0_198:hover,
+html.agm-travelo #range ._chevron_ws1t0_198:active {
+  background: #0a62a8 !important;
+  border-color: #0a62a8 !important;
+}
+
+html.agm-travelo #range ._chevron_ws1t0_198 svg,
+html.agm-travelo #range ._chevron_ws1t0_198 path {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* The vessel plates are photographed on white, so the carousel half of this
+   section is white as well and the boats sit on it without a card edge showing.
+   The heading above keeps the navy treatment. */
+html.agm-travelo #range ._contentWrapper_ws1t0_224 {
+  background: #fff !important;
+  color: var(--agm-navy) !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  max-height: 100svh !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: stretch !important;
+  padding: 108px 0 36px !important;
+}
+
+html.agm-travelo.agm-has-cookie #range ._contentWrapper_ws1t0_224 {
+  padding-bottom: 128px !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._sliderWrapper_ws1t0_231 {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._image_ws1t0_66 {
+  width: min(1080px, 86vw) !important;
+  max-width: none !important;
+  height: auto !important;
+  aspect-ratio: 2.15 / 1 !important;
+  margin-left: calc((100% - min(1080px, 86vw)) / 2) !important;
+  background-size: contain !important;
+  background-position: center !important;
+  box-shadow: none;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._rangeTitle_ws1t0_164 {
+  color: var(--agm-navy) !important;
+  margin-top: 0 !important;
+  flex: 0 0 auto;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._rangeTitle_ws1t0_164 > :nth-child(2) {
+  color: #0a62a8 !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198 {
+  border-color: rgba(11, 28, 51, 0.16) !important;
+  background: rgba(11, 28, 51, 0.04) !important;
+  color: var(--agm-navy) !important;
+  backdrop-filter: none;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198 svg,
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198 path {
+  fill: var(--agm-navy) !important;
+  stroke: var(--agm-navy) !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198:hover,
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198:active {
+  background: #0a62a8 !important;
+  border-color: #0a62a8 !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198:hover svg,
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198:hover path {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._sliderWrapper_ws1t0_231:after {
+  background: linear-gradient(90deg, transparent, rgba(11, 28, 51, 0.16), transparent);
+  box-shadow: none;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._image_ws1t0_66 {
+  box-shadow: none;
+}
+
+html.agm-travelo #range ._iconsContainer_ws1t0_148,
+html.agm-travelo #range img[src*="Metric_scale"],
+html.agm-travelo #range img[src*="/metrics/"],
+html.agm-travelo #range img[alt*="Metric_scale"],
+html.agm-travelo #range img[alt*="scale_"],
+html.agm-travelo #range ._namesContainer_ws1t0_135,
+html.agm-travelo #range ._slLine_ws1t0_76 {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+.agm-briefs-head {
+  width: min(1180px, 100%);
+  margin: 0 auto 36px;
+}
+
+.agm-briefs-head h2 {
+  margin: 0;
+  font-family: var(--agm-sans);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--agm-navy);
+}
+
+.agm-stories {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.agm-story {
+  position: relative;
+  display: block;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #06101c;
+  box-shadow: 0 18px 44px rgba(11, 28, 51, 0.12);
+  text-decoration: none;
+  color: #fff;
+  isolation: isolate;
+}
+
+.agm-story-wide {
+  grid-column: 1 / -1;
+  min-height: 300px;
+}
+
+.agm-story img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.agm-story:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(6, 16, 28, 0.12) 22%, rgba(6, 16, 28, 0.82) 100%);
+}
+
+.agm-story-n {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 22px;
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #9fd0f0;
+}
+
+.agm-story-head {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 26px 26px;
+}
+
+.agm-story small {
+  display: block;
+  margin: 0 0 8px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9fd0f0;
+}
+
+.agm-story h3 {
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--agm-sans);
+  font-size: clamp(20px, 1.7vw, 26px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.agm-story-wide h3 {
+  max-width: 18ch;
+  font-size: clamp(26px, 3vw, 40px);
+}
+
+.agm-story-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--agm-accent);
+}
+
+.agm-story-go:after {
+  content: "";
+  width: 12px;
+  height: 8px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'><path d='M0 4h11M8 1l3 3-3 3' fill='none' stroke='black' stroke-width='1.6'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'><path d='M0 4h11M8 1l3 3-3 3' fill='none' stroke='black' stroke-width='1.6'/></svg>") center / contain no-repeat;
+  transition: transform 0.25s ease;
+}
+
+.agm-story:hover img {
+  transform: scale(1.07);
+}
+
+.agm-story:hover .agm-story-go:after {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agm-story img,
+  .agm-hero-mark-rule,
+  html.agm-travelo #range ._image_ws1t0_66 {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+}
+
+.agm-faq {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* The reference site separates its enquiry section with a pale full-bleed tint
+   rather than a dark panel, which keeps the page light the whole way down.
+   The section breaks out of the centred measure so the colour runs edge to
+   edge, while the inner padding keeps the grid aligned with the sections
+   above and below it. */
+.agm-travelo-section.agm-faq {
+  width: 100%;
+  max-width: none;
+  padding: 88px var(--agm-gutter);
+  background: var(--agm-tint);
+}
+
+.agm-faq h2 {
+  margin: 0 0 24px;
+  font-family: var(--agm-serif);
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--agm-navy);
+}
+
+.agm-help {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(11, 28, 51, 0.08);
+}
+
+.agm-help img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.agm-help p {
+  margin: 0 0 8px;
+  font-family: var(--agm-sans);
+  font-size: 13px;
+  color: rgba(20, 32, 51, 0.6);
+}
+
+.agm-faq details {
+  border-bottom: 1px solid rgba(20, 32, 51, 0.12);
+  padding: 16px 0;
+}
+
+.agm-faq summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  font-family: var(--agm-serif);
+  font-size: 20px;
+  color: var(--agm-navy);
+}
+
+.agm-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.agm-faq summary:after {
+  content: "+";
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(20, 32, 51, 0.2);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--agm-sans);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.agm-faq details[open] summary:after {
+  content: "×";
+}
+
+.agm-faq details p {
+  margin: 10px 36px 0 0;
+  font-family: var(--agm-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(20, 32, 51, 0.68);
+}
+
+.agm-gallery-head {
+  text-align: center;
+  margin-bottom: 28px;
+  font-family: var(--agm-serif);
+  font-size: 22px;
+  color: var(--agm-navy);
+}
+
+.agm-gallery {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 1fr 0.9fr 1.1fr;
+  gap: 14px;
+  align-items: end;
+}
+
+.agm-gallery-item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 40px;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.agm-gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  transition: transform 0.7s ease;
+}
+
+.agm-gallery-item:nth-child(even) img {
+  height: 300px;
+}
+
+  .agm-gallery-item figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 18px 16px 16px;
+    background: linear-gradient(180deg, transparent, rgba(7, 20, 34, 0.92) 58%);
+    color: #fff;
+  }
+
+.agm-gallery-item figcaption small {
+  display: block;
+  margin: 0 0 6px;
+  font-family: var(--agm-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9fd0f0;
+}
+
+  /* The description is the part that reveals on hover. Collapsing its height
+     rather than sliding the whole caption down means the label always sits
+     flush at the foot of the tile and no half-line of text is ever clipped. */
+  .agm-gallery-item figcaption strong {
+    display: block;
+    font-family: var(--agm-serif);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #fff;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  }
+
+  .agm-gallery-item:hover figcaption strong,
+  .agm-gallery-item:focus-within figcaption strong,
+  .agm-gallery-item.is-on figcaption strong {
+    max-height: 7em;
+    opacity: 1;
+  }
+
+.agm-gallery-item:hover img,
+.agm-gallery-item:focus-within img,
+.agm-gallery-item.is-on img {
+  transform: scale(1.08);
+}
+
+
+.agm-final {
+  width: var(--agm-content);
+  margin: 0 auto 72px;
+  min-height: 380px;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 48px 24px;
+  background: #0b1c33 url("/en/hero-poster.webp") center / cover no-repeat;
+  color: #fff;
+}
+
+.agm-final:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 28, 51, 0.45);
+}
+
+.agm-final > * {
+  position: relative;
+  z-index: 1;
+}
+
+.agm-final h2 {
+  margin: 0 0 22px;
+  font-family: var(--agm-serif);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.agm-mini-footer {
+  padding: 0 24px 40px;
+  text-align: center;
+  font-family: var(--agm-sans);
+  font-size: 13px;
+  color: rgba(20, 32, 51, 0.55);
+}
+
+.agm-mini-footer a {
+  color: var(--agm-navy);
+}
+
+/* The nav is centred on the bar rather than on the space left over by the
+   wordmark, so once the window narrows its left edge slides underneath the
+   logo. Below this width there is no longer room to centre it: drop it back
+   into the normal flex flow and tighten the links so the bar stays one row. */
+@media (max-width: 1280px) {
+  html.agm-travelo #appbar .agm-nav {
+    position: static;
+    transform: none;
+    gap: 2px !important;
+  }
+
+  html.agm-travelo #appbar .agm-nav > .a {
+    padding: 0 12px !important;
+    font-size: 16px !important;
+  }
+
+  html.agm-travelo #appbar .agm-nav-cta {
+    margin-left: 8px;
+    padding: 0 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html.agm-travelo #appbar.appbar {
+    height: 68px !important;
+  }
+
+  html.agm-travelo #appbar .agm-nav {
+    position: static;
+    transform: none;
+  }
+
+  html.agm-travelo #appbar .agm-nav > .a {
+    font-size: 15px !important;
+  }
+
+  .agm-hero-ui {
+    justify-content: flex-end;
+    padding: 96px 22px 120px;
+  }
+
+  .agm-hero-copy h1 {
+    font-size: clamp(34px, 10vw, 48px);
+    max-width: none;
+  }
+
+  .agm-hero-copy p {
+    font-size: 15px;
+  }
+
+  .agm-hero-top {
+    grid-template-columns: 1fr;
+  }
+
+  .agm-float-card {
+    display: none;
+  }
+
+  .agm-hero-mark {
+    padding: 36px 20px 22px;
+  }
+
+  .agm-hero-mark-what {
+    font-size: 18px;
+  }
+
+  .agm-feature-grid,
+  .agm-stories,
+  .agm-faq,
+  .agm-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .agm-story {
+    min-height: 360px;
+  }
+
+  .agm-story-wide {
+    min-height: 280px;
+  }
+
+  .agm-feature:nth-child(1),
+  .agm-feature:nth-child(2),
+  .agm-feature:nth-child(3) {
+    transition-delay: 0ms;
+  }
+
+  .agm-feature img {
+    height: 180px;
+  }
+
+  .agm-gallery-item img,
+  .agm-gallery-item:nth-child(even) img {
+    height: 220px;
+  }
+
+  .agm-travelo-section {
+    width: var(--agm-content);
+    padding: 56px 0;
+  }
+
+  html.agm-travelo #agm-about.agm-about-stage {
+    width: 100%;
+    padding: 0 0 24px;
+  }
+
+  .agm-about-stage-inner {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+    gap: 16px;
+    padding: 76px 16px 16px;
+  }
+
+  .agm-about-copy h2 {
+    font-size: clamp(30px, 8.6vw, 44px);
+  }
+
+  .agm-about-script {
+    font-size: clamp(20px, 5.8vw, 26px);
+    margin-top: 8px;
+  }
+
+  .agm-about-deck {
+    margin-top: 10px;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .agm-about-meta {
+    margin-top: 16px;
+    gap: 10px 14px;
+  }
+
+  .agm-about-figures {
+    margin-top: 14px;
+    padding-top: 12px;
+    gap: 8px 12px;
+  }
+
+  .agm-about-figures dt {
+    font-size: 18px;
+  }
+
+  .agm-about-mosaic {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: min(28vw, 148px);
+    height: auto;
+  }
+
+  .agm-about-mosaic .is-hero {
+    grid-row: auto;
+  }
+
+  .agm-about-lanes {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 4px 16px 20px;
+  }
+
+  .agm-about-lane,
+  .agm-about-lane:nth-child(2),
+  .agm-about-stage.is-ready .agm-about-lane:nth-child(2).is-in {
+    transform: none;
+    min-height: 168px;
+  }
+
+  /* Stacked, the four cards cannot fit one screen, so drop the single-screen
+     budget and let the band run as tall as its content. */
+  #agm-briefs.agm-travelo-section {
+    width: 100%;
+    min-height: 0;
+    padding: 56px 16px;
+  }
+}
+
+/* This island carries the last third of the page: the services panel, the
+ * about band, the enquiry panel and the footer. Its bundle is large, so it does
+ * not mount until around four seconds after navigation, and until it does the
+ * document is roughly 2400px shorter than it should be. Anyone who starts
+ * scrolling in those four seconds runs off the end of the document and into
+ * blank white where the services panel belongs, then has it appear underneath
+ * them.
+ *
+ * So hold the space open until the module is really there. The figure is the
+ * two full-screen bands it renders plus the measured height of the enquiry
+ * panel and footer, and it is deliberately a little short of what the module
+ * finally occupies: overshooting would leave a permanent white gap, which is
+ * the very fault this is meant to prevent. :has() drops the reservation the
+ * moment the panel exists, so it cannot outlive the mount. */
+html.agm-travelo #below:not(:has(._main_mirx2_1)) {
+  display: block;
+  min-height: calc(200svh + 1030px);
+}
+
+/* The services panel is a scroll-choreographed module from the source
+ * template. Once the page has been scrolled through it promotes itself and its
+ * media column to position: fixed, at which point the media breaks out to the
+ * full viewport width and the text column disappears entirely. The scroll loop
+ * that used to drive that choreography was removed, so nothing puts it back.
+ * Pin the whole module into normal flow and let it size to its content, the
+ * same as every other band on the page.
+ *
+ * The animation itself cannot be cancelled: the scroll library is bundled
+ * inside the island, so nothing on window exposes its registry of triggers. It
+ * therefore keeps running and keeps writing values inline as the page scrolls,
+ * and every property it touches has to be neutralised here or it still moves
+ * the layout. Width and height matter as much as position does: the media
+ * column was being given height: 95% of the viewport mid-scroll, which left a
+ * 50px white strip under the photograph, and the text column was being pushed
+ * to left: -926px on its way to -50vw. */
+html.agm-travelo #below ._main_mirx2_1,
+html.agm-travelo #below ._first_mirx2_8,
+html.agm-travelo #below ._second_mirx2_56 {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Width has to be answered per element rather than in the block above. The
+   library also turns the spacer into a flex container, which makes the module a
+   flex item, so an auto width sizes it to its content: 1672px inside a 1920px
+   spacer, with the band stopping short of the right edge of the window. The two
+   columns do want auto, because their own flex basis is what should size
+   them. */
+html.agm-travelo #below ._main_mirx2_1 {
+  width: 100% !important;
+}
+
+html.agm-travelo #below ._first_mirx2_8,
+html.agm-travelo #below ._second_mirx2_56 {
+  width: auto !important;
+}
+
+/* Pinning the module back into flow is only half of it. The scroll library
+   wraps a pinned element in a .pin-spacer and reserves the length of the whole
+   pinned sequence on it, so the spacer stood 2806px tall around a block that is
+   really 838px: the module rendered correctly and was then followed by roughly
+   1968px of blank white that read as an empty section. The element no longer
+   pins, so the spacer must not hold that space open either. The sizes are set
+   inline by the library, hence !important. */
+html.agm-travelo #below .pin-spacer {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* One exact screen. Height is locked, not min-height: otherwise the band
+   grows past the window and the photograph sits as a 16/9 tile in a pool of
+   leftover white. The inset (not the centred-measure gutter) is what lets the
+   picture run almost to the window edge. */
+html.agm-travelo #below ._main_mirx2_1 {
+  box-sizing: border-box;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  max-height: 100svh !important;
+  margin: 0 !important;
+  padding: 86px var(--agm-inset) 28px;
+  gap: clamp(28px, 3vw, 48px);
+  background: #fff;
+  align-items: stretch !important;
+  overflow: hidden;
+}
+
+/* Copy keeps a reading measure; the photograph takes everything else. */
+html.agm-travelo #below ._first_mirx2_8 {
+  display: flex;
+  flex: 0 1 400px;
+  max-width: 34%;
+  min-width: 0;
+  min-height: 0;
+  background: #fff;
+}
+
+/* A zero basis rather than auto: width is forced to auto above to fend off the
+   animation, and an auto basis would then size this column from the
+   photograph's intrinsic width instead of the space the text column leaves. */
+html.agm-travelo #below ._second_mirx2_56 {
+  flex: 1 1 0%;
+  min-width: 0;
+  min-height: 0;
+  align-self: stretch;
+}
+
+html.agm-travelo #below ._second_mirx2_56 > ._container_mirx2_26,
+html.agm-travelo #below ._imgWrapper_mirx2_65 {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  aspect-ratio: auto;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+html.agm-travelo #below ._imgWrapper_mirx2_65 > img,
+html.agm-travelo #below ._image_mirx2_195 {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* The kicker is nested inside the column's inner wrapper rather than being a
+   child of the column, so it has to be reached as a descendant. */
+html.agm-travelo #below ._first_mirx2_8 h2 {
+  font-family: var(--agm-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.24em !important;
+  color: #0a62a8 !important;
+}
+
+/* The panel runs edge to edge, so its text column is indented by the page
+   gutter rather than a flat 40px; otherwise the heading starts well to the left
+   of every other section and the band reads as bolted on. The right-hand
+   margin holds the copy off the photograph, which the lines used to run
+   straight into. The top margin clears the fixed appbar, which ends 78px down
+   the viewport (a 14px offset above a 64px bar): the column starts at the very
+   top of the band, so the kicker and the heading's first line used to sit
+   underneath the bar whenever the band came to rest at the top of the screen. */
+html.agm-travelo #below ._first_mirx2_8 > ._container_mirx2_26 {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 0;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+html.agm-travelo #below ._first_mirx2_8 > ._container_mirx2_26 > :first-child {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  justify-content: space-between !important;
+  gap: clamp(14px, 1.8svh, 22px);
+}
+
+html.agm-travelo #below ._first_mirx2_8 > ._container_mirx2_26 img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10;
+  max-height: min(28svh, 240px);
+  object-fit: cover;
+}
+
+/* At 1200px the module's own stylesheet turns the row into a column, which
+   flips what the rules above mean: a flex basis becomes a height, and spreading
+   the copy to fill the column no longer has a screen to fill. Everything above
+   is unwound here so the stacked layout simply runs at its natural height, with
+   the photograph given a band of its own underneath the copy. */
+@media (max-width: 1200px) {
+  html.agm-travelo #below ._main_mirx2_1 {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding-top: 80px;
+    gap: 28px;
+    overflow: visible;
+  }
+
+  html.agm-travelo #below ._first_mirx2_8 {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
+  html.agm-travelo #below ._first_mirx2_8 > ._container_mirx2_26 {
+    flex: 0 1 auto;
+    justify-content: flex-start !important;
+  }
+
+  html.agm-travelo #below ._first_mirx2_8 > ._container_mirx2_26 > :first-child {
+    flex: 0 1 auto;
+    justify-content: flex-start !important;
+  }
+
+  html.agm-travelo #below ._second_mirx2_56 {
+    flex: 0 0 auto;
+    min-height: 0;
+  }
+
+  html.agm-travelo #below ._second_mirx2_56 > ._container_mirx2_26,
+  html.agm-travelo #below ._imgWrapper_mirx2_65 {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+html.agm-travelo #below ._description_mirx2_36 {
+  font-family: var(--agm-serif) !important;
+  font-size: clamp(26px, 2.5vw, 38px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+  color: var(--agm-navy) !important;
+  margin: 0 !important;
+  max-width: 18em;
+}
+
+html.agm-travelo #below ._thumbnailContainer_mirx2_182,
+html.agm-travelo #below ._thumbnailContainerMobile_mirx2_188 {
+  display: none !important;
+}
+
+html.agm-travelo #below ._discover_mirx2_161 {
+  border-radius: 15px !important;
+  padding: 10px 18px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+}
+
+.agm-service-plate {
+  display: grid;
+  gap: clamp(12px, 1.6svh, 18px);
+  min-height: 0;
+}
+
+.agm-service-plate img {
+  width: 100%;
+  height: min(26svh, 220px);
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+.agm-service-plate figcaption {
+  margin-top: 8px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 51, 0.5);
+}
+
+.agm-service-lead {
+  margin: 0;
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(20, 32, 51, 0.78);
+}
+
+.agm-service-facts {
+  list-style: none;
+  margin: 0;
+  padding: 16px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+  border-top: 1px solid rgba(11, 28, 51, 0.12);
+}
+
+.agm-service-facts li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(20, 32, 51, 0.55);
+}
+
+.agm-service-facts b {
+  font-family: var(--agm-serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--agm-navy);
+}
+
+html.agm-travelo #below ._texts_mirx2_93 {
+  max-width: min(520px, 86%);
+}
+
+html.agm-travelo #below ._texts_mirx2_93 > :first-child {
+  font-size: 13px !important;
+  letter-spacing: 0.18em !important;
+}
+
+html.agm-travelo #below ._texts_mirx2_93 > :nth-child(2) {
+  max-width: 36em !important;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 900px) {
+  html.agm-travelo #below ._first_mirx2_8 {
+    flex-basis: auto;
+  }
+
+  html.agm-travelo #below ._first_mirx2_8 > ._container_mirx2_26 {
+    margin: 0 !important;
+  }
+
+  .agm-service-plate img {
+    height: 180px;
+  }
+
+  html.agm-travelo #below ._second_mirx2_56 {
+    min-height: 0;
+  }
+}
+
+html.agm-travelo #below .agm-legal-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  padding: 0 var(--agm-inset) 36px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+html.agm-travelo #below .agm-legal-foot a {
+  color: var(--agm-navy);
+  text-decoration: none;
+}
+
+html.agm-travelo #below .agm-legal-foot a:hover {
+  color: var(--agm-blue);
+}
+
+html.agm-travelo #below ._footerSection_ypmp5_1 {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 0%, rgba(10, 98, 168, 0.1), transparent 62%),
+    #fff !important;
+  color: #0b1c33;
+}
+
+html.agm-travelo #below ._footerContent_ypmp5_5 {
+  width: var(--agm-content);
+  margin: 0 auto !important;
+  min-height: 240px;
+  align-items: stretch;
+  counter-reset: agm-foot;
+}
+
+/* The columns carry 40px of side padding for their dividers, which would push
+   the first column's text in past the page gutter. */
+html.agm-travelo #below ._footerItem_ypmp5_14:first-child {
+  padding-left: 0 !important;
+}
+
+html.agm-travelo #below ._footerItem_ypmp5_14:last-child {
+  padding-right: 0 !important;
+}
+
+html.agm-travelo #below ._footerItem_ypmp5_14 {
+  padding: 52px 40px !important;
+  gap: 14px !important;
+  justify-content: center !important;
+  box-sizing: border-box;
+}
+
+html.agm-travelo #below ._footerTitle_ypmp5_67 {
+  font-family: var(--agm-serif) !important;
+  font-size: clamp(22px, 2vw, 30px) !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.04em !important;
+  color: #0b1c33 !important;
+  max-width: 12em;
+}
+
+html.agm-travelo #below ._footerTitle_ypmp5_67:before {
+  counter-increment: agm-foot;
+  content: counter(agm-foot, decimal-leading-zero);
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #0a62a8;
+}
+
+html.agm-travelo #below ._footerDescription_ypmp5_68 {
+  font-family: var(--agm-sans) !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: rgba(11, 28, 51, 0.68) !important;
+  max-width: 34ch;
+  text-wrap: pretty;
+}
+
+html.agm-travelo #below ._footerDivider_ypmp5_91 {
+  width: 1px !important;
+  height: auto !important;
+  align-self: stretch !important;
+  margin: 40px 0 !important;
+  background: rgba(10, 98, 168, 0.22) !important;
+}
+
+html.agm-travelo #below ._footerItem_ypmp5_14:hover ._footerTitle_ypmp5_67,
+html.agm-travelo #below ._footerItem_ypmp5_14:hover ._footerDescription_ypmp5_68 {
+  color: #fff !important;
+}
+
+html.agm-travelo #below ._footerItem_ypmp5_14:hover ._footerTitle_ypmp5_67:before {
+  color: #9fd0f0;
+}
+
+html.agm-travelo #below ._container_k2jxx_1 {
+  margin-top: 0 !important;
+  background: #fff !important;
+}
+
+html.agm-travelo #below ._topContainer_k2jxx_18 {
+  align-items: flex-end !important;
+  gap: 48px;
+  padding: 56px 80px 40px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 0%, rgba(10, 98, 168, 0.08), transparent 58%),
+    #fff;
+}
+
+html.agm-travelo #below ._headingContainer_k2jxx_24 {
+  padding: 0 !important;
+  max-height: none !important;
+  flex: 1 1 auto;
+}
+
+html.agm-travelo #below ._heading_k2jxx_10 {
+  font-family: var(--agm-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.24em !important;
+  text-transform: uppercase !important;
+  color: #0a62a8 !important;
+  max-width: none !important;
+  width: auto !important;
+}
+
+html.agm-travelo #below ._heading_k2jxx_10:after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin-top: 14px;
+  background: #0a62a8;
+}
+
+html.agm-travelo #below ._title_k2jxx_32 {
+  font-family: var(--agm-serif) !important;
+  font-size: clamp(28px, 3.2vw, 42px) !important;
+  font-weight: 300 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+  color: var(--agm-navy) !important;
+  max-width: 12em !important;
+  margin: 18px 0 0 !important;
+  text-wrap: pretty;
+}
+
+html.agm-travelo #below ._topControls_k2jxx_258 {
+  margin-right: 0 !important;
+  padding: 0 !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  flex: 0 1 340px;
+}
+
+html.agm-travelo #below ._searchWrapper_k2jxx_275,
+html.agm-travelo #below ._areaSelector_k2jxx_291 {
+  display: none !important;
+}
+
+.agm-contact-aside {
+  display: grid;
+  gap: 20px;
+  min-width: 260px;
+}
+
+.agm-contact-aside dl {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.agm-contact-aside dl > div {
+  display: grid;
+  grid-template-columns: 4.2em 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(10, 98, 168, 0.18);
+}
+
+.agm-contact-aside dt {
+  margin: 0;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0a62a8;
+}
+
+.agm-contact-aside dd {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--agm-navy);
+}
+
+.agm-contact-aside a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.agm-contact-aside a:hover {
+  color: #0a62a8;
+}
+
+.agm-contact-cta {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--agm-accent-fill);
+  color: var(--agm-accent-ink);
+  border: 1px solid var(--agm-accent-line);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.agm-contact-cta:hover {
+  background: var(--agm-accent-fill-hover);
+  color: var(--agm-accent-ink);
+}
+
+html.agm-travelo #below ._enquire_k2jxx_41 {
+  border-radius: 999px !important;
+  border: 1px solid var(--agm-accent-line) !important;
+  background: var(--agm-accent-fill) !important;
+  color: var(--agm-accent-ink) !important;
+  padding: 10px 18px !important;
+  font-family: var(--agm-sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase;
+}
+
+html.agm-travelo #below ._enquire_k2jxx_41:hover {
+  background: var(--agm-accent-fill-hover) !important;
+  color: var(--agm-accent-ink) !important;
+}
+
+@media (min-width: 901px) {
+  html.agm-travelo #below ._topContainer_k2jxx_18 {
+    flex-direction: row !important;
+    align-items: flex-end !important;
+  }
+
+  html.agm-travelo #below ._topControls_k2jxx_258 {
+    width: auto !important;
+    align-self: flex-end !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html.agm-travelo #below ._topContainer_k2jxx_18 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 28px;
+    padding: 36px 22px 28px;
+  }
+
+  html.agm-travelo #below ._title_k2jxx_32 {
+    max-width: 16em !important;
+  }
+
+  html.agm-travelo #below ._topControls_k2jxx_258 {
+    flex: 1 1 auto;
+    width: 100% !important;
+  }
+}
+
+html.agm-travelo #below ._container_k2jxx_1,
+html.agm-travelo #below ._footerSection_ypmp5_1 {
+  display: none !important;
+}
+
+.agm-about-feats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 32px;
+  margin: 32px 0 10px;
+}
+
+.agm-about-feats div {
+  display: grid;
+  gap: 6px;
+  padding-left: 52px;
+  position: relative;
+}
+
+.agm-about-feats div:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--agm-accent);
+  box-shadow: 0 0 0 7px rgba(150, 248, 120, 0.16);
+}
+
+.agm-about-feats div:after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 13px;
+  width: 12px;
+  height: 7px;
+  border: 2px solid var(--agm-accent-ink);
+  border-top: 0;
+  border-right: 0;
+  transform: rotate(-48deg);
+}
+
+.agm-about-feats strong {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.agm-about-feats span {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.agm-closer {
+  background: #eef5fb;
+  padding: 88px var(--agm-inset);
+}
+
+.agm-closer-plan {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 48px 64px;
+  align-items: center;
+}
+
+.agm-closer-copy .agm-kicker {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--agm-blue);
+}
+
+.agm-closer-copy h2 {
+  margin: 0 0 14px;
+  max-width: 14ch;
+  font-family: var(--agm-sans);
+  font-size: clamp(36px, 4.4vw, 58px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--agm-navy);
+}
+
+.agm-closer-copy p {
+  margin: 0 0 24px;
+  max-width: 36em;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--agm-ink-muted);
+}
+
+.agm-closer-form {
+  display: grid;
+  gap: 12px;
+  padding: 28px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(11, 28, 51, 0.08);
+}
+
+.agm-closer-form-title {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--agm-navy);
+}
+
+.agm-closer-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(6, 16, 28, 0.55);
+}
+
+.agm-closer-form input,
+.agm-closer-form textarea {
+  width: 100%;
+  border: 1px solid rgba(11, 28, 51, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: 15px/1.4 var(--agm-sans);
+  color: #06101c;
+  background: #f7fafc;
+  box-sizing: border-box;
+}
+
+.agm-closer-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.agm-form-honey {
+  position: absolute;
+  left: -9999px;
+}
+
+.agm-form-status {
+  margin: 0;
+  font-size: 14px;
+}
+
+.agm-form-status.is-ok {
+  color: #1b6b3a;
+}
+
+.agm-form-status.is-err {
+  color: #9b1c1c;
+}
+
+.agm-endfoot {
+  position: relative;
+  isolation: isolate;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  overflow: hidden;
+  background: #06101c;
+}
+
+.agm-endfoot-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.agm-endfoot:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(6, 16, 28, 0.28) 0%, rgba(6, 16, 28, 0.72) 58%, rgba(6, 16, 28, 0.88) 100%);
+}
+
+.agm-endfoot-inner {
+  width: min(1180px, calc(100% - 2 * var(--agm-inset)));
+  margin: 0 auto;
+  padding: 80px 0 36px;
+}
+
+.agm-endfoot-inner h2 {
+  margin: 0 0 48px;
+  max-width: 14ch;
+  font-family: var(--agm-sans);
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.agm-endfoot-cols {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.agm-endfoot-cols div {
+  display: grid;
+  gap: 8px;
+}
+
+.agm-endfoot-cols div:nth-child(2) {
+  text-align: center;
+  letter-spacing: 0.22em;
+}
+
+.agm-endfoot-cols div:nth-child(3) {
+  justify-items: end;
+}
+
+.agm-endfoot-cols a,
+.agm-endfoot-cols span {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.agm-endfoot-cols a:hover {
+  color: #fff;
+}
+
+.agm-endfoot-inner > p {
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 900px) {
+  .agm-about-feats,
+  .agm-closer-plan,
+  .agm-endfoot-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .agm-about-feats {
+    gap: 18px;
+  }
+
+  .agm-closer {
+    padding: 48px 16px;
+  }
+
+  .agm-endfoot-cols div:nth-child(2),
+  .agm-endfoot-cols div:nth-child(3) {
+    text-align: left;
+    justify-items: start;
+  }
+}

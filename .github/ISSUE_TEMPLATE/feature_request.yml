@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest an improvement or new content
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What user or business need does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Homepage only
+        - Single page
+        - Site-wide
+        - Documentation / process
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context

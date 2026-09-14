@@ -1,0 +1,44 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  overflow: auto !important;
+}
+
+._video_1ru7k_1 {
+  object-fit: cover;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+._main_ty1x2_1 video,
+._container_1im41_1 video {
+  pointer-events: none;
+}
+
+._overlay_ty1x2_22,
+._section_1im41_10 {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+._imgBox_1im41_154 {
+  transition: opacity 0.5s ease-out, clip-path 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  ._video_1ru7k_1,
+  video,
+  ._imgBox_1im41_154 {
+    transition: none;
+  }
+}
