@@ -222,32 +222,10 @@
 
   function enhanceServices() {
     var root = document.querySelector("#below ._main_mirx2_1");
+    if (root) root.setAttribute("hidden", "");
+    if (document.getElementById("agm-ourservice")) return;
     if (!root) return;
     polishServiceLinks(root);
-    var desc = root.querySelector("._description_mirx2_36");
-    var box = root.querySelector("._first_mirx2_8 > ._container_mirx2_26");
-    if (!desc || !box) return;
-    if (!box.querySelector(".agm-service-plate")) {
-      desc.insertAdjacentHTML(
-        "afterend",
-        '<div class="agm-service-plate">' +
-          "<figure>" +
-          '<img src="/en/images/custom-pages/shipyard-hero.jpg" alt="FRP construction at the Marunda yard">' +
-          "<figcaption>Marunda yard · North Jakarta</figcaption>" +
-          "</figure>" +
-          '<p class="agm-service-lead">PT. Agara Global Maritim is a ship’s company and FRP yard. We place working boats, with certificated crews, at the disposal of principals who must answer for safety and timetable.</p>' +
-          '<ul class="agm-service-facts">' +
-          "<li><b>Marunda</b>Own yard, North Jakarta</li>" +
-          "<li><b>FRP</b>Built and finished in-house</li>" +
-          "<li><b>12</b>Passengers per crewboat</li>" +
-          "<li><b>24/7</b>Operations desk</li>" +
-          "</ul></div>"
-      );
-    }
-    var learn = box.querySelector("._discover_mirx2_161");
-    if (learn && /learn more/i.test(learn.textContent || "")) {
-      learn.textContent = "View services";
-    }
   }
 
   function enhanceFooter() {
@@ -507,22 +485,9 @@
   }
 
   function pinNav() {
-    var bars = document.querySelectorAll(".appbar-wrapper");
-    if (!bars.length) return;
-    function update() {
-      var hero = document.querySelector(".agm-hero, #hero, #hs_cos_wrapper_hero");
-      var overHero = false;
-      if (hero) {
-        overHero = hero.getBoundingClientRect().bottom > 90;
-      }
-      var scrolled = window.scrollY > 16 && !overHero;
-      bars.forEach(function (bar) {
-        bar.classList.toggle("is-scrolled", scrolled);
-      });
-    }
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update, { passive: true });
+    document.querySelectorAll(".appbar-wrapper").forEach(function (bar) {
+      bar.classList.add("is-scrolled");
+    });
   }
 
   function run() {

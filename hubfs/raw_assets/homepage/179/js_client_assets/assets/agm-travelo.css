@@ -16,140 +16,100 @@ html.agm-travelo body {
 
 html.agm-travelo #appbar-corporate .appbar-wrapper,
 html.agm-travelo .appbar-wrapper {
-  padding: calc(18px + var(--agm-safe-top, 0px)) 40px 0 !important;
+  padding: calc(14px + var(--agm-safe-top, 0px)) var(--agm-gutter-vw, var(--agm-inset, 64px)) 0 !important;
 }
 
-html.agm-travelo #appbar.appbar {
-  max-width: 1440px !important;
-  height: 80px !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  color: #fff !important;
-}
-
+html.agm-travelo #appbar.appbar,
 html.agm-travelo .appbar-wrapper.is-scrolled #appbar.appbar {
-  background: rgba(255, 255, 255, 0.9) !important;
+  max-width: var(--agm-measure, 1180px) !important;
+  height: 68px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(22px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
-  box-shadow: 0 10px 36px rgba(6, 16, 28, 0.14) !important;
-  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 8px 28px rgba(11, 28, 51, 0.08) !important;
+  border: 1px solid rgba(11, 28, 51, 0.08) !important;
   border-radius: 999px !important;
-  color: #06101c !important;
-}
-
-html.agm-travelo .appbar-wrapper.is-scrolled .agm-brand-logo,
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .section:first-child a img,
-html.agm-travelo .appbar-wrapper.is-scrolled #burger {
-  filter: none !important;
-}
-
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-brand-name,
-html.agm-travelo .appbar-wrapper.is-scrolled .agm-brand-name {
-  color: #06101c !important;
-}
-
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-brand-sub,
-html.agm-travelo .appbar-wrapper.is-scrolled .agm-brand-sub {
-  color: rgba(6, 16, 28, 0.55) !important;
-}
-
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-nav > .a,
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .section:nth-child(2) .a {
-  color: #132033 !important;
-}
-
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
-  background: rgba(6, 16, 28, 0.06);
-}
-
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-nav-cta,
-html.agm-travelo .appbar-wrapper.is-scrolled #appbar .section:nth-child(2) .a[href*="enquire"] {
-  color: var(--agm-accent-ink) !important;
+  color: #0b1c33 !important;
 }
 
 html.agm-travelo #appbar.appbar > div {
-  padding: 0 20px 0 8px !important;
-  gap: 28px !important;
+  padding: 0 10px 0 22px !important;
+  gap: 20px !important;
 }
 
-/* The hero is a dark photograph and the scrolled state is a navy pill, so the
-   bar is white throughout and needs no colour flip. */
 html.agm-travelo .agm-brand-logo,
 html.agm-travelo #appbar .section:first-child a img {
-  height: 50px !important;
-  max-width: 64px !important;
-  filter: brightness(0) invert(1);
+  height: 34px !important;
+  max-width: 40px !important;
+  filter: none !important;
 }
 
 html.agm-travelo #appbar .agm-brand-name,
 html.agm-travelo .agm-brand-name {
-  font-size: 22px !important;
-  letter-spacing: 0.2em !important;
-  color: #fff !important;
+  font-size: 14px !important;
+  letter-spacing: 0.18em !important;
+  color: #0b1c33 !important;
 }
 
 html.agm-travelo #appbar .agm-brand-sub,
 html.agm-travelo .agm-brand-sub {
-  font-size: 13px !important;
-  letter-spacing: 0.26em !important;
-  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+  color: rgba(11, 28, 51, 0.48) !important;
 }
 
 html.agm-travelo #appbar .agm-nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  justify-content: center !important;
-  gap: 10px !important;
+  position: static;
+  left: auto;
+  transform: none;
+  justify-content: flex-end !important;
+  gap: 2px !important;
 }
 
 html.agm-travelo #appbar .agm-nav > .a,
 html.agm-travelo #appbar .section:nth-child(2) .a {
-  min-height: 44px !important;
-  padding: 0 18px !important;
-  font-size: 18px !important;
-  font-weight: 600 !important;
+  min-height: 36px !important;
+  padding: 0 13px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
   letter-spacing: 0.02em !important;
-  color: #fff !important;
+  color: rgba(11, 28, 51, 0.72) !important;
 }
 
 html.agm-travelo #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(11, 28, 51, 0.06);
+  color: #0b1c33 !important;
 }
 
-/* The bar's call to action uses the site accent, same as every other primary
-   action on the page. */
 html.agm-travelo #appbar .agm-nav-cta,
 html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"] {
-  min-height: 48px !important;
-  padding: 0 28px !important;
-  margin-left: 16px;
-  background: var(--agm-accent-fill) !important;
-  color: var(--agm-accent-ink) !important;
-  font-size: 15px !important;
+  min-height: 40px !important;
+  padding: 0 18px !important;
+  margin-left: 10px;
+  background: #0b1c33 !important;
+  color: #fff !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  border: 1px solid var(--agm-accent-line) !important;
+  border: 1px solid #0b1c33 !important;
   border-radius: 999px !important;
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 html.agm-travelo #appbar .agm-nav-cta:hover,
 html.agm-travelo #appbar .section:nth-child(2) .a[href*="enquire"]:hover {
-  background: var(--agm-accent-fill-hover) !important;
-  color: var(--agm-accent-ink) !important;
+  background: #0a62a8 !important;
+  border-color: #0a62a8 !important;
+  color: #fff !important;
 }
 
 html.agm-travelo #burger {
   width: 48px;
   height: 48px;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 html.agm-travelo .agm-langs {
@@ -950,10 +910,7 @@ html.agm-travelo .agm-fleet-intro {
 html.agm-travelo #hs_cos_wrapper_range,
 html.agm-travelo #range,
 html.agm-travelo #range ._rangeSection_ws1t0_1 {
-  background:
-    radial-gradient(ellipse 80% 42% at 50% 88%, rgba(23, 128, 196, 0.32), transparent 58%),
-    radial-gradient(ellipse 50% 30% at 8% 12%, rgba(10, 98, 168, 0.22), transparent 55%),
-    linear-gradient(180deg, #071422 0%, #0b1c33 48%, #061018 100%) !important;
+  background: #fff !important;
   color: #fff !important;
 }
 
@@ -964,73 +921,102 @@ html.agm-travelo #range ._rangeSection_ws1t0_1 {
   min-height: 0 !important;
 }
 
-html.agm-travelo #range ._rangeSection_ws1t0_1:before {
+html.agm-travelo #range ._rangeSection_ws1t0_1:before,
+html.agm-travelo #range ._rangeSection_ws1t0_1:after {
+  content: none !important;
+}
+
+html.agm-travelo #range ._rangeHeader_ws1t0_9 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  z-index: 1;
+  padding: 100px var(--agm-inset) 52px !important;
+  background:
+    radial-gradient(ellipse 70% 80% at 100% 0%, rgba(10, 98, 168, 0.38), transparent 58%),
+    radial-gradient(ellipse 45% 60% at 0% 100%, rgba(184, 149, 74, 0.16), transparent 55%),
+    linear-gradient(165deg, #0e2438 0%, #0b1c33 46%, #081422 100%) !important;
+}
+
+html.agm-travelo #range ._rangeHeader_ws1t0_9:before {
   content: "";
   position: absolute;
   inset: 0;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
   background-image:
-    radial-gradient(circle at 88% 22%, transparent 78px, rgba(159, 208, 240, 0.2) 79px, transparent 80px),
-    radial-gradient(circle at 88% 22%, transparent 132px, rgba(159, 208, 240, 0.14) 133px, transparent 134px),
-    radial-gradient(circle at 88% 22%, transparent 186px, rgba(159, 208, 240, 0.1) 187px, transparent 188px),
-    linear-gradient(90deg, rgba(159, 208, 240, 0.07) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(159, 208, 240, 0.07) 1px, transparent 1px);
-  background-size: auto, auto, auto, 56px 56px, 56px 56px;
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 42%, #000 78%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 42%, #000 78%);
+    repeating-linear-gradient(
+      118deg,
+      transparent 0 46px,
+      rgba(234, 215, 164, 0.09) 46px 47px
+    ),
+    repeating-linear-gradient(
+      28deg,
+      transparent 0 64px,
+      rgba(159, 208, 240, 0.07) 64px 65px
+    );
 }
 
-html.agm-travelo #range ._rangeSection_ws1t0_1:after {
+html.agm-travelo #range ._rangeHeader_ws1t0_9:after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: min(42%, 280px);
-  pointer-events: none;
+  right: -6%;
+  top: 50%;
   z-index: 0;
-  opacity: 0.55;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath d='M0 70 Q180 30 360 70 T720 70 T1080 70 T1440 70' fill='none' stroke='%239fd0f0' stroke-opacity='0.35' stroke-width='1.4'/%3E%3Cpath d='M0 108 Q180 68 360 108 T720 108 T1080 108 T1440 108' fill='none' stroke='%239fd0f0' stroke-opacity='0.22' stroke-width='1.2'/%3E%3Cpath d='M0 146 Q180 106 360 146 T720 146 T1080 146 T1440 146' fill='none' stroke='%239fd0f0' stroke-opacity='0.14' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
+  width: min(42vw, 420px);
+  height: min(42vw, 420px);
+  pointer-events: none;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='none' stroke='%23ead7a4' stroke-opacity='0.22' stroke-width='0.8'/%3E%3Ccircle cx='100' cy='100' r='68' fill='none' stroke='%239fd0f0' stroke-opacity='0.16' stroke-width='0.7'/%3E%3Cpath d='M100 8 L100 192 M8 100 L192 100 M32 32 L168 168 M168 32 L32 168' stroke='%23ead7a4' stroke-opacity='0.2' stroke-width='0.7'/%3E%3Cpath d='M100 100 L156 44' stroke='%2396f878' stroke-opacity='0.55' stroke-width='1.2'/%3E%3Ccircle cx='100' cy='100' r='3' fill='%2396f878' fill-opacity='0.7'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.9;
 }
 
-html.agm-travelo #range ._rangeHeader_ws1t0_9,
+html.agm-travelo #range ._rangeHeader_ws1t0_9 > *,
 html.agm-travelo #range ._contentWrapper_ws1t0_224 {
   position: relative;
   z-index: 1;
 }
 
 html.agm-travelo #range ._name_ws1t0_16 {
-  color: #9fd0f0 !important;
+  color: #ead7a4 !important;
+  font-family: var(--agm-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
   letter-spacing: 0.22em !important;
   text-transform: uppercase !important;
 }
 
 html.agm-travelo #range ._description_ws1t0_22 {
-  font-family: var(--agm-serif) !important;
-  font-size: clamp(28px, 3.6vw, 46px) !important;
-  line-height: 1.05 !important;
-  font-weight: 300 !important;
+  font-family: var(--agm-sans) !important;
+  font-size: clamp(26px, 3.2vw, 42px) !important;
+  line-height: 1.12 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.035em !important;
   color: #fff !important;
-  max-width: 16em !important;
+  max-width: 18em !important;
 }
 
 html.agm-travelo #range ._button_ws1t0_33 {
-  border-radius: 15px !important;
-  border: 1px solid rgba(255, 255, 255, 0.35) !important;
-  background: rgba(10, 98, 168, 0.4) !important;
-  color: #fff !important;
-  padding: 10px 20px !important;
-  letter-spacing: 0.08em !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--agm-accent-line, rgba(150, 248, 120, 0.45)) !important;
+  background: var(--agm-accent-fill, rgba(150, 248, 120, 0.92)) !important;
+  color: var(--agm-accent-ink, #14251c) !important;
+  padding: 11px 22px !important;
+  font-family: var(--agm-sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   backdrop-filter: blur(12px);
 }
 
 html.agm-travelo #range ._button_ws1t0_33:hover {
-  background: #0a62a8 !important;
-  border-color: #0a62a8 !important;
+  background: var(--agm-accent-fill-hover, #96f878) !important;
+  border-color: var(--agm-accent-line, #96f878) !important;
+  color: var(--agm-accent-ink, #14251c) !important;
 }
 
 html.agm-travelo #range ._sliderWrapper_ws1t0_231 {
@@ -1077,9 +1063,12 @@ html.agm-travelo #hs_cos_wrapper_below {
    empty until then. Hold the height so the page does not jump when the real
    content arrives. seaLiving is retired in favour of static markup and never
    hydrates at all, so it is taken out of the flow. */
-html.agm-travelo #range:empty,
-html.agm-travelo #below:empty {
+html.agm-travelo #range:empty {
   min-height: 70vh;
+}
+
+html.agm-travelo #below:empty {
+  min-height: 0;
 }
 
 html.agm-travelo #seaLiving:empty,
@@ -1091,6 +1080,7 @@ html.agm-travelo #hs_cos_wrapper_seaLiving {
    heading underneath it. */
 html.agm-travelo #range,
 html.agm-travelo #agm-about,
+html.agm-travelo #agm-about-host,
 html.agm-travelo #below,
 html.agm-travelo #below ._main_mirx2_1 {
   scroll-margin-top: 108px;
@@ -1629,13 +1619,13 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   }
 
   html.agm-travelo #appbar .agm-nav > .a {
-    padding: 0 12px !important;
-    font-size: 16px !important;
+    padding: 0 10px !important;
+    font-size: 13px !important;
   }
 
   html.agm-travelo #appbar .agm-nav-cta {
     margin-left: 8px;
-    padding: 0 20px !important;
+    padding: 0 14px !important;
   }
 }
 
@@ -1650,7 +1640,7 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   }
 
   html.agm-travelo #appbar .agm-nav > .a {
-    font-size: 15px !important;
+    font-size: 13px !important;
   }
 
   .agm-hero-ui {
@@ -1881,22 +1871,167 @@ html.agm-travelo #hs_cos_wrapper_below.pin-spacer {
   transform: none !important;
 }
 
-/* One exact screen. Height is locked, not min-height: otherwise the band
-   grows past the window and the photograph sits as a 16/9 tile in a pool of
-   leftover white. The inset (not the centred-measure gutter) is what lets the
-   picture run almost to the window edge. */
-html.agm-travelo #below ._main_mirx2_1 {
-  box-sizing: border-box;
-  height: 100svh !important;
-  min-height: 100svh !important;
-  max-height: 100svh !important;
+/* HubSpot About Us is replaced by the static #agm-about-host band. */
+html.agm-travelo #below ._container_1tsw7_1 {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
   margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* The HubSpot interiors panel pins itself and writes the headline under the
+   bar. It is replaced by the static .agm-ourservice band. */
+html.agm-travelo #below ._main_mirx2_1 {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.agm-ourservice {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100svh;
+  max-height: 100svh;
+  margin: 0;
   padding: calc(20px + 80px + var(--agm-safe-top, 0px)) var(--agm-inset) 28px;
-  gap: clamp(28px, 3vw, 48px);
   background: #fff;
-  align-items: stretch !important;
   overflow: hidden;
-  z-index: 0;
+}
+
+html.agm-has-cookie .agm-ourservice {
+  padding-bottom: 128px;
+}
+
+.agm-ourservice-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 0;
+}
+
+.agm-ourservice-kicker {
+  margin: 0 0 10px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0a62a8;
+}
+
+.agm-ourservice-copy h2 {
+  margin: 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--agm-navy);
+}
+
+.agm-ourservice-shot {
+  margin: 16px 0 0;
+  min-height: 0;
+}
+
+.agm-ourservice-shot img {
+  display: block;
+  width: min(100%, 280px);
+  height: min(22svh, 180px);
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.agm-ourservice-shot figcaption {
+  margin-top: 8px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 51, 0.5);
+}
+
+.agm-ourservice-lead {
+  margin: 14px 0 0;
+  font-family: var(--agm-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(20, 32, 51, 0.78);
+}
+
+.agm-ourservice-facts {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 14px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 18px;
+  border-top: 1px solid rgba(11, 28, 51, 0.12);
+}
+
+.agm-ourservice-facts li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  color: rgba(20, 32, 51, 0.55);
+}
+
+.agm-ourservice-facts b {
+  font-family: var(--agm-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--agm-navy);
+}
+
+.agm-ourservice-hero {
+  position: relative;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #e8eef3;
+}
+
+.agm-ourservice-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .agm-ourservice {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+    padding: 100px 16px 32px;
+    overflow: visible;
+  }
+
+  .agm-ourservice-hero {
+    min-height: 52vw;
+  }
+
+  .agm-ourservice-shot img {
+    width: 100%;
+    height: 180px;
+  }
 }
 
 /* Copy keeps a reading measure; the photograph takes everything else. */

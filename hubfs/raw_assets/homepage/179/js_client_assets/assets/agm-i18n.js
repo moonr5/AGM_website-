@@ -91,6 +91,15 @@
       id: "Lebih dari sekadar pembuat kapal. Penyewaan kapal, dukungan kelautan dan logistik, serta kapal FRP berkualitas dari galangan kami di Marunda."
     },
     "about.fleet": { en: "View fleet", id: "Lihat armada" },
+    "about.more": { en: "Learn more", id: "Selengkapnya" },
+    "about.band": {
+      en: "Your trusted partner for marine services.\nEngineering reliable maritime solutions.",
+      id: "Mitra terpercaya untuk layanan kelautan.\nRekayasa solusi maritim yang dapat diandalkan."
+    },
+    "about.bandp": {
+      en: "PT. Agara Global Maritim is a marine services company built around vessel charter, marine support, and FRP shipbuilding, serving industrial, tourism, and fishing operators to strict standards of safety.",
+      id: "PT. Agara Global Maritim adalah perusahaan layanan kelautan yang berfokus pada charter kapal, dukungan kelautan, dan pembangunan kapal FRP, melayani operator industri, pariwisata, dan perikanan dengan standar keselamatan yang ketat."
+    },
     "stat.yard": { en: "Own yard, North Jakarta", id: "Galangan sendiri, Jakarta Utara" },
     "stat.fleet": { en: "Charter-ready FRP fleet", id: "Armada FRP siap charter" },
     "stat.pax": { en: "Passengers per crewboat", id: "Penumpang per crewboat" },
@@ -146,15 +155,15 @@
     "next.p": { en: "The operations desk answers from Marunda. Call, write, or send the enquire form.", id: "Meja operasi menjawab dari Marunda. Telepon, tulis, atau kirim formulir." },
     "home.fleet.h2": { en: "Explore our charter-ready vessels", id: "Jelajahi kapal siap charter kami" },
     "home.fleet.p": {
-      en: "Harvester II is ready for crew transfer, sea tourism, fishing trips, and project work. Additional hulls are under construction at Marunda.",
-      id: "Harvester II siap untuk transfer kru, wisata laut, memancing, dan kerja proyek. Lambung tambahan sedang dibangun di Marunda."
+      en: "The 15 m crewboat and 12 m cabin boat are ready for crew transfer, sea tourism, fishing trips, and project work. Custom hulls are built to brief at Marunda.",
+      id: "Crewboat 15 m dan cabin boat 12 m siap untuk transfer kru, wisata laut, memancing, dan kerja proyek. Lambung custom dibangun sesuai brief di Marunda."
     },
     "pg.services.k": { en: "Services", id: "Layanan" },
     "pg.services.h": { en: "Charter, build,<br>and support", id: "Charter, bangun,<br>dan dukung" },
     "pg.services.l": { en: "Four service lines from one team: ship chartering, FRP shipbuilding, marine and logistic support, and repair and maintenance.", id: "Empat lini layanan dari satu tim: penyewaan kapal, pembangunan kapal FRP, dukungan kelautan dan logistik, serta perbaikan dan perawatan." },
     "pg.fleet.k": { en: "Fleet", id: "Armada" },
     "pg.fleet.h": { en: "Crewboats ready<br>for charter", id: "Crewboat siap<br>untuk charter" },
-    "pg.fleet.l": { en: "Harvester II, built at our own Marunda yard in 2025, available on daily, per-trip, or monthly terms.", id: "Harvester II, dibangun di galangan Marunda kami tahun 2025, tersedia harian, per trip, atau bulanan." },
+    "pg.fleet.l": { en: "The 15 m crewboat and 12 m cabin boat, built at our own Marunda yard in 2025, available on daily, per-trip, or monthly terms.", id: "Crewboat 15 m dan cabin boat 12 m, dibangun di galangan Marunda kami tahun 2025, tersedia harian, per trip, atau bulanan." },
     "pg.yard.k": { en: "Marunda shipyard", id: "Galangan Marunda" },
     "pg.yard.h": { en: "Construction conducted under our own roof", id: "Pembangunan dilakukan di bawah atap kami sendiri" },
     "pg.yard.l": { en: "Hull, accommodation, and finish are undertaken at Marunda, North Jakarta — not assembled from distant, unexamined labour.", id: "Lambung, akomodasi, dan finishing dikerjakan di Marunda, Jakarta Utara — bukan dirakit dari tenaga yang tidak kami awasi." },

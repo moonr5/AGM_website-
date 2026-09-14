@@ -101,6 +101,8 @@
   }
 
   function enhance() {
+    if (document.getElementById("agm-about-host")) return true;
+
     var root = document.querySelector("#below ._container_1tsw7_1");
     if (!root) return false;
 

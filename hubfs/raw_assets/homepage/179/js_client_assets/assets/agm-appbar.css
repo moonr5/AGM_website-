@@ -21,7 +21,7 @@
   max-width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
-  padding: calc(16px + var(--agm-safe-top, 0px)) 22px 0 !important;
+  padding: calc(14px + var(--agm-safe-top, 0px)) var(--agm-gutter-vw, var(--agm-inset, 64px)) 0 !important;
   box-sizing: border-box;
   background: transparent !important;
   z-index: 5000 !important;
@@ -35,22 +35,20 @@
   position: relative !important;
   top: auto !important;
   width: 100% !important;
-  max-width: 1320px !important;
-  height: 76px !important;
+  max-width: var(--agm-measure, 1180px) !important;
+  height: 68px !important;
   margin: 0 auto !important;
   padding: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #06101c !important;
-  background: rgba(255, 255, 255, 0.42) !important;
-  backdrop-filter: blur(28px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  color: #0b1c33 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(22px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
+  border: 1px solid rgba(11, 28, 51, 0.08) !important;
   border-radius: 999px !important;
-  box-shadow:
-    0 10px 40px rgba(6, 16, 28, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 8px 28px rgba(11, 28, 51, 0.08) !important;
   transition:
     background 0.35s ease,
     box-shadow 0.35s ease,
@@ -59,9 +57,9 @@
 }
 
 .appbar-wrapper.is-scrolled #appbar.appbar {
-  background: rgba(255, 255, 255, 0.82) !important;
-  border-color: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 12px 36px rgba(6, 16, 28, 0.16) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(11, 28, 51, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(11, 28, 51, 0.1) !important;
 }
 
 #appbar.appbar > div {
@@ -72,8 +70,8 @@
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
-  padding: 0 12px 0 22px !important;
-  gap: 18px !important;
+  padding: 0 10px 0 22px !important;
+  gap: 20px !important;
   box-sizing: border-box;
   overflow: visible !important;
 }
@@ -87,7 +85,7 @@
 
 #appbar .section:first-child {
   justify-content: flex-start !important;
-  flex: 1 1 auto !important;
+  flex: 0 0 auto !important;
 }
 
 #appbar .agm-nav,
@@ -124,9 +122,9 @@
 .agm-brand-logo,
 #appbar .section:first-child a img {
   display: block !important;
-  height: 42px !important;
+  height: 34px !important;
   width: auto !important;
-  max-width: 54px !important;
+  max-width: 40px !important;
   flex-shrink: 0;
 }
 
@@ -138,17 +136,17 @@
   min-width: 0;
   line-height: 1.05 !important;
   white-space: nowrap !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 #appbar .agm-brand-name,
 .agm-brand-name {
   font-family: var(--agm-sans) !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.24em !important;
+  letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
-  color: #06101c !important;
+  color: #0b1c33 !important;
   display: block !important;
   line-height: 1.1 !important;
   overflow: visible !important;
@@ -157,11 +155,11 @@
 #appbar .agm-brand-sub,
 .agm-brand-sub {
   font-family: var(--agm-sans) !important;
-  font-size: 11px !important;
+  font-size: 10px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.3em !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
-  color: rgba(6, 16, 28, 0.55) !important;
+  color: rgba(11, 28, 51, 0.48) !important;
   display: block !important;
   line-height: 1.2 !important;
   overflow: visible !important;
@@ -174,14 +172,14 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center;
-  min-height: 42px;
-  padding: 0 16px !important;
+  min-height: 36px;
+  padding: 0 13px !important;
   cursor: pointer;
   font-family: var(--agm-sans) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.04em !important;
-  color: #132033 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  color: rgba(11, 28, 51, 0.72) !important;
   white-space: nowrap !important;
   border-radius: 999px;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -196,27 +194,28 @@
    primary action across the site. */
 #appbar .agm-nav-cta,
 #appbar .section:nth-child(2) .a[href*="contacts"] {
-  margin-left: 6px;
-  padding: 0 24px !important;
-  min-height: 48px !important;
-  background: var(--agm-accent-fill) !important;
-  color: var(--agm-accent-ink) !important;
-  font-size: 14px !important;
+  margin-left: 10px;
+  padding: 0 18px !important;
+  min-height: 40px !important;
+  background: #0b1c33 !important;
+  color: #fff !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  border: 1px solid var(--agm-accent-line) !important;
+  border: 1px solid #0b1c33 !important;
   border-radius: 999px !important;
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 
 #appbar .agm-nav-cta:hover,
 #appbar .section:nth-child(2) .a[href*="contacts"]:hover {
-  background: var(--agm-accent-fill-hover) !important;
-  color: var(--agm-accent-ink) !important;
-  transform: translateY(-1px);
+  background: #0a62a8 !important;
+  border-color: #0a62a8 !important;
+  color: #fff !important;
+  transform: none;
 }
 
 .agm-langs {

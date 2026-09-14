@@ -16,13 +16,8 @@
   }
 
   function setAppbarScrolled() {
-    var bars = document.querySelectorAll(".appbar-wrapper");
-    if (!bars.length) return;
-    var hero = document.querySelector(".agm-hero, #hero, #hs_cos_wrapper_hero");
-    var overHero = hero ? hero.getBoundingClientRect().bottom > 90 : false;
-    var scrolled = window.scrollY > 16 && !overHero;
-    bars.forEach(function (bar) {
-      bar.classList.toggle("is-scrolled", scrolled);
+    document.querySelectorAll(".appbar-wrapper").forEach(function (bar) {
+      bar.classList.add("is-scrolled");
     });
   }
 
