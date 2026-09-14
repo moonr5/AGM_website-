@@ -31,11 +31,43 @@ html.agm-travelo #appbar.appbar {
 }
 
 html.agm-travelo .appbar-wrapper.is-scrolled #appbar.appbar {
-  background: rgba(11, 28, 51, 0.52) !important;
-  backdrop-filter: blur(18px) saturate(140%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
-  box-shadow: 0 8px 24px rgba(6, 16, 28, 0.18) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(22px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
+  box-shadow: 0 10px 36px rgba(6, 16, 28, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
   border-radius: 999px !important;
+  color: #06101c !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled .agm-brand-logo,
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .section:first-child a img,
+html.agm-travelo .appbar-wrapper.is-scrolled #burger {
+  filter: none !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-brand-name,
+html.agm-travelo .appbar-wrapper.is-scrolled .agm-brand-name {
+  color: #06101c !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-brand-sub,
+html.agm-travelo .appbar-wrapper.is-scrolled .agm-brand-sub {
+  color: rgba(6, 16, 28, 0.55) !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-nav > .a,
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .section:nth-child(2) .a {
+  color: #132033 !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-nav > .a:not(.agm-nav-cta):hover {
+  background: rgba(6, 16, 28, 0.06);
+}
+
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .agm-nav-cta,
+html.agm-travelo .appbar-wrapper.is-scrolled #appbar .section:nth-child(2) .a[href*="enquire"] {
+  color: var(--agm-accent-ink) !important;
 }
 
 html.agm-travelo #appbar.appbar > div {
@@ -426,23 +458,25 @@ html.agm-travelo #hero ._overlay_biyw3_102 {
   padding: 88px 0;
 }
 
-/* The briefs band deliberately breaks the shared content measure and runs
-   edge to edge, so the cards get a full-bleed inset rather than the page
-   gutter.
- *
- * The band is meant to read as a single screen, so the two media heights are
- * measured against viewport height rather than width and are budgeted, with
- * the heading and padding, to total less than 100svh. They are tokens because
- * the square cards and the wide blue card have to stay in proportion with each
- * other. The px bounds stop them collapsing in a short window or ballooning on
- * a tall one. */
+/* Full-bleed one-screen band: heading stays put, the four cards share the
+   remaining viewport as a 3+1 grid so nothing clips under the nav or past
+   the fold on desktop. */
 #agm-briefs.agm-travelo-section {
   width: 100%;
   max-width: none;
   box-sizing: border-box;
-  min-height: 0;
-  padding: 80px var(--agm-inset);
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: calc(18px + 80px + var(--agm-safe-top, 0px)) var(--agm-inset) 24px;
+  overflow: hidden;
   background: #eef5fb;
+}
+
+html.agm-has-cookie #agm-briefs.agm-travelo-section {
+  padding-bottom: 128px;
 }
 
 .agm-kicker-row {
@@ -1030,8 +1064,13 @@ html.agm-travelo #hs_cos_wrapper_range {
   contain-intrinsic-size: auto calc(100svh + 280px);
 }
 
-html.agm-travelo #below {
+html.agm-travelo #below,
+html.agm-travelo #hs_cos_wrapper_below {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
   min-height: 120px;
+  z-index: 0;
 }
 
 /* These islands only hydrate once scrolled into view, so their container is
@@ -1051,8 +1090,10 @@ html.agm-travelo #hs_cos_wrapper_seaLiving {
 /* The appbar is fixed, so an anchor jump would otherwise park the section
    heading underneath it. */
 html.agm-travelo #range,
-html.agm-travelo #agm-about {
-  scroll-margin-top: 96px;
+html.agm-travelo #agm-about,
+html.agm-travelo #below,
+html.agm-travelo #below ._main_mirx2_1 {
+  scroll-margin-top: 108px;
 }
 
 html.agm-travelo #range ._rangeTitle_ws1t0_164 {
@@ -1188,14 +1229,19 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
 }
 
 .agm-briefs-head {
+  flex: 0 0 auto;
   width: min(1180px, 100%);
-  margin: 0 auto 36px;
+  margin: 0 auto 12px;
+}
+
+.agm-briefs-head .agm-kicker {
+  margin: 0 0 6px;
 }
 
 .agm-briefs-head h2 {
   margin: 0;
   font-family: var(--agm-sans);
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(24px, 2.6vw, 34px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.035em;
@@ -1203,19 +1249,23 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
 }
 
 .agm-stories {
+  flex: 1 1 auto;
+  min-height: 0;
   width: min(1180px, 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-rows: minmax(0, 1.35fr) minmax(0, 0.82fr);
+  gap: 14px;
 }
 
 .agm-story {
   position: relative;
   display: block;
-  min-height: 420px;
+  min-height: 0;
+  height: 100%;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 22px;
   background: #06101c;
   box-shadow: 0 18px 44px rgba(11, 28, 51, 0.12);
   text-decoration: none;
@@ -1225,7 +1275,7 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
 
 .agm-story-wide {
   grid-column: 1 / -1;
-  min-height: 300px;
+  min-height: 0;
 }
 
 .agm-story img {
@@ -1263,7 +1313,7 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 28px 26px 26px;
+  padding: 18px 20px 18px;
 }
 
 .agm-story small {
@@ -1281,7 +1331,7 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   margin: 0;
   max-width: 22ch;
   font-family: var(--agm-sans);
-  font-size: clamp(20px, 1.7vw, 26px);
+  font-size: clamp(16px, 1.35vw, 22px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -1289,15 +1339,15 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
 }
 
 .agm-story-wide h3 {
-  max-width: 18ch;
-  font-size: clamp(26px, 3vw, 40px);
+  max-width: 20ch;
+  font-size: clamp(20px, 2.2vw, 30px);
 }
 
 .agm-story-go {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 10px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1640,12 +1690,14 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
     grid-template-columns: 1fr;
   }
 
-  .agm-story {
-    min-height: 360px;
+  .agm-stories {
+    grid-template-rows: none;
   }
 
+  .agm-story,
   .agm-story-wide {
-    min-height: 280px;
+    min-height: 240px;
+    height: auto;
   }
 
   .agm-feature:nth-child(1),
@@ -1736,10 +1788,13 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
 
   /* Stacked, the four cards cannot fit one screen, so drop the single-screen
      budget and let the band run as tall as its content. */
-  #agm-briefs.agm-travelo-section {
-    width: 100%;
+  #agm-briefs.agm-travelo-section,
+  html.agm-has-cookie #agm-briefs.agm-travelo-section {
+    height: auto;
     min-height: 0;
-    padding: 56px 16px;
+    max-height: none;
+    padding: 56px 16px 40px;
+    overflow: visible;
   }
 }
 
@@ -1780,13 +1835,17 @@ html.agm-travelo #below:not(:has(._main_mirx2_1)) {
  * to left: -926px on its way to -50vw. */
 html.agm-travelo #below ._main_mirx2_1,
 html.agm-travelo #below ._first_mirx2_8,
-html.agm-travelo #below ._second_mirx2_56 {
+html.agm-travelo #below ._second_mirx2_56,
+html.agm-travelo #below ._imgWrapper_mirx2_65,
+html.agm-travelo #below ._container_mirx2_26 {
   position: relative !important;
   inset: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
   transform: none !important;
-  height: auto !important;
   max-width: none !important;
-  max-height: none !important;
 }
 
 /* Width has to be answered per element rather than in the block above. The
@@ -1811,12 +1870,15 @@ html.agm-travelo #below ._second_mirx2_56 {
    1968px of blank white that read as an empty section. The element no longer
    pins, so the spacer must not hold that space open either. The sizes are set
    inline by the library, hence !important. */
-html.agm-travelo #below .pin-spacer {
+html.agm-travelo #below .pin-spacer,
+html.agm-travelo #hs_cos_wrapper_below.pin-spacer {
+  position: relative !important;
   height: auto !important;
   min-height: 0 !important;
   max-height: none !important;
   padding: 0 !important;
   margin: 0 !important;
+  transform: none !important;
 }
 
 /* One exact screen. Height is locked, not min-height: otherwise the band
@@ -1829,11 +1891,12 @@ html.agm-travelo #below ._main_mirx2_1 {
   min-height: 100svh !important;
   max-height: 100svh !important;
   margin: 0 !important;
-  padding: 86px var(--agm-inset) 28px;
+  padding: calc(20px + 80px + var(--agm-safe-top, 0px)) var(--agm-inset) 28px;
   gap: clamp(28px, 3vw, 48px);
   background: #fff;
   align-items: stretch !important;
   overflow: hidden;
+  z-index: 0;
 }
 
 /* Copy keeps a reading measure; the photograph takes everything else. */
@@ -1843,6 +1906,7 @@ html.agm-travelo #below ._first_mirx2_8 {
   max-width: 34%;
   min-width: 0;
   min-height: 0;
+  height: auto !important;
   background: #fff;
 }
 

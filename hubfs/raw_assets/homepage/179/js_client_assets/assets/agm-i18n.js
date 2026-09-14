@@ -146,15 +146,15 @@
     "next.p": { en: "The operations desk answers from Marunda. Call, write, or send the enquire form.", id: "Meja operasi menjawab dari Marunda. Telepon, tulis, atau kirim formulir." },
     "home.fleet.h2": { en: "Explore our charter-ready vessels", id: "Jelajahi kapal siap charter kami" },
     "home.fleet.p": {
-      en: "Two FRP vessels built in 2025 for crew transfer, sea tourism, fishing trips, and project work. Additional hulls are under construction at Marunda.",
-      id: "Dua kapal FRP dibangun tahun 2025 untuk transfer kru, wisata laut, memancing, dan kerja proyek. Lambung tambahan sedang dibangun di Marunda."
+      en: "Harvester II is ready for crew transfer, sea tourism, fishing trips, and project work. Additional hulls are under construction at Marunda.",
+      id: "Harvester II siap untuk transfer kru, wisata laut, memancing, dan kerja proyek. Lambung tambahan sedang dibangun di Marunda."
     },
     "pg.services.k": { en: "Services", id: "Layanan" },
     "pg.services.h": { en: "Charter, build,<br>and support", id: "Charter, bangun,<br>dan dukung" },
     "pg.services.l": { en: "Four service lines from one team: ship chartering, FRP shipbuilding, marine and logistic support, and repair and maintenance.", id: "Empat lini layanan dari satu tim: penyewaan kapal, pembangunan kapal FRP, dukungan kelautan dan logistik, serta perbaikan dan perawatan." },
     "pg.fleet.k": { en: "Fleet", id: "Armada" },
     "pg.fleet.h": { en: "Crewboats ready<br>for charter", id: "Crewboat siap<br>untuk charter" },
-    "pg.fleet.l": { en: "Two FRP vessels built at our own Marunda yard in 2025, available on daily, per-trip, or monthly terms.", id: "Dua kapal FRP dibangun di galangan Marunda kami tahun 2025, tersedia harian, per trip, atau bulanan." },
+    "pg.fleet.l": { en: "Harvester II, built at our own Marunda yard in 2025, available on daily, per-trip, or monthly terms.", id: "Harvester II, dibangun di galangan Marunda kami tahun 2025, tersedia harian, per trip, atau bulanan." },
     "pg.yard.k": { en: "Marunda shipyard", id: "Galangan Marunda" },
     "pg.yard.h": { en: "Construction conducted under our own roof", id: "Pembangunan dilakukan di bawah atap kami sendiri" },
     "pg.yard.l": { en: "Hull, accommodation, and finish are undertaken at Marunda, North Jakarta — not assembled from distant, unexamined labour.", id: "Lambung, akomodasi, dan finishing dikerjakan di Marunda, Jakarta Utara — bukan dirakit dari tenaga yang tidak kami awasi." },

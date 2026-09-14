@@ -470,8 +470,65 @@
     });
   }
 
+  function unpinBelow() {
+    var root = document.getElementById("below") || document.getElementById("hs_cos_wrapper_below");
+    if (!root) return;
+    var nodes = [root].concat(
+      Array.prototype.slice.call(
+        root.querySelectorAll(".pin-spacer, ._main_mirx2_1, ._first_mirx2_8, ._second_mirx2_56, ._imgWrapper_mirx2_65, ._container_mirx2_26")
+      )
+    );
+    nodes.forEach(function (el) {
+      if (!el || !el.style) return;
+      if (el.style.position === "fixed") {
+        el.style.position = "relative";
+        el.style.top = "";
+        el.style.left = "";
+        el.style.right = "";
+        el.style.bottom = "";
+        el.style.width = "";
+      }
+      if (el.classList && el.classList.contains("pin-spacer")) {
+        el.style.height = "auto";
+        el.style.padding = "0";
+        el.style.margin = "0";
+      }
+    });
+    var ST = window.ScrollTrigger;
+    if (ST && typeof ST.getAll === "function") {
+      ST.getAll().forEach(function (trigger) {
+        var target = trigger && trigger.trigger;
+        if (!target) return;
+        if (target === root || (target.closest && target.closest("#below, #hs_cos_wrapper_below"))) {
+          trigger.kill();
+        }
+      });
+    }
+  }
+
+  function pinNav() {
+    var bars = document.querySelectorAll(".appbar-wrapper");
+    if (!bars.length) return;
+    function update() {
+      var hero = document.querySelector(".agm-hero, #hero, #hs_cos_wrapper_hero");
+      var overHero = false;
+      if (hero) {
+        overHero = hero.getBoundingClientRect().bottom > 90;
+      }
+      var scrolled = window.scrollY > 16 && !overHero;
+      bars.forEach(function (bar) {
+        bar.classList.toggle("is-scrolled", scrolled);
+      });
+    }
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+  }
+
   function run() {
     restyleNav();
+    pinNav();
+    unpinBelow();
     mountPage();
     bindStories();
     bindGallery();
@@ -498,6 +555,7 @@
     new MutationObserver(function () {
       clearTimeout(belowTimer);
       belowTimer = setTimeout(function () {
+        unpinBelow();
         enhanceServices();
         enhanceContact();
         enhanceFooter();
