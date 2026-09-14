@@ -144,8 +144,8 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
   box-shadow: 0 18px 40px rgba(6, 16, 28, 0.16);
   transform: translateZ(0);
   transition:
-    flex-grow 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :is(#below, #agm-about-host) .agm-about-card-photo {
@@ -156,7 +156,7 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
   object-fit: cover;
   object-position: center;
   transform: scale(1.02);
-  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :is(#below, #agm-about-host) .agm-about-card:before,
@@ -171,7 +171,7 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
   z-index: 1;
   background: rgba(6, 16, 28, 0.28);
   opacity: 0;
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :is(#below, #agm-about-host) .agm-about-card:after {
@@ -215,8 +215,8 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
      the viewport and any fixed offset clips its second line. */
   transform: translateY(0);
   transition:
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    padding 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :is(#below, #agm-about-host) .agm-about-meta {
@@ -254,9 +254,9 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
   color: rgba(6, 16, 28, 0.7);
   opacity: 0;
   transition:
-    grid-template-rows 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.06s,
-    margin-top 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :is(#below, #agm-about-host) .agm-about-blurb > span {
@@ -285,7 +285,7 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
   top: 50%;
   background: #06101c;
   transform: translate(-50%, -50%);
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :is(#below, #agm-about-host) .agm-about-more:before {
@@ -388,28 +388,26 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
   to { transform: rotate(360deg); }
 }
 
-@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
-  :is(#below, #agm-about-host) .agm-about-cards:hover .agm-about-card:not(:hover):before,
-  :is(#below, #agm-about-host) .agm-about-cards:has(.agm-about-card:focus-visible) .agm-about-card:not(:focus-visible):before {
+@media (min-width: 769px) {
+  :is(#below, #agm-about-host) .agm-about-cards:has(.agm-about-card.is-open) .agm-about-card:not(.is-open):before,
+  :is(#below, #agm-about-host) .agm-about-cards:hover .agm-about-card:not(:hover):not(.is-open):before {
     opacity: 1;
   }
 
+  :is(#below, #agm-about-host) .agm-about-card.is-open,
   :is(#below, #agm-about-host) .agm-about-card:hover,
   :is(#below, #agm-about-host) .agm-about-card:focus-visible {
     flex-grow: 1.95;
     box-shadow: 0 28px 56px rgba(6, 16, 28, 0.22);
   }
 
+  :is(#below, #agm-about-host) .agm-about-card.is-open .agm-about-card-photo,
   :is(#below, #agm-about-host) .agm-about-card:hover .agm-about-card-photo,
   :is(#below, #agm-about-host) .agm-about-card:focus-visible .agm-about-card-photo {
     transform: scale(1.06);
   }
 
-  :is(#below, #agm-about-host) .agm-about-card:hover .agm-about-glass,
-  :is(#below, #agm-about-host) .agm-about-card:focus-visible .agm-about-glass {
-    transform: translateY(0);
-  }
-
+  :is(#below, #agm-about-host) .agm-about-card.is-open .agm-about-blurb,
   :is(#below, #agm-about-host) .agm-about-card:hover .agm-about-blurb,
   :is(#below, #agm-about-host) .agm-about-card:focus-visible .agm-about-blurb {
     grid-template-rows: 1fr;
@@ -417,6 +415,7 @@ html.agm-has-cookie :is(#below, #agm-about-host) ._container_1tsw7_1.agm-about-r
     opacity: 1;
   }
 
+  :is(#below, #agm-about-host) .agm-about-card.is-open .agm-about-more:after,
   :is(#below, #agm-about-host) .agm-about-card:hover .agm-about-more:after,
   :is(#below, #agm-about-host) .agm-about-card:focus-visible .agm-about-more:after {
     transform: translate(-50%, -50%) rotate(90deg) scaleY(0);

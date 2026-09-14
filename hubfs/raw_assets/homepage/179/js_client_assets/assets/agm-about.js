@@ -100,8 +100,31 @@
     return fx;
   }
 
+  function bindOpenCards() {
+    document.querySelectorAll(".agm-about-cards").forEach(function (row) {
+      if (row.dataset.openBound === "1") return;
+      row.dataset.openBound = "1";
+      var cards = row.querySelectorAll(".agm-about-card");
+      if (cards[0] && !row.querySelector(".agm-about-card.is-open")) {
+        cards[0].classList.add("is-open");
+      }
+      cards.forEach(function (card) {
+        var open = function () {
+          cards.forEach(function (other) {
+            other.classList.toggle("is-open", other === card);
+          });
+        };
+        card.addEventListener("mouseenter", open);
+        card.addEventListener("focus", open);
+      });
+    });
+  }
+
   function enhance() {
-    if (document.getElementById("agm-about-host")) return true;
+    if (document.getElementById("agm-about-host")) {
+      bindOpenCards();
+      return true;
+    }
 
     var root = document.querySelector("#below ._container_1tsw7_1");
     if (!root) return false;
@@ -136,6 +159,7 @@
     if (cta) cta.setAttribute("href", ABOUT);
 
     root.classList.add("agm-about-ready");
+    bindOpenCards();
     return true;
   }
 
