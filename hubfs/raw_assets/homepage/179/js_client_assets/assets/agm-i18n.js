@@ -13,6 +13,7 @@
     "nav.ownercare": { en: "Owner Care", id: "Perawatan" },
     "nav.seatrad": { en: "Sea Cucumber Trade", id: "Perdagangan Teripang" },
     "nav.blue": { en: "Blue Economy", id: "Ekonomi Biru" },
+    "nav.intel": { en: "Marine Intelligence", id: "Intelijen Maritim" },
     "nav.story": { en: "Our Story", id: "Kisah Kami" },
     "nav.people": { en: "People", id: "Orang" },
     "nav.compliance": { en: "Compliance", id: "Kepatuhan" },
@@ -150,6 +151,19 @@
     "how.more": { en: "Read more", id: "Baca selengkapnya" },
     "notes.kicker": { en: "Company notes", id: "Catatan perusahaan" },
     "notes.h2": { en: "Official briefs", id: "Brief resmi" },
+    "notes.l": {
+      en: "Charter-ready crewboats, an FRP yard of our own, and operational cover from Marunda — notes from the company's work.",
+      id: "Crewboat siap charter, galangan FRP sendiri, dan dukungan operasi dari Marunda — catatan dari kerja perusahaan."
+    },
+    "notes.story.h": { en: "The story behind AGM", id: "Kisah di balik AGM" },
+    "notes.story.l": {
+      en: "The same yard that lays the hull keeps the boat on station. Construction, charter, and cover stay under one roof in Marunda.",
+      id: "Galangan yang membangun lambung juga menjaga kapal tetap bertugas. Konstruksi, charter, dan dukungan tetap dalam satu atap di Marunda."
+    },
+    "notes.1": { en: "A charter-ready FRP crewboat, placed into professional service", id: "Crewboat FRP siap charter, sudah masuk layanan profesional" },
+    "notes.2": { en: "Construction and finishing undertaken entirely in our own yard", id: "Konstruksi dan finishing dikerjakan seluruhnya di galangan sendiri" },
+    "notes.3": { en: "A certified ship's company, with continuous operational cover", id: "Perusahaan kapal bersertifikat, dengan dukungan operasi yang berkelanjutan" },
+    "notes.4": { en: "A considered contribution to Indonesia's maritime prosperity", id: "Kontribusi yang dipertimbangkan bagi kemakmuran maritim Indonesia" },
     "next.kicker": { en: "Next step", id: "Langkah berikutnya" },
     "next.h2": { en: "Tell us the work. We will place the boat.", id: "Sebutkan pekerjaannya. Kami akan menempatkan kapalnya." },
     "next.p": { en: "The operations desk answers from Marunda. Call, write, or send the enquire form.", id: "Meja operasi menjawab dari Marunda. Telepon, tulis, atau kirim formulir." },
@@ -161,6 +175,15 @@
     "pg.services.k": { en: "Services", id: "Layanan" },
     "pg.services.h": { en: "Charter, build,<br>and support", id: "Charter, bangun,<br>dan dukung" },
     "pg.services.l": { en: "Four service lines from one team: ship chartering, FRP shipbuilding, marine and logistic support, and repair and maintenance.", id: "Empat lini layanan dari satu tim: penyewaan kapal, pembangunan kapal FRP, dukungan kelautan dan logistik, serta perbaikan dan perawatan." },
+    "livemap.k": { en: "Live picture", id: "Gambar langsung" },
+    "livemap.h": { en: "Ships on the Java Sea, now", id: "Kapal di Laut Jawa, sekarang" },
+    "livemap.l": {
+      en: "A live AIS view of traffic around Jakarta. Open the full Marine Intelligence map.",
+      id: "Tampilan AIS langsung lalu lintas di sekitar Jakarta. Buka peta Marine Intelligence lengkap."
+    },
+    "livemap.cta": { en: "Open the live map", id: "Buka peta langsung" },
+    "livemap.live": { en: "Live", id: "Langsung" },
+    "livemap.ships": { en: "{n} ships", id: "{n} kapal" },
     "pg.fleet.k": { en: "Fleet", id: "Armada" },
     "pg.fleet.h": { en: "Crewboats ready<br>for charter", id: "Crewboat siap<br>untuk charter" },
     "pg.fleet.l": { en: "The 15 m crewboat and 12 m cabin boat, built at our own Marunda yard in 2025, available on daily, per-trip, or monthly terms.", id: "Crewboat 15 m dan cabin boat 12 m, dibangun di galangan Marunda kami tahun 2025, tersedia harian, per trip, atau bulanan." },
@@ -246,6 +269,7 @@
     [/\/owner-care/, "nav.ownercare"],
     [/\/sea-cucumber/, "nav.seatrad"],
     [/\/blue-economy/, "nav.blue"],
+    [/\/marine-intelligence/, "nav.intel"],
     [/\/sustainability/, "nav.story"],
     [/\/people/, "nav.people"],
     [/\/compliance/, "nav.compliance"],

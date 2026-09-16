@@ -8,6 +8,7 @@
     { href: "/en/owner-care/", label: "Owner Care", key: "nav.ownercare" },
     { href: "/en/sea-cucumber-trade/", label: "Sea Cucumber Trade", key: "nav.seatrad" },
     { href: "/en/blue-economy/", label: "Blue Economy", key: "nav.blue" },
+    { href: "/en/marine-intelligence/", label: "Marine Intelligence", key: "nav.intel" },
     { href: "/en/sustainability/", label: "Our Story", key: "nav.story" },
     { href: "/en/people/", label: "People", key: "nav.people" },
     { href: "/en/compliance/", label: "Compliance", key: "nav.compliance" },

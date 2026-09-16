@@ -78,41 +78,21 @@
   function afterFleet() {
     return (
       '<section class="agm-travelo-section" id="agm-briefs">' +
-      '<header class="agm-briefs-head"><p class="agm-kicker">Company notes</p><h2>Official briefs</h2></header>' +
-      '<div class="agm-stories">' +
-      storyCard({
-        n: "01",
-        img: FLEET,
-        alt: "AGM crewboat prepared for charter",
-        kicker: "Fleet programme · 2025",
-        title: "A charter-ready FRP crewboat, placed into professional service",
-        href: "/en/fleet-charter/",
-      }) +
-      storyCard({
-        n: "02",
-        img: YARD,
-        alt: "Marunda shipyard",
-        kicker: "Marunda shipyard",
-        title: "Construction and finishing undertaken entirely in our own yard",
-        href: "/en/shipyard/",
-      }) +
-      storyCard({
-        n: "03",
-        img: CREW,
-        alt: "Marine operations",
-        kicker: "Marine operations",
-        title: "A certified ship's company, with continuous operational cover",
-        href: "/en/operations/",
-      }) +
-      storyCard({
-        n: "04",
-        wide: true,
-        img: "/en/hero-poster.webp",
-        alt: "Open water at dusk off the Java coast",
-        kicker: "Blue economy",
-        title: "A considered contribution to Indonesia's maritime prosperity",
-        href: "/en/blue-economy/",
-      }) +
+      '<div class="agm-briefs-rows">' +
+      '<article class="agm-brief-row"><div class="agm-brief-copy">' +
+      '<p class="agm-kicker">Company notes</p><h2>Official briefs</h2>' +
+      "<p>Charter-ready crewboats, an FRP yard of our own, and operational cover from Marunda — notes from the company's work.</p>" +
+      '</div><figure class="agm-brief-media"><img src="/en/images/company-profile/vessel-charter.jpg?v=h2" alt="AGM crewboat prepared for charter"></figure></article>' +
+      '<article class="agm-brief-row"><div class="agm-brief-copy">' +
+      "<h2>The story behind AGM</h2>" +
+      "<p>The same yard that lays the hull keeps the boat on station. Construction, charter, and cover stay under one roof in Marunda.</p>" +
+      '<ul class="agm-brief-points">' +
+      '<li><a href="/en/fleet-charter/">A charter-ready FRP crewboat, placed into professional service</a></li>' +
+      '<li><a href="/en/shipyard/">Construction and finishing undertaken entirely in our own yard</a></li>' +
+      '<li><a href="/en/operations/">A certified ship\'s company, with continuous operational cover</a></li>' +
+      '<li><a href="/en/blue-economy/">A considered contribution to Indonesia\'s maritime prosperity</a></li>' +
+      "</ul></div>" +
+      '<figure class="agm-brief-media"><img src="' + CREW + '" alt="Marine operations from Marunda"></figure></article>' +
       "</div></section>" +
       '<section class="agm-travelo-section agm-faq">' +
       "<div><h2>Frequently asked questions</h2>" +

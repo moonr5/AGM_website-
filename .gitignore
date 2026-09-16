@@ -1,4 +1,7 @@
 node_modules/
+marine-intelligence/node_modules/
+marine-intelligence/.env
+.env
 .vscode/
 website_backup/
 *.zip
@@ -9,6 +12,7 @@ en/p8-deploy.mp4
 storage/enquiries/*.json
 storage/enquiries/rate/*.json
 api/enquire-config.php
+api/datadocked-config.php
 
 # Local dev / audit artifacts
 local-server.err

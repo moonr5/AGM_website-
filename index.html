@@ -168,9 +168,11 @@ a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-b
 <script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-services.js?v=2"></script>
 <link rel="stylesheet" href="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-about.css?v=23" media="print" onload="this.media='all'">
 <script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-about.js?v=11"></script>
-<link rel="stylesheet" href="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-travelo.css?v=88">
-<script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-i18n.js?v=12"></script>
-<script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-travelo.js?v=29"></script>
+<link rel="stylesheet" href="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-livemap.css?v=2">
+<link rel="stylesheet" href="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-travelo.css?v=91">
+<script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-i18n.js?v=15"></script>
+<script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-livemap.js?v=2"></script>
+<script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-travelo.js?v=30"></script>
 <script defer src="/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-cookies.js?v=3"></script>
 </head>
   <body>
@@ -1594,47 +1596,32 @@ a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-b
   
       </div> 
 <section class="agm-travelo-section" id="agm-briefs">
-  <header class="agm-briefs-head">
-    <p class="agm-kicker" data-i18n="notes.kicker">Company notes</p>
-    <h2 data-i18n="notes.h2">Official briefs</h2>
-  </header>
-  <div class="agm-stories">
-    <a class="agm-story" href="/en/fleet-charter/">
-      <img src="/en/images/company-profile/vessel-charter.jpg?v=h2" alt="AGM crewboat prepared for charter">
-      <span class="agm-story-n" aria-hidden="true">01</span>
-      <div class="agm-story-head">
-        <small>Fleet programme · 2025</small>
-        <h3>A charter-ready FRP crewboat, placed into professional service</h3>
-        <span class="agm-story-go" data-i18n="how.more">Read more</span>
+  <div class="agm-briefs-rows">
+    <article class="agm-brief-row">
+      <div class="agm-brief-copy">
+        <p class="agm-kicker" data-i18n="notes.kicker">Company notes</p>
+        <h2 data-i18n="notes.h2">Official briefs</h2>
+        <p data-i18n="notes.l">Charter-ready crewboats, an FRP yard of our own, and operational cover from Marunda — notes from the company's work.</p>
       </div>
-    </a>
-    <a class="agm-story" href="/en/shipyard/">
-      <img src="/en/images/company-profile/frp-shipbuilding.jpg" alt="Marunda shipyard">
-      <span class="agm-story-n" aria-hidden="true">02</span>
-      <div class="agm-story-head">
-        <small>Marunda shipyard</small>
-        <h3>Construction and finishing undertaken entirely in our own yard</h3>
-        <span class="agm-story-go" data-i18n="how.more">Read more</span>
+      <figure class="agm-brief-media">
+        <img src="/en/images/company-profile/vessel-charter.jpg?v=h2" alt="AGM crewboat prepared for charter">
+      </figure>
+    </article>
+    <article class="agm-brief-row">
+      <div class="agm-brief-copy">
+        <h2 data-i18n="notes.story.h">The story behind AGM</h2>
+        <p data-i18n="notes.story.l">The same yard that lays the hull keeps the boat on station. Construction, charter, and cover stay under one roof in Marunda.</p>
+        <ul class="agm-brief-points">
+          <li><a href="/en/fleet-charter/" data-i18n="notes.1">A charter-ready FRP crewboat, placed into professional service</a></li>
+          <li><a href="/en/shipyard/" data-i18n="notes.2">Construction and finishing undertaken entirely in our own yard</a></li>
+          <li><a href="/en/operations/" data-i18n="notes.3">A certified ship's company, with continuous operational cover</a></li>
+          <li><a href="/en/blue-economy/" data-i18n="notes.4">A considered contribution to Indonesia's maritime prosperity</a></li>
+        </ul>
       </div>
-    </a>
-    <a class="agm-story" href="/en/operations/">
-      <img src="/en/images/company-profile/marine-support.jpg" alt="Marine operations">
-      <span class="agm-story-n" aria-hidden="true">03</span>
-      <div class="agm-story-head">
-        <small>Marine operations</small>
-        <h3>A certified ship's company, with continuous operational cover</h3>
-        <span class="agm-story-go" data-i18n="how.more">Read more</span>
-      </div>
-    </a>
-    <a class="agm-story agm-story-wide" href="/en/blue-economy/">
-      <img src="/en/hero-poster.webp" alt="Open water at dusk off the Java coast" loading="lazy" decoding="async">
-      <span class="agm-story-n" aria-hidden="true">04</span>
-      <div class="agm-story-head">
-        <small>Blue economy</small>
-        <h3>A considered contribution to Indonesia's maritime prosperity</h3>
-        <span class="agm-story-go" data-i18n="how.more">Read more</span>
-      </div>
-    </a>
+      <figure class="agm-brief-media">
+        <img src="/en/images/company-profile/marine-support.jpg" alt="Marine operations from Marunda">
+      </figure>
+    </article>
   </div>
 </section>
 <section class="agm-travelo-section agm-faq">
@@ -1761,6 +1748,25 @@ Engineering reliable maritime solutions.</div>
           <span class="agm-about-more">Open</span>
         </div>
       </a>
+    </div>
+  </section>
+</div>
+<div class="agm-livemap-home">
+  <section class="agm-livemap" data-agm-livemap data-bbox="-6.35,106.50,-5.78,107.25" data-center="-6.00,106.88" data-zoom="9">
+    <div class="agm-livemap-copy">
+      <p class="agm-livemap-kicker" data-i18n="livemap.k">Live picture</p>
+      <h2 data-i18n="livemap.h">Ships on the Java Sea, now</h2>
+      <p class="agm-livemap-lede" data-i18n="livemap.l">A live AIS view of traffic around Jakarta. Open the full Marine Intelligence map.</p>
+      <a class="agm-livemap-cta" href="/en/marine-intelligence/" data-i18n="livemap.cta">Open the live map</a>
+    </div>
+    <div class="agm-livemap-stage">
+      <div class="agm-livemap-canvas" data-agm-livemap-canvas></div>
+      <div class="agm-livemap-chip">
+        <span class="agm-livemap-dot" aria-hidden="true"></span>
+        <span data-i18n="livemap.live">Live</span>
+        <span data-agm-livemap-count></span>
+      </div>
+      <a class="agm-livemap-hit" href="/en/marine-intelligence/" aria-label="Open Marine Intelligence"></a>
     </div>
   </section>
 </div>

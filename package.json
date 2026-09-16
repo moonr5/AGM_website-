@@ -5,6 +5,7 @@
   "description": "Local runner for the Agara Global Maritim static website backup.",
   "scripts": {
     "start": "node local-server.js",
+    "intel": "npm --prefix marine-intelligence run dev",
     "prepare": "node tools/prepare-local-site.js",
     "audit": "node tools/prepare-local-site.js --audit-only",
     "audit:unused": "node tools/audit-unused-files.js",

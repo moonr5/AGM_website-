@@ -489,25 +489,22 @@ html.agm-travelo #hero ._overlay_biyw3_102 {
   padding: 88px 0;
 }
 
-/* Full-bleed one-screen band: heading stays put, the four cards share the
-   remaining viewport as a 3+1 grid so nothing clips under the nav or past
-   the fold on desktop. */
+/* Official briefs — two-column editorial rows, not a one-screen card grid. */
 #agm-briefs.agm-travelo-section {
   width: 100%;
   max-width: none;
   box-sizing: border-box;
-  height: 100svh;
-  min-height: 100svh;
-  max-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  padding: calc(18px + 80px + var(--agm-safe-top, 0px)) var(--agm-inset) 24px;
-  overflow: hidden;
-  background: #eef5fb;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  display: block;
+  padding: 88px var(--agm-inset) 96px;
+  overflow: visible;
+  background: #fff;
 }
 
 html.agm-has-cookie #agm-briefs.agm-travelo-section {
-  padding-bottom: 128px;
+  padding-bottom: 96px;
 }
 
 .agm-kicker-row {
@@ -983,7 +980,7 @@ html.agm-travelo #hs_cos_wrapper_range,
 html.agm-travelo #range,
 html.agm-travelo #range ._rangeSection_ws1t0_1 {
   background: #fff !important;
-  color: #fff !important;
+  color: var(--agm-navy) !important;
 }
 
 html.agm-travelo #range ._rangeSection_ws1t0_1 {
@@ -1001,49 +998,15 @@ html.agm-travelo #range ._rangeSection_ws1t0_1:after {
 html.agm-travelo #range ._rangeHeader_ws1t0_9 {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
-  padding: 100px var(--agm-inset) 52px !important;
-  background:
-    radial-gradient(ellipse 70% 80% at 100% 0%, rgba(10, 98, 168, 0.38), transparent 58%),
-    radial-gradient(ellipse 45% 60% at 0% 100%, rgba(184, 149, 74, 0.16), transparent 55%),
-    linear-gradient(165deg, #0e2438 0%, #0b1c33 46%, #081422 100%) !important;
+  padding: 88px var(--agm-inset) 28px !important;
+  background: #fff !important;
 }
 
-html.agm-travelo #range ._rangeHeader_ws1t0_9:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.55;
-  background-image:
-    repeating-linear-gradient(
-      118deg,
-      transparent 0 46px,
-      rgba(234, 215, 164, 0.09) 46px 47px
-    ),
-    repeating-linear-gradient(
-      28deg,
-      transparent 0 64px,
-      rgba(159, 208, 240, 0.07) 64px 65px
-    );
-}
-
+html.agm-travelo #range ._rangeHeader_ws1t0_9:before,
 html.agm-travelo #range ._rangeHeader_ws1t0_9:after {
-  content: "";
-  position: absolute;
-  right: -6%;
-  top: 50%;
-  z-index: 0;
-  width: min(42vw, 420px);
-  height: min(42vw, 420px);
-  pointer-events: none;
-  transform: translateY(-50%);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='none' stroke='%23ead7a4' stroke-opacity='0.22' stroke-width='0.8'/%3E%3Ccircle cx='100' cy='100' r='68' fill='none' stroke='%239fd0f0' stroke-opacity='0.16' stroke-width='0.7'/%3E%3Cpath d='M100 8 L100 192 M8 100 L192 100 M32 32 L168 168 M168 32 L32 168' stroke='%23ead7a4' stroke-opacity='0.2' stroke-width='0.7'/%3E%3Cpath d='M100 100 L156 44' stroke='%2396f878' stroke-opacity='0.55' stroke-width='1.2'/%3E%3Ccircle cx='100' cy='100' r='3' fill='%2396f878' fill-opacity='0.7'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.9;
+  content: none !important;
 }
 
 html.agm-travelo #range ._rangeHeader_ws1t0_9 > *,
@@ -1053,42 +1016,42 @@ html.agm-travelo #range ._contentWrapper_ws1t0_224 {
 }
 
 html.agm-travelo #range ._name_ws1t0_16 {
-  color: #ead7a4 !important;
+  color: var(--agm-blue) !important;
   font-family: var(--agm-sans) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.22em !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
 }
 
 html.agm-travelo #range ._description_ws1t0_22 {
   font-family: var(--agm-sans) !important;
-  font-size: clamp(26px, 3.2vw, 42px) !important;
+  font-size: clamp(28px, 3.4vw, 44px) !important;
   line-height: 1.12 !important;
   font-weight: 700 !important;
   letter-spacing: -0.035em !important;
-  color: #fff !important;
-  max-width: 18em !important;
+  color: var(--agm-navy) !important;
+  max-width: 16em !important;
 }
 
 html.agm-travelo #range ._button_ws1t0_33 {
   border-radius: 999px !important;
-  border: 1px solid var(--agm-accent-line, rgba(150, 248, 120, 0.45)) !important;
-  background: var(--agm-accent-fill, rgba(150, 248, 120, 0.92)) !important;
-  color: var(--agm-accent-ink, #14251c) !important;
+  border: 1px solid var(--agm-navy) !important;
+  background: transparent !important;
+  color: var(--agm-navy) !important;
   padding: 11px 22px !important;
   font-family: var(--agm-sans) !important;
   font-size: 12px !important;
   font-weight: 700 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
 }
 
 html.agm-travelo #range ._button_ws1t0_33:hover {
-  background: var(--agm-accent-fill-hover, #96f878) !important;
-  border-color: var(--agm-accent-line, #96f878) !important;
-  color: var(--agm-accent-ink, #14251c) !important;
+  background: var(--agm-navy) !important;
+  border-color: var(--agm-navy) !important;
+  color: #fff !important;
 }
 
 html.agm-travelo #range ._sliderWrapper_ws1t0_231 {
@@ -1308,6 +1271,100 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   line-height: 1.05;
   letter-spacing: -0.035em;
   color: var(--agm-navy);
+}
+
+.agm-briefs-rows {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.agm-brief-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.2fr);
+  gap: 36px 56px;
+  align-items: center;
+}
+
+.agm-brief-copy .agm-kicker {
+  margin: 0 0 12px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--agm-blue);
+}
+
+.agm-brief-copy h2 {
+  margin: 0 0 16px;
+  max-width: 16ch;
+  font-family: var(--agm-sans);
+  font-size: clamp(32px, 3.6vw, 48px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--agm-navy);
+  text-wrap: balance;
+}
+
+.agm-brief-copy p {
+  margin: 0;
+  max-width: 42ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--agm-ink-muted);
+}
+
+.agm-brief-media {
+  margin: 0;
+  min-width: 0;
+}
+
+.agm-brief-media img {
+  display: block;
+  width: 100%;
+  height: min(46vh, 420px);
+  object-fit: cover;
+  border-radius: 28px;
+  background: #eef3f7;
+}
+
+.agm-brief-points {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.agm-brief-points a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--agm-navy);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.agm-brief-points a:before {
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--agm-blue);
+  box-shadow: 0 0 0 5px rgba(10, 98, 168, 0.12);
+}
+
+.agm-brief-points a:hover {
+  color: var(--agm-blue);
 }
 
 .agm-stories {
@@ -1747,9 +1804,23 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
 
   .agm-feature-grid,
   .agm-stories,
+  .agm-brief-row,
   .agm-faq,
   .agm-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .agm-briefs-rows {
+    gap: 48px;
+  }
+
+  .agm-brief-copy h2 {
+    max-width: none;
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .agm-brief-media img {
+    height: 240px;
   }
 
   .agm-stories {

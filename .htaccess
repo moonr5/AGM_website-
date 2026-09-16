@@ -3,13 +3,18 @@ DirectoryIndex index.html en/index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteRule ^api/dealers/?$ /api/dealers.json [L]
+  RewriteRule ^api/datadocked/([a-z0-9-]+)/?$ /api/datadocked.php?dd=$1 [L,QSA]
+  RewriteRule ^api/ais/vessels/?$ /api/ais.php [L,QSA]
 
   # Every page lives under /en/. The imported template left behind links to
   # locale-less paths, so send those to the real page instead of a 404. Only
   # applies when nothing actually exists at the requested path.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(about|blue-economy|brand-representative|careers|compliance|contacts|cookie-manager|cookie-policy|corporate|enquire|fleet-charter|investors|news-and-events|operations|our-fleet|owner-care|people|privacy-policy|sea-cucumber-trade|services|shipyard|sustainability)(/.*)?$ /en/$1/ [R=301,L]
+  RewriteRule ^(about|blue-economy|brand-representative|careers|compliance|contacts|cookie-manager|cookie-policy|corporate|enquire|fleet-charter|investors|news-and-events|operations|our-fleet|owner-care|people|privacy-policy|sea-cucumber-trade|services|shipyard|sustainability|marine-intelligence)(/.*)?$ /en/$1/ [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^en/marine-intelligence/ /en/marine-intelligence/index.html [L]
   RewriteRule ^videos/services/(.+)$ /en/videos/services/$1 [L]
   RewriteRule ^(en/)?p8\.mp4$ /en/p8-lite.mp4 [L]
   RewriteRule ^(en/)?p61\.svg$ /en/p61.png [L]

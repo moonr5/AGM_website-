@@ -149,7 +149,7 @@ function resolveRequest(url) {
     "contacts", "corporate", "enquire", "fleet-charter", "investors",
     "news-and-events", "operations", "our-fleet", "owner-care", "people",
     "privacy-policy", "sea-cucumber-trade", "services", "shipyard",
-    "sustainability"
+    "sustainability", "marine-intelligence"
   ]);
   const firstSegment = pathname.replace(/^\/+/, "").split("/")[0];
   if (SECTIONS.has(firstSegment)) {
@@ -179,6 +179,11 @@ function resolveRequest(url) {
     if (isInsideRoot(absolute) && existsFile(absolute)) {
       return absolute;
     }
+  }
+
+  if (pathname.startsWith("/en/marine-intelligence")) {
+    const spa = path.join(ROOT, "en", "marine-intelligence", "index.html");
+    if (existsFile(spa)) return spa;
   }
 
   return null;
@@ -403,6 +408,60 @@ function handleEnquire(req, res) {
     });
 }
 
+function readLocalEnv() {
+  const file = path.join(ROOT, "marine-intelligence", ".env");
+  const out = {};
+  if (!existsFile(file)) return out;
+  for (const line of fs.readFileSync(file, "utf8").split(/\r?\n/)) {
+    const match = line.match(/^([^#=]+)=(.*)$/);
+    if (match) out[match[1].trim()] = match[2].trim().replace(/^["']|["']$/g, "");
+  }
+  return out;
+}
+
+function handleOpenWaters(req, res, parsedUrl) {
+  const bbox = parsedUrl.searchParams.get("bbox") || "";
+  if (!/^-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?$/.test(bbox)) {
+    return send(res, 400, JSON.stringify({ error: "bbox", message: "bbox must be minLat,minLon,maxLat,maxLon." }), MIME[".json"], req);
+  }
+  const dest = `https://ais.openwaters.io/v1/vessels?bbox=${bbox}`;
+  fetch(dest, { headers: { Accept: "application/geo+json, application/json" } })
+    .then(async (upstream) => {
+      const body = await upstream.text();
+      send(res, upstream.status, body, MIME[".json"], req);
+    })
+    .catch((err) => {
+      send(res, 502, JSON.stringify({
+        error: "upstream",
+        message: err && err.message ? err.message : "Live AIS could not be reached.",
+      }), MIME[".json"], req);
+    });
+}
+
+function handleDataDocked(req, res, parsedUrl) {
+  const env = readLocalEnv();
+  const key = process.env.DATADOCKED_API_KEY || env.DATADOCKED_API_KEY || "";
+  if (!key) {
+    return send(res, 401, JSON.stringify({
+      error: "unauthorized",
+      message: "No Data Docked key configured. Set DATADOCKED_API_KEY.",
+    }), MIME[".json"], req);
+  }
+  const destPath = parsedUrl.pathname.replace(/^\/api\/datadocked/, "") || "/";
+  const dest = `https://datadocked.com/api/vessels_operations${destPath}${parsedUrl.search}`;
+  fetch(dest, { headers: { Accept: "application/json", "x-api-key": key } })
+    .then(async (upstream) => {
+      const body = await upstream.text();
+      send(res, upstream.status, body, MIME[".json"], req);
+    })
+    .catch((err) => {
+      send(res, 502, JSON.stringify({
+        error: "upstream",
+        message: err && err.message ? err.message : "Data Docked could not be reached.",
+      }), MIME[".json"], req);
+    });
+}
+
 const server = http.createServer((req, res) => {
   // Intercept HubSpot dealer API — return single placeholder to suppress error
   if (req.url === "/api/dealers") {
@@ -419,6 +478,12 @@ const server = http.createServer((req, res) => {
 
   if (pathname === "/api/enquire.php" || pathname === "/api/enquire") {
     return handleEnquire(req, res);
+  }
+  if (pathname.startsWith("/api/datadocked")) {
+    return handleDataDocked(req, res, parsedUrl);
+  }
+  if (pathname === "/api/ais/vessels") {
+    return handleOpenWaters(req, res, parsedUrl);
   }
   if (pathname.toLowerCase().endsWith(".php")) {
     return send(res, 501, JSON.stringify({ ok: false, error: "This sender runs on the live Hostinger site." }), MIME[".json"], req);
