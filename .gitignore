@@ -14,6 +14,9 @@ storage/enquiries/rate/*.json
 api/enquire-config.php
 api/datadocked-config.php
 
+# Raw company-deck extract (huge originals). Web copies live in en/images/profile/.
+en/images/deck/
+
 # Local dev / audit artifacts
 local-server.err
 unused-files-report.json
