@@ -227,6 +227,7 @@
       '<a href="/en/contacts/">Contacts</a>' +
       '<a href="/en/careers/">Careers</a>' +
       '<a href="/en/privacy-policy/">Privacy</a>' +
+      '<a href="/en/terms/">Terms of Use</a>' +
       '<a href="/en/cookie-policy/">Cookie Policy</a>' +
       '<a href="/en/cookie-manager/">Cookie Manager</a>';
     root.appendChild(nav);
@@ -284,8 +285,13 @@
         name: String(data.get("name") || "").trim(),
         email: String(data.get("email") || "").trim(),
         phone: String(data.get("phone") || "").trim(),
-        message: String(data.get("message") || "").trim()
+        message: String(data.get("message") || "").trim(),
+        consent: data.get("consent") === "on"
       };
+      if (!payload.consent) {
+        setStatus("err", "Please confirm we may use these details to reply.");
+        return;
+      }
       if (!payload.name || !payload.email || !payload.message) {
         setStatus("err", window.AGM_I18N ? window.AGM_I18N.t("form.need") : "Please add your name, email, and a short message.");
         return;
@@ -407,6 +413,47 @@
     }
   }
 
+  function popFactCards() {
+    var band = document.querySelector(".agm-hero-facts");
+    if (!band || band.dataset.popBound === "1") return;
+    band.dataset.popBound = "1";
+    var cards = band.querySelectorAll(".agm-hero-fact");
+    cards.forEach(function (card, i) {
+      card.style.setProperty("--i", String(i));
+    });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      band.classList.add("is-ready", "is-in");
+      return;
+    }
+    band.classList.add("is-ready");
+
+    function show() {
+      if (band.classList.contains("is-in")) return;
+      band.classList.add("is-in");
+      var last = cards[cards.length - 1];
+      if (!last) return;
+      last.addEventListener(
+        "animationend",
+        function () {
+          band.classList.add("is-popped");
+        },
+        { once: true }
+      );
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          show();
+          io.disconnect();
+        });
+      },
+      { threshold: 0.22, rootMargin: "0px 0px -12% 0px" }
+    );
+    io.observe(band);
+  }
+
   function revealFeatures() {
     var stage = document.getElementById("agm-about");
     var cards = document.querySelectorAll(".agm-feature, .agm-about-lane, .agm-about-copy, .agm-about-mosaic figure, .agm-partner-card");
@@ -508,6 +555,7 @@
     bindStories();
     bindGallery();
     animateHero();
+    popFactCards();
     revealFeatures();
     enhanceServices();
     enhanceContact();

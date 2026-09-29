@@ -146,9 +146,10 @@ function resolveRequest(url) {
   // template still links to locale-less paths such as /our-fleet.
   const SECTIONS = new Set([
     "about", "blue-economy", "brand-representative", "compliance",
-    "contacts", "corporate", "enquire", "fleet-charter", "investors",
+    "contacts", "corporate", "careers", "enquire", "fleet-charter", "investors",
     "news-and-events", "operations", "our-fleet", "owner-care", "people",
-    "privacy-policy", "sea-cucumber-trade", "services", "shipyard",
+    "privacy-policy", "terms", "cookie-policy", "cookie-manager",
+    "sea-cucumber-trade", "services", "shipyard",
     "sustainability", "marine-intelligence"
   ]);
   const firstSegment = pathname.replace(/^\/+/, "").split("/")[0];

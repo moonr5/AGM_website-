@@ -20,7 +20,7 @@ function agm_letter_subject($name, $service)
     return $subject;
 }
 
-function agm_letter_text($name, $email, $phone, $service, $message, $when)
+function agm_letter_text($name, $email, $phone, $service, $message, $when, $consent = "")
 {
     return implode("\n", array(
         "PT. Agara Global Maritim",
@@ -30,6 +30,7 @@ function agm_letter_text($name, $email, $phone, $service, $message, $when)
         "Their email:     " . $email,
         "Their phone:     " . ($phone !== "" ? $phone : "Not given"),
         "About:           " . ($service !== "" ? $service : "General enquiry"),
+        "Privacy consent: " . ($consent !== "" ? $consent : "Not recorded"),
         "Sent:            " . $when,
         "",
         "What they wrote",
@@ -40,12 +41,13 @@ function agm_letter_text($name, $email, $phone, $service, $message, $when)
     ));
 }
 
-function agm_letter_html($name, $email, $phone, $service, $message, $when)
+function agm_letter_html($name, $email, $phone, $service, $message, $when, $consent = "")
 {
     $safeName = agm_letter_h($name);
     $safeEmail = agm_letter_h($email);
     $safePhone = agm_letter_h($phone !== "" ? $phone : "Not given");
     $safeService = agm_letter_h($service !== "" ? $service : "General enquiry");
+    $safeConsent = agm_letter_h($consent !== "" ? $consent : "Not recorded");
     $safeWhen = agm_letter_h($when);
     $safeMessage = nl2br(agm_letter_h($message), false);
     $mailto = agm_letter_h("mailto:" . $email);
@@ -65,6 +67,7 @@ function agm_letter_html($name, $email, $phone, $service, $message, $when)
         . agm_letter_row("Their email", '<a href="' . $mailto . '" style="color:#185684;text-decoration:none">' . $safeEmail . "</a>")
         . agm_letter_row("Their phone", $safePhone)
         . agm_letter_row("About", $safeService)
+        . agm_letter_row("Privacy consent", $safeConsent)
         . agm_letter_row("Sent", $safeWhen)
         . "</table>"
         . '<div style="margin:22px 0 8px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6a7b8c">What they wrote</div>'
@@ -92,6 +95,7 @@ function agm_formsubmit_fields($name, $email, $phone, $service, $message, $subje
         "Their email" => $email,
         "Their phone" => $phone !== "" ? $phone : "Not given",
         "About" => $service !== "" ? $service : "General enquiry",
+        "Privacy consent" => "Yes",
         "What they wrote" => $message,
         "_subject" => $subject,
         "_template" => "box",

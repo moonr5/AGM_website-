@@ -299,6 +299,10 @@ $email = agm_clean_header(agm_text($input["email"] ?? "", 180));
 $phone = agm_text($input["phone"] ?? "", 60);
 $service = agm_text($input["service"] ?? "", 80);
 $message = agm_text($input["message"] ?? "", 4000);
+$consentRaw = $input["consent"] ?? "";
+$consent = ($consentRaw === true || $consentRaw === 1 || $consentRaw === "1" || $consentRaw === "on" || $consentRaw === "Yes" || $consentRaw === "true")
+    ? "Yes"
+    : "Not recorded";
 
 if ($name === "" || $email === "" || $message === "") {
     agm_reply(400, false, "Please add your name, email, and a short message.");
@@ -332,8 +336,8 @@ $hits[] = $now;
 
 $when = gmdate("Y-m-d H:i") . " UTC";
 $subject = agm_clean_header(agm_letter_subject($name, $service));
-$body = agm_letter_text($name, $email, $phone, $service, $message, $when);
-$html = agm_letter_html($name, $email, $phone, $service, $message, $when);
+$body = agm_letter_text($name, $email, $phone, $service, $message, $when, $consent);
+$html = agm_letter_html($name, $email, $phone, $service, $message, $when, $consent);
 
 $storeDir = dirname(__DIR__) . "/storage/enquiries";
 if (!is_dir($storeDir)) {
@@ -346,6 +350,7 @@ $record = array(
     "phone" => $phone,
     "service" => $service,
     "message" => $message,
+    "consent" => $consent,
     "ip" => $ip,
 );
 @file_put_contents(

@@ -179,9 +179,18 @@ html.agm-travelo .agm-langs button {
   color: rgba(11, 28, 51, 0.42) !important;
 }
 
-html.agm-travelo .agm-langs button[aria-pressed="true"] {
+html.agm-travelo .agm-langs button[aria-pressed="true"]:not([data-agm-lang="id"]) {
   background: #0b1c33 !important;
   color: #fff !important;
+}
+
+html.agm-travelo .agm-langs button[data-agm-lang="id"] {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html.agm-travelo .agm-langs button[data-agm-lang="id"][aria-pressed="true"] {
+  background: transparent !important;
 }
 
 html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs {
@@ -193,9 +202,17 @@ html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs button {
   color: rgba(255, 255, 255, 0.62) !important;
 }
 
-html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs button[aria-pressed="true"] {
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs button[aria-pressed="true"]:not([data-agm-lang="id"]) {
   background: #96f878 !important;
   color: #14251c !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-langs button[data-agm-lang="id"][aria-pressed="true"] {
+  background: transparent !important;
+}
+
+html.agm-travelo .appbar-wrapper.is-over-hero .agm-flag-id {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 html.agm-travelo #hero ._manifestContainer_biyw3_107,
@@ -2847,6 +2864,33 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
 .agm-closer-form textarea {
   min-height: 110px;
   resize: vertical;
+}
+
+.agm-closer-form .agm-form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+  color: var(--agm-ink-muted);
+}
+
+.agm-closer-form .agm-form-consent input {
+  width: auto;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.agm-closer-form .agm-form-consent a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .agm-form-honey {

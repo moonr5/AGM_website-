@@ -61,6 +61,7 @@
       '<div class="agm-cookie-bar-copy">' +
       "<strong data-i18n=\"cookie.title\">" + title + "</strong>" +
       "<p data-i18n=\"cookie.copy\">" + copy + "</p>" +
+      '<p class="agm-cookie-bar-links"><a href="/en/cookie-policy/">Cookie Policy</a> · <a href="/en/privacy-policy/">Privacy</a> · <a href="/en/terms/">Terms</a></p>' +
       "</div>" +
       '<div class="agm-cookie-bar-actions">' +
       '<button type="button" class="agm-cookie-bar-btn is-solid" data-agm-cookie="accept" data-i18n="cookie.accept">' + accept + "</button>" +

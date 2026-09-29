@@ -16,6 +16,7 @@
     { href: "/en/contacts/", label: "Contacts", key: "nav.contacts" },
     { href: "/en/careers/", label: "Careers", key: "nav.careers" },
     { href: "/en/privacy-policy/", label: "Privacy", key: "nav.privacy" },
+    { href: "/en/terms/", label: "Terms of Use", key: "nav.terms" },
     { href: "/en/cookie-policy/", label: "Cookie Policy", key: "nav.cookies" },
     { href: "/en/cookie-manager/", label: "Cookie Manager", key: "nav.cookiemgr" }
   ];
@@ -79,6 +80,7 @@
       '<label><span data-i18n="form.phone">Your phone</span><input type="tel" name="phone" autocomplete="tel" maxlength="60"></label>' +
       '<label><span data-i18n="form.msg">Tell us more</span><textarea name="message" required maxlength="4000" placeholder="Dates, passengers, or a build brief"></textarea></label>' +
       '<label class="agm-form-honey" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>' +
+      '<label class="agm-form-consent"><input type="checkbox" name="consent" required> <span>I agree that AGM may use these details to reply, as described in the <a href="/en/privacy-policy/">Privacy</a> notice.</span></label>' +
       '<p class="agm-form-status" role="status" aria-live="polite" hidden></p>' +
       '<button class="agm-pill agm-pill-plain" type="submit" data-i18n="form.send">Send message</button>' +
       "</form></div></section>"
@@ -103,6 +105,7 @@
       '<a href="/en/contacts/" data-i18n="nav.contacts">Contacts</a>' +
       '<a href="/en/enquire/" data-i18n="nav.enquire">Enquire</a>' +
       '<a href="/en/privacy-policy/" data-i18n="nav.privacy">Privacy</a>' +
+      '<a href="/en/terms/" data-i18n="nav.terms">Terms of Use</a>' +
       '<a href="/en/cookie-policy/" data-i18n="nav.cookies">Cookie Policy</a>' +
       "</div></nav>" +
       "<p>© 2026 PT. Agara Global Maritim</p>" +
@@ -111,7 +114,7 @@
   }
 
   function skipCloserForm() {
-    return /\/enquire\/?$|\/contacts\/?$/.test(location.pathname);
+    return /\/enquire\/?$|\/contacts\/?$|\/careers\/?$|\/cookie-manager\/?$/.test(location.pathname);
   }
 
   var ENQUIRE_TO = "corporate@stratconagaraglobal.com";
@@ -136,6 +139,7 @@
         "Their phone": payload.phone || "Not given",
         "About": payload.service || "General enquiry",
         "What they wrote": payload.message,
+        "Privacy consent": payload.consent ? "Yes" : "Not recorded",
         _subject: "New AGM enquiry — " + payload.name + (payload.service ? " — " + payload.service : ""),
         _template: "box",
         _captcha: "false",
@@ -218,8 +222,14 @@
         email: String(data.get("email") || "").trim(),
         phone: String(data.get("phone") || "").trim(),
         service: String(data.get("service") || "").trim(),
-        message: String(data.get("message") || "").trim()
+        message: String(data.get("message") || "").trim(),
+        consent: data.get("consent") === "on"
       };
+
+      if (!payload.consent) {
+        setStatus("err", "Please confirm we may use these details to reply.");
+        return;
+      }
 
       if (!payload.name || !payload.email || !payload.message) {
         setStatus("err", window.AGM_I18N ? window.AGM_I18N.t("form.need") : "Please add your name, email, and a short message.");
@@ -292,7 +302,7 @@
     bindEnquireForm();
     if (!document.querySelector('script[src*="agm-cookies.js"]')) {
       var cookies = document.createElement("script");
-      cookies.src = "/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-cookies.js?v=3";
+      cookies.src = "/hubfs/raw_assets/homepage/179/js_client_assets/assets/agm-cookies.js?v=4";
       cookies.defer = true;
       document.head.appendChild(cookies);
     }

@@ -265,6 +265,17 @@
   color: rgba(255, 255, 255, 0.74);
 }
 
+.agm-cookie-bar-links {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+}
+
+.agm-cookie-bar-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .agm-cookie-bar-actions {
   display: flex;
   flex-wrap: wrap;

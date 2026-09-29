@@ -24,6 +24,7 @@
     "nav.privacy": { en: "Privacy", id: "Privasi" },
     "nav.cookies": { en: "Cookie Policy", id: "Kebijakan Cookie" },
     "nav.cookiemgr": { en: "Cookie Manager", id: "Pengelola Cookie" },
+    "nav.terms": { en: "Terms of Use", id: "Syarat Penggunaan" },
     "nav.operations": { en: "Operations", id: "Operasi" },
     "cookie.title": { en: "Cookies on this site", id: "Cookie di situs ini" },
     "cookie.copy": {
@@ -175,15 +176,6 @@
     "pg.services.k": { en: "Services", id: "Layanan" },
     "pg.services.h": { en: "Charter, build,<br>and support", id: "Charter, bangun,<br>dan dukung" },
     "pg.services.l": { en: "Four service lines from one team: ship chartering, FRP shipbuilding, marine and logistic support, and repair and maintenance.", id: "Empat lini layanan dari satu tim: penyewaan kapal, pembangunan kapal FRP, dukungan kelautan dan logistik, serta perbaikan dan perawatan." },
-    "livemap.k": { en: "Live picture", id: "Gambar langsung" },
-    "livemap.h": { en: "Ships on the Java Sea, now", id: "Kapal di Laut Jawa, sekarang" },
-    "livemap.l": {
-      en: "A live AIS view of traffic around Jakarta. Open the full Marine Intelligence map.",
-      id: "Tampilan AIS langsung lalu lintas di sekitar Jakarta. Buka peta Marine Intelligence lengkap."
-    },
-    "livemap.cta": { en: "Open the live map", id: "Buka peta langsung" },
-    "livemap.live": { en: "Live", id: "Langsung" },
-    "livemap.ships": { en: "{n} ships", id: "{n} kapal" },
     "pg.fleet.k": { en: "Fleet", id: "Armada" },
     "pg.fleet.h": { en: "Crewboats ready<br>for charter", id: "Crewboat siap<br>untuk charter" },
     "pg.fleet.l": { en: "The 15 m crewboat and 12 m cabin boat, built at our own Marunda yard in 2025, available on daily, per-trip, or monthly terms.", id: "Crewboat 15 m dan cabin boat 12 m, dibangun di galangan Marunda kami tahun 2025, tersedia harian, per trip, atau bulanan." },
@@ -219,10 +211,13 @@
     "pg.car.l": { en: "AGM hires seafarers, FRP craftsmen, and shore staff who can be trusted with a principal’s timetable and a hull we built ourselves.", id: "AGM merekrut pelaut, pengrajin FRP, dan staf darat yang dapat dipercaya dengan jadwal prinsipal dan lambung yang kami bangun sendiri." },
     "pg.priv.k": { en: "Privacy", id: "Privasi" },
     "pg.priv.h": { en: "How we handle<br>your information", id: "Bagaimana kami menangani<br>informasi Anda" },
-    "pg.priv.l": { en: "PT. Agara Global Maritim collects only what we need to answer an enquiry, run a charter, or plan yard work. Last updated 7 September 2026.", id: "PT. Agara Global Maritim hanya mengumpulkan yang diperlukan untuk menjawab pertanyaan, menjalankan charter, atau merencanakan kerja galangan. Diperbarui 7 September 2026." },
+    "pg.priv.l": { en: "PT. Agara Global Maritim collects only what we need to answer an enquiry, run a charter, or plan yard work. Last updated 28 September 2026.", id: "PT. Agara Global Maritim hanya mengumpulkan yang diperlukan untuk menjawab pertanyaan, menjalankan charter, atau merencanakan kerja galangan. Diperbarui 28 September 2026." },
+    "pg.terms.k": { en: "Terms of Use", id: "Syarat Penggunaan" },
+    "pg.terms.h": { en: "Using this<br>website", id: "Menggunakan<br>situs ini" },
+    "pg.terms.l": { en: "These terms govern the public website of PT. Agara Global Maritim. Last updated 28 September 2026.", id: "Syarat ini mengatur situs publik PT. Agara Global Maritim. Diperbarui 28 September 2026." },
     "pg.ck.k": { en: "Cookie Policy", id: "Kebijakan Cookie" },
     "pg.ck.h": { en: "What this site<br>stores on your device", id: "Apa yang situs ini<br>simpan di perangkat Anda" },
-    "pg.ck.l": { en: "A short account of the cookies and similar storage used on agmaritim.com. Last updated 7 September 2026.", id: "Ringkasan cookie dan penyimpanan serupa di agmaritim.com. Diperbarui 7 September 2026." },
+    "pg.ck.l": { en: "A short account of the cookies and similar storage used on this website. Last updated 28 September 2026.", id: "Ringkasan cookie dan penyimpanan serupa di situs ini. Diperbarui 28 September 2026." },
     "pg.cm.k": { en: "Cookie Manager", id: "Pengelola Cookie" },
     "pg.cm.h": { en: "Choose what<br>this site may store", id: "Pilih apa yang<br>boleh disimpan situs ini" },
     "pg.cm.l": { en: "Necessary cookies stay on so the site and the forms work. Analytics and marketing wait for your say.", id: "Cookie yang diperlukan tetap aktif agar situs dan formulir berjalan. Analitik dan pemasaran menunggu izin Anda." },
@@ -277,6 +272,7 @@
     [/\/contacts/, "nav.contacts"],
     [/\/careers/, "nav.careers"],
     [/\/privacy/, "nav.privacy"],
+    [/\/terms/, "nav.terms"],
     [/\/cookie-manager/, "nav.cookiemgr"],
     [/\/cookie-policy/, "nav.cookies"],
     [/\/operations/, "nav.operations"]
@@ -335,7 +331,18 @@
     var script = document.querySelector(".agm-hero-script");
     if (script) script.setAttribute("data-phrases", t("hero.phrases", lang));
     document.querySelectorAll(".agm-langs button").forEach(function (btn) {
-      btn.setAttribute("aria-pressed", btn.getAttribute("data-agm-lang") === lang ? "true" : "false");
+      var code = btn.getAttribute("data-agm-lang");
+      btn.setAttribute("aria-pressed", code === lang ? "true" : "false");
+      if (code === "id") {
+        btn.classList.add("agm-lang-id");
+        btn.setAttribute("aria-label", "Bahasa Indonesia");
+        btn.setAttribute("title", "Bahasa Indonesia");
+        if (!btn.querySelector(".agm-flag-id svg")) {
+          btn.innerHTML = flagMarkup();
+        }
+      } else if (code === "en") {
+        btn.setAttribute("aria-label", "English");
+      }
     });
     try {
       document.dispatchEvent(new CustomEvent("agm:lang", { detail: { lang: lang } }));
@@ -350,11 +357,23 @@
     apply(lang);
   }
 
+  function flagMarkup() {
+    return (
+      '<span class="agm-flag-id" aria-hidden="true">' +
+      '<svg viewBox="0 0 3 2" width="15" height="10" focusable="false">' +
+      '<rect width="3" height="1" fill="#ce1126"/>' +
+      '<rect y="1" width="3" height="1" fill="#ffffff"/>' +
+      "</svg></span>"
+    );
+  }
+
   function switcherHtml() {
     return (
       '<div class="agm-langs" role="group" aria-label="Language">' +
-      '<button type="button" data-agm-lang="en">EN</button>' +
-      '<button type="button" data-agm-lang="id">ID</button>' +
+      '<button type="button" data-agm-lang="en" aria-label="English">EN</button>' +
+      '<button type="button" data-agm-lang="id" class="agm-lang-id" aria-label="Bahasa Indonesia" title="Bahasa Indonesia">' +
+      flagMarkup() +
+      "</button>" +
       "</div>"
     );
   }

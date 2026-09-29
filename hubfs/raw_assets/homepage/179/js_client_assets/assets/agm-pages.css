@@ -1750,6 +1750,81 @@ a.agm-contact-card:focus-visible {
   color: var(--agm-navy);
 }
 
+.agm-legal-table-wrap {
+  overflow-x: auto;
+  margin: 8px 0 0;
+}
+
+.agm-legal-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.agm-legal-table th,
+.agm-legal-table td {
+  text-align: left;
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--agm-rule);
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.agm-legal-table th {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--agm-ink-muted);
+}
+
+.agm-legal-table code {
+  font-size: 12.5px;
+}
+
+.agm-form label.agm-form-consent,
+.agm-form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 4px 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+  color: var(--agm-ink-muted);
+}
+
+.agm-form label.agm-form-consent input,
+.agm-form-consent input {
+  width: auto;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  flex: 0 0 auto;
+}
+
+.agm-form-consent a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.agm-cookie-bar-links {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+}
+
+.agm-cookie-bar-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .agm-cookie-panel {
   display: grid;
   gap: 12px;
