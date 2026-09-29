@@ -647,11 +647,14 @@ html.agm-travelo #agm-about.agm-about-stage:before {
 }
 
 .agm-about-script {
-  margin: 10px 0 0;
-  font-family: var(--agm-script);
-  font-size: clamp(24px, 2.6vw, 38px);
-  line-height: 1.2;
-  color: #f3e6bf;
+  margin: 12px 0 0;
+  font-family: var(--agm-serif);
+  font-size: clamp(18px, 1.7vw, 24px);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: #ead7a4;
 }
 
 .agm-about-deck {
@@ -668,17 +671,52 @@ html.agm-travelo #agm-about.agm-about-stage:before {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px 20px;
-  margin-top: 22px;
+  gap: 16px 28px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(234, 215, 164, 0.18);
+}
+
+/* On the navy About band the lime glass pill reads muddy. Gold outline keeps
+   the CTA in the same register as the italic headline and figures. */
+html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill {
+  background: transparent;
+  border-color: rgba(234, 215, 164, 0.55);
+  color: #f3e6bf;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
+  background: #ead7a4;
+  border-color: #ead7a4;
+  color: var(--agm-navy);
+  box-shadow: none;
 }
 
 .agm-about-where {
+  position: relative;
+  padding-left: 14px;
   font-family: var(--agm-sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.agm-about-where:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ead7a4;
+  transform: translateY(-50%);
+  opacity: 0.85;
 }
 
 .agm-about-figures {
@@ -746,9 +784,12 @@ html.agm-travelo #agm-about.agm-about-stage:before {
 .agm-about-mosaic figcaption {
   position: absolute;
   left: 16px;
-  bottom: 12px;
-  font-family: var(--agm-script);
-  font-size: clamp(20px, 1.8vw, 28px);
+  bottom: 14px;
+  font-family: var(--agm-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: #fff;
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
@@ -1202,12 +1243,15 @@ html.agm-travelo #range ._contentWrapper_ws1t0_224 ._sliderWrapper_ws1t0_231 {
   margin: 0 !important;
 }
 
+/* Center-mode slots are ~half the track; keep plates under that so neighbours
+   (scaled to 0.6) only peek and do not overlap the active hull. */
 html.agm-travelo #range ._contentWrapper_ws1t0_224 ._image_ws1t0_66 {
-  width: min(1080px, 86vw) !important;
-  max-width: none !important;
+  width: min(680px, 46vw) !important;
+  max-width: 90% !important;
   height: auto !important;
   aspect-ratio: 2.15 / 1 !important;
-  margin-left: calc((100% - min(1080px, 86vw)) / 2) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   background-size: contain !important;
   background-position: center !important;
   box-shadow: none;
@@ -1888,7 +1932,7 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   }
 
   .agm-about-script {
-    font-size: clamp(20px, 5.8vw, 26px);
+    font-size: clamp(16px, 4.2vw, 20px);
     margin-top: 8px;
   }
 
@@ -2730,55 +2774,57 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
 }
 
 .agm-about-feats {
+  counter-reset: agm-feat;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px 32px;
-  margin: 32px 0 10px;
+  gap: 28px 40px;
+  margin: 36px 0 4px;
 }
 
 .agm-about-feats div {
+  counter-increment: agm-feat;
   display: grid;
-  gap: 6px;
-  padding-left: 52px;
+  gap: 8px;
+  padding: 4px 0 4px 56px;
   position: relative;
 }
 
 .agm-about-feats div:before {
-  content: "";
+  content: counter(agm-feat, decimal-leading-zero);
   position: absolute;
   left: 0;
-  top: 3px;
-  width: 30px;
-  height: 30px;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
-  background: var(--agm-accent);
-  box-shadow: 0 0 0 7px rgba(150, 248, 120, 0.16);
+  border: 1px solid rgba(234, 215, 164, 0.42);
+  background: rgba(234, 215, 164, 0.06);
+  box-shadow: none;
+  font-family: var(--agm-serif);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #ead7a4;
+  box-sizing: border-box;
 }
 
 .agm-about-feats div:after {
-  content: "";
-  position: absolute;
-  left: 9px;
-  top: 13px;
-  width: 12px;
-  height: 7px;
-  border: 2px solid var(--agm-accent-ink);
-  border-top: 0;
-  border-right: 0;
-  transform: rotate(-48deg);
+  display: none;
 }
 
 .agm-about-feats strong {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: #fff;
 }
 
 .agm-about-feats span {
-  font-size: 15px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .agm-closer {
@@ -3017,7 +3063,11 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
   }
 
   .agm-about-feats {
-    gap: 18px;
+    gap: 22px;
+  }
+
+  .agm-about-meta {
+    gap: 14px 18px;
   }
 
   .agm-closer {

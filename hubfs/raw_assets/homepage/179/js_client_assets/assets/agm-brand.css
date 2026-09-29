@@ -11,7 +11,9 @@
 :root {
   --agm-sans: "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
   --agm-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --agm-script: "Great Vibes", "Palatino Linotype", cursive;
+  /* Former Great Vibes script — kept as an alias to the display serif so no
+     decorative handwriting remains on the public site. */
+  --agm-script: var(--agm-serif);
 
   /* Hull and water. */
   --agm-navy: #0b1c33;

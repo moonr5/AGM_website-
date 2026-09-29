@@ -182,11 +182,12 @@
   }
 
   #range ._image_ws1t0_66 {
-    width: 92vw !important;
-    max-width: none !important;
+    width: min(520px, 72vw) !important;
+    max-width: 88% !important;
     height: auto !important;
     aspect-ratio: 2.15 / 1 !important;
-    margin-left: calc((100% - 92vw) / 2) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   #range ._iconsContainer_ws1t0_148,
