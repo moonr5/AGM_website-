@@ -575,23 +575,13 @@ html.agm-travelo #agm-about.agm-about-stage {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(ellipse 70% 50% at 82% 18%, rgba(10, 98, 168, 0.32), transparent 58%),
-    radial-gradient(ellipse 40% 30% at 12% 88%, rgba(184, 149, 74, 0.12), transparent 55%),
-    var(--agm-navy);
-  color: #fff;
+    radial-gradient(ellipse 65% 55% at 88% 12%, rgba(255, 255, 255, 0.06), transparent 55%),
+    #0a0a0c;
+  color: #f5f5f7;
 }
 
 html.agm-travelo #agm-about.agm-about-stage:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 75% 70% at 70% 35%, #000 10%, transparent 72%);
+  display: none;
 }
 
 .agm-about-stage-inner {
@@ -615,23 +605,23 @@ html.agm-travelo #agm-about.agm-about-stage:before {
 }
 
 .agm-about-kicker {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-family: var(--agm-sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9fd0f0;
+  color: rgba(245, 245, 247, 0.48);
 }
 
 .agm-about-copy h2 {
   margin: 0;
-  font-family: var(--agm-serif);
-  font-size: clamp(36px, 4.8vw, 68px);
-  font-weight: 300;
-  line-height: 0.94;
-  letter-spacing: -0.028em;
-  color: #fff;
+  font-family: var(--agm-sans);
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: #f5f5f7;
 }
 
 .agm-about-copy h2 span,
@@ -641,30 +631,32 @@ html.agm-travelo #agm-about.agm-about-stage:before {
 
 .agm-about-copy h2 em {
   width: fit-content;
-  margin-top: 0.04em;
-  font-style: italic;
-  color: #ead7a4;
+  margin-top: 0.06em;
+  font-style: normal;
+  font-weight: 600;
+  color: rgba(245, 245, 247, 0.72);
 }
 
 .agm-about-script {
-  margin: 12px 0 0;
-  font-family: var(--agm-serif);
-  font-size: clamp(18px, 1.7vw, 24px);
-  font-weight: 300;
+  margin: 14px 0 0;
+  font-family: var(--agm-sans);
+  font-size: clamp(16px, 1.4vw, 19px);
+  font-weight: 400;
   font-style: normal;
-  line-height: 1.35;
+  line-height: 1.4;
   letter-spacing: -0.01em;
-  color: #ead7a4;
+  color: rgba(245, 245, 247, 0.58);
 }
 
 .agm-about-deck {
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   max-width: 34em;
   font-family: var(--agm-sans);
   font-size: 15px;
+  font-weight: 400;
   line-height: 1.55;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: -0.005em;
+  color: rgba(245, 245, 247, 0.58);
 }
 
 .agm-about-meta {
@@ -674,24 +666,24 @@ html.agm-travelo #agm-about.agm-about-stage:before {
   gap: 16px 28px;
   margin-top: 28px;
   padding-top: 22px;
-  border-top: 1px solid rgba(234, 215, 164, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* On the navy About band the lime glass pill reads muddy. Gold outline keeps
-   the CTA in the same register as the italic headline and figures. */
 html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill {
   background: transparent;
-  border-color: rgba(234, 215, 164, 0.55);
-  color: #f3e6bf;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #f5f5f7;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
-  background: #ead7a4;
-  border-color: #ead7a4;
-  color: var(--agm-navy);
+  background: #f5f5f7;
+  border-color: #f5f5f7;
+  color: #0a0a0c;
   box-shadow: none;
 }
 
@@ -700,10 +692,10 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   padding-left: 14px;
   font-family: var(--agm-sans);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(245, 245, 247, 0.42);
 }
 
 .agm-about-where:before {
@@ -711,12 +703,12 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: #ead7a4;
+  background: rgba(245, 245, 247, 0.45);
   transform: translateY(-50%);
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .agm-about-figures {
@@ -725,23 +717,24 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   gap: 12px 20px;
   margin: 22px 0 0;
   padding: 16px 0 0;
-  border-top: 1px solid rgba(234, 215, 164, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .agm-about-figures dt {
   margin: 0 0 4px;
-  font-family: var(--agm-serif);
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  color: #ead7a4;
+  font-family: var(--agm-sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #f5f5f7;
 }
 
 .agm-about-figures dd {
   margin: 0;
+  font-family: var(--agm-sans);
   font-size: 13px;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(245, 245, 247, 0.48);
 }
 
 .agm-about-mosaic {
@@ -839,10 +832,11 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   top: 18px;
   left: 20px;
   z-index: 1;
-  font-family: var(--agm-serif);
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  color: #ead7a4;
+  font-family: var(--agm-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(245, 245, 247, 0.55);
 }
 
 .agm-about-lane-body {
@@ -858,17 +852,18 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
 .agm-about-lane-body small {
   font-family: var(--agm-sans);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(245, 245, 247, 0.55);
 }
 
 .agm-about-lane-body strong {
-  font-family: var(--agm-serif);
-  font-size: clamp(24px, 2vw, 32px);
-  font-weight: 300;
-  letter-spacing: -0.02em;
+  font-family: var(--agm-sans);
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #f5f5f7;
 }
 
 .agm-about-lane-body em {
@@ -876,10 +871,10 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   font-family: var(--agm-sans);
   font-size: 12px;
   font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ead7a4;
+  color: rgba(245, 245, 247, 0.55);
 }
 
 .agm-about-lane:hover img,
@@ -2784,8 +2779,8 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
 .agm-about-feats div {
   counter-increment: agm-feat;
   display: grid;
-  gap: 8px;
-  padding: 4px 0 4px 56px;
+  gap: 6px;
+  padding: 2px 0 2px 44px;
   position: relative;
 }
 
@@ -2793,20 +2788,19 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
   content: counter(agm-feat, decimal-leading-zero);
   position: absolute;
   left: 0;
-  top: 2px;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid rgba(234, 215, 164, 0.42);
-  background: rgba(234, 215, 164, 0.06);
+  top: 3px;
+  width: auto;
+  height: auto;
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
-  font-family: var(--agm-serif);
+  font-family: var(--agm-sans);
   font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  color: #ead7a4;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(245, 245, 247, 0.38);
   box-sizing: border-box;
 }
 
@@ -2815,16 +2809,19 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
 }
 
 .agm-about-feats strong {
+  font-family: var(--agm-sans);
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.015em;
-  color: #fff;
+  letter-spacing: -0.02em;
+  color: #f5f5f7;
 }
 
 .agm-about-feats span {
+  font-family: var(--agm-sans);
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(245, 245, 247, 0.48);
 }
 
 .agm-closer {
