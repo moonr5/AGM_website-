@@ -362,7 +362,7 @@
 }
 
 .agm-partners-inner {
-  width: min(880px, 100%);
+  width: min(1080px, 100%);
   margin: 0 auto;
   text-align: center;
 }
@@ -438,6 +438,11 @@
   height: 52px;
 }
 
+.agm-partner-card[data-partner="mercury"] img {
+  height: 42px;
+  max-width: 240px;
+}
+
 .agm-partner-name {
   display: none;
 }
@@ -457,13 +462,14 @@
   }
 
   .agm-partner-plate {
-    padding: 6px 18px;
+    padding: 6px 12px;
   }
 
   .agm-partner-plate img,
-  .agm-partner-card[data-partner="yamaha"] img {
-    height: 40px;
-    max-width: 140px;
+  .agm-partner-card[data-partner="yamaha"] img,
+  .agm-partner-card[data-partner="mercury"] img {
+    height: 34px;
+    max-width: 120px;
   }
 }
 

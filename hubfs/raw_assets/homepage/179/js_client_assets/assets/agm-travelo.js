@@ -41,9 +41,10 @@
       '<section class="agm-partners" id="agm-partners" aria-label="Official partners">' +
       '<div class="agm-partners-inner"><p class="agm-partners-kicker">Official partners</p>' +
       "<h2>The engines we specify</h2>" +
-      '<p class="agm-partners-lede">Suzuki Marine and Yamaha — installed, attended, and supported from the Marunda yard.</p>' +
+      '<p class="agm-partners-lede">Suzuki Marine, Mercury Marine, and Yamaha — installed, attended, and supported from the Marunda yard.</p>' +
       '<div class="agm-partners-row">' +
       '<article class="agm-partner-card" data-partner="suzuki"><a class="agm-partner-plate" href="https://www.suzukimarine.com/" target="_blank" rel="noopener noreferrer"><span class="agm-partner-float"><img src="/en/images/partners/suzuki-marine.png?v=2" alt="Suzuki Marine" width="420" height="140" loading="lazy" decoding="async"></span></a><p class="agm-partner-name">Suzuki Marine</p></article>' +
+      '<article class="agm-partner-card" data-partner="mercury"><a class="agm-partner-plate" href="https://www.mercurymarine.com/" target="_blank" rel="noopener noreferrer"><span class="agm-partner-float"><img src="/en/images/partners/mercury-marine.png?v=1" alt="Mercury Marine" width="420" height="100" loading="lazy" decoding="async"></span></a><p class="agm-partner-name">Mercury Marine</p></article>' +
       '<article class="agm-partner-card" data-partner="yamaha"><a class="agm-partner-plate" href="https://yamaha-motor.com/marine" target="_blank" rel="noopener noreferrer"><span class="agm-partner-float"><img src="/en/images/partners/yamaha.png?v=2" alt="Yamaha" width="420" height="140" loading="lazy" decoding="async"></span></a><p class="agm-partner-name">Yamaha</p></article>' +
       "</div></div></section>" +
       '<section class="agm-fleet-intro">' +

@@ -83,8 +83,8 @@
     "part.kicker": { en: "Official partners", id: "Mitra resmi" },
     "part.h2": { en: "The engines we specify", id: "Mesin yang kami tetapkan" },
     "part.lede": {
-      en: "Suzuki Marine and Yamaha — installed, attended, and supported from the Marunda yard.",
-      id: "Suzuki Marine dan Yamaha — dipasang, dirawat, dan didukung dari galangan Marunda."
+      en: "Suzuki Marine, Mercury Marine, and Yamaha — installed, attended, and supported from the Marunda yard.",
+      id: "Suzuki Marine, Mercury Marine, dan Yamaha — dipasang, dirawat, dan didukung dari galangan Marunda."
     },
     "about.kicker": { en: "About us", id: "Tentang kami" },
     "about.h1": { en: "Your trusted partner for marine services", id: "Mitra terpercaya untuk layanan kelautan" },
