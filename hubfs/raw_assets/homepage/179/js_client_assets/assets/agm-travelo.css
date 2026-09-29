@@ -572,7 +572,7 @@ html.agm-travelo #agm-about.agm-about-stage {
   max-width: none;
   margin: 0;
   padding: 0 0 36px;
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
   background:
     radial-gradient(ellipse 65% 55% at 88% 12%, rgba(255, 255, 255, 0.06), transparent 55%),
@@ -591,9 +591,10 @@ html.agm-travelo #agm-about.agm-about-stage:before {
   grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
   gap: clamp(28px, 4vw, 56px);
   align-items: stretch;
-  height: 100svh;
-  max-height: 100svh;
-  padding: 86px var(--agm-inset) 28px;
+  min-height: 100svh;
+  height: auto;
+  max-height: none;
+  padding: 96px var(--agm-inset) 40px;
   box-sizing: border-box;
 }
 
@@ -602,6 +603,7 @@ html.agm-travelo #agm-about.agm-about-stage:before {
   flex-direction: column;
   justify-content: center;
   min-height: 0;
+  padding-bottom: 8px;
 }
 
 .agm-about-kicker {
@@ -714,9 +716,9 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
 .agm-about-figures {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 20px;
+  gap: 16px 20px;
   margin: 22px 0 0;
-  padding: 16px 0 0;
+  padding: 16px 0 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -793,13 +795,14 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  padding: 20px var(--agm-inset) 28px;
+  margin-top: 12px;
+  padding: 28px var(--agm-inset) 28px;
 }
 
 .agm-about-lane {
   position: relative;
   display: block;
-  min-height: min(44svh, 400px);
+  min-height: min(40svh, 360px);
   overflow: hidden;
   border-radius: 22px;
   text-decoration: none;
@@ -808,7 +811,7 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
 }
 
 .agm-about-lane:nth-child(2) {
-  transform: translateY(-28px);
+  transform: none;
 }
 
 .agm-about-lane img {
@@ -901,10 +904,6 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
 .agm-about-stage.is-ready .agm-about-lane.is-in {
   opacity: 1;
   transform: none;
-}
-
-.agm-about-stage.is-ready .agm-about-lane:nth-child(2).is-in {
-  transform: translateY(-28px);
 }
 
 @media (prefers-reduced-motion: reduce) {
