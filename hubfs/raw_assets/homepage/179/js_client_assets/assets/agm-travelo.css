@@ -1052,7 +1052,7 @@ html.agm-travelo #range ._rangeHeader_ws1t0_9 {
   isolation: isolate;
   overflow: visible;
   z-index: 1;
-  padding: 88px var(--agm-inset) 28px !important;
+  padding: 56px var(--agm-inset) 8px !important;
   background: #fff !important;
 }
 
@@ -1072,18 +1072,20 @@ html.agm-travelo #range ._name_ws1t0_16 {
   font-family: var(--agm-sans) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
+  letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
+  margin: 0 0 10px !important;
 }
 
 html.agm-travelo #range ._description_ws1t0_22 {
   font-family: var(--agm-sans) !important;
-  font-size: clamp(28px, 3.4vw, 44px) !important;
+  font-size: clamp(26px, 3.2vw, 40px) !important;
+  font-weight: 600 !important;
   line-height: 1.12 !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.035em !important;
+  letter-spacing: -0.03em !important;
+  max-width: 18em !important;
+  margin: 0 !important;
   color: var(--agm-navy) !important;
-  max-width: 16em !important;
 }
 
 html.agm-travelo #range ._button_ws1t0_33 {
@@ -1207,41 +1209,44 @@ html.agm-travelo #range ._chevron_ws1t0_198 path {
   stroke: #fff !important;
 }
 
-/* The vessel plates are photographed on white, so the carousel half of this
-   section is white as well and the boats sit on it without a card edge showing.
-   The heading above keeps the navy treatment. */
+/* Title + boats share one composed band — not a full empty viewport. */
 html.agm-travelo #range ._contentWrapper_ws1t0_224 {
   background: #fff !important;
   color: var(--agm-navy) !important;
-  height: 100svh !important;
-  min-height: 100svh !important;
-  max-height: 100svh !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: stretch !important;
-  padding: 108px 0 36px !important;
+  justify-content: flex-start !important;
+  gap: 28px !important;
+  padding: 28px 0 56px !important;
 }
 
 html.agm-travelo.agm-has-cookie #range ._contentWrapper_ws1t0_224 {
-  padding-bottom: 128px !important;
+  padding-bottom: 96px !important;
 }
 
 html.agm-travelo #range ._contentWrapper_ws1t0_224 ._sliderWrapper_ws1t0_231 {
-  flex: 1 1 auto !important;
+  flex: 0 0 auto !important;
   min-height: 0 !important;
   width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
+  display: block !important;
   margin: 0 !important;
+  padding: 0 !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 .react-multi-carousel-item {
+  padding: 0 18px !important;
+  box-sizing: border-box !important;
 }
 
 /* Center-mode slots are ~half the track; keep plates under that so neighbours
-   (scaled to 0.6) only peek and do not overlap the active hull. */
+   only peek and do not overlap the active hull. */
 html.agm-travelo #range ._contentWrapper_ws1t0_224 ._image_ws1t0_66 {
-  width: min(680px, 46vw) !important;
-  max-width: 90% !important;
+  width: min(620px, 42vw) !important;
+  max-width: 100% !important;
   height: auto !important;
   aspect-ratio: 2.15 / 1 !important;
   margin-left: auto !important;
@@ -1253,12 +1258,34 @@ html.agm-travelo #range ._contentWrapper_ws1t0_224 ._image_ws1t0_66 {
 
 html.agm-travelo #range ._contentWrapper_ws1t0_224 ._rangeTitle_ws1t0_164 {
   color: var(--agm-navy) !important;
+  font-family: var(--agm-sans) !important;
+  font-size: clamp(22px, 2.4vw, 32px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  gap: 10px !important;
   flex: 0 0 auto;
+  width: min(1180px, calc(100% - 2 * var(--agm-inset))) !important;
+  align-self: center !important;
 }
 
 html.agm-travelo #range ._contentWrapper_ws1t0_224 ._rangeTitle_ws1t0_164 > :nth-child(2) {
-  color: #0a62a8 !important;
+  color: rgba(11, 28, 51, 0.48) !important;
+  font-family: var(--agm-sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+
+html.agm-travelo #range ._contentWrapper_ws1t0_224 ._rangeTitle_ws1t0_164 > :last-child {
+  display: flex !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%);
 }
 
 html.agm-travelo #range ._contentWrapper_ws1t0_224 ._chevron_ws1t0_198 {

@@ -181,9 +181,25 @@
     box-sizing: border-box !important;
   }
 
+  #range ._contentWrapper_ws1t0_224 {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    gap: 18px !important;
+    padding: 12px 0 40px !important;
+  }
+
+  html.agm-has-cookie #range ._contentWrapper_ws1t0_224 {
+    padding-bottom: 110px !important;
+  }
+
+  #range ._contentWrapper_ws1t0_224 .react-multi-carousel-item {
+    padding: 0 10px !important;
+  }
+
   #range ._image_ws1t0_66 {
-    width: min(520px, 72vw) !important;
-    max-width: 88% !important;
+    width: min(480px, 78vw) !important;
+    max-width: 100% !important;
     height: auto !important;
     aspect-ratio: 2.15 / 1 !important;
     margin-left: auto !important;
@@ -200,21 +216,12 @@
   }
 
   #range ._rangeTitle_ws1t0_164 {
-    font-size: clamp(18px, 5vw, 24px) !important;
+    font-size: clamp(20px, 5vw, 26px) !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    padding: 0 var(--agm-mobile-pad-r) 12px var(--agm-mobile-pad) !important;
-  }
-
-  #range ._contentWrapper_ws1t0_224 {
-    height: 100svh !important;
-    min-height: 100svh !important;
-    max-height: 100svh !important;
-    padding: 88px 0 24px !important;
-  }
-
-  html.agm-has-cookie #range ._contentWrapper_ws1t0_224 {
-    padding-bottom: 148px !important;
+    padding: 0 var(--agm-mobile-pad-r) 0 var(--agm-mobile-pad) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* ── below (about, services, map, footer) ── */
