@@ -429,7 +429,7 @@
       }
     }
     var drawer = document.querySelector(".agm-drawer nav");
-    if (drawer && !drawer.querySelector(".agm-langs")) {
+    if (drawer && !drawer.querySelector(".agm-langs") && !document.querySelector("#appbar .agm-langs.is-compact")) {
       var boxHold = document.createElement("div");
       boxHold.innerHTML = switcherHtml();
       var box = boxHold.firstElementChild;

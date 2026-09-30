@@ -358,9 +358,12 @@ body.agm-page {
 }
 
 .agm-form {
+  position: relative;
   display: grid;
   gap: 14px;
-  max-width: 640px;
+  max-width: min(640px, 100%);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .agm-form label {
@@ -392,11 +395,19 @@ body.agm-page {
 }
 
 .agm-form-honey {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
 }
 
 .agm-form-status {
@@ -477,6 +488,7 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
 }
 
 .agm-closer-form {
+  position: relative;
   display: grid;
   gap: 12px;
   max-width: none;
@@ -484,6 +496,7 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
   border-radius: 28px;
   background: #fff;
   box-shadow: 0 18px 48px rgba(11, 28, 51, 0.08);
+  box-sizing: border-box;
 }
 
 .agm-closer-form-title {
@@ -496,12 +509,16 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
 .agm-endfoot {
   position: relative;
   isolation: isolate;
+  z-index: 1;
   min-height: 520px;
   display: flex;
   align-items: flex-end;
   color: #fff;
   overflow: hidden;
   background: #06101c;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .agm-endfoot-media {
@@ -510,22 +527,28 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .agm-endfoot:before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(6, 16, 28, 0.28) 0%, rgba(6, 16, 28, 0.72) 58%, rgba(6, 16, 28, 0.88) 100%);
+    linear-gradient(180deg, rgba(6, 16, 28, 0.45) 0%, rgba(6, 16, 28, 0.78) 52%, rgba(6, 16, 28, 0.92) 100%);
 }
 
 .agm-endfoot-inner {
-  width: min(1180px, calc(100% - 2 * var(--agm-inset)));
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 2 * var(--agm-inset, 20px)));
+  max-width: 100%;
   margin: 0 auto;
   padding: 80px 0 36px;
+  box-sizing: border-box;
 }
 
 .agm-endfoot-inner h2 {
@@ -616,11 +639,13 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
 .agm-drawer {
   position: fixed;
   inset: 0;
-  z-index: 1100;
-  background: rgba(6, 16, 28, 0.42);
+  z-index: 4800;
+  background: rgba(6, 16, 28, 0.55);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 .agm-drawer.is-open {
@@ -632,28 +657,48 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
   position: absolute;
   top: 0;
   right: 0;
-  width: min(360px, 88vw);
+  width: min(360px, 92vw);
   height: 100%;
-  padding: 92px 28px 32px;
+  height: 100dvh;
+  padding: calc(76px + var(--agm-safe-top, 0px)) 22px calc(28px + var(--agm-safe-bottom, 0px));
   box-sizing: border-box;
-  background: #f7f9fb;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  transform: translateX(24px);
-  transition: transform 0.22s ease;
+  gap: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  transform: translateX(100%);
+  transition: transform 0.24s var(--agm-ease, ease);
+  box-shadow: -16px 0 40px rgba(6, 16, 28, 0.18);
 }
 
 .agm-drawer.is-open nav {
   transform: none;
 }
 
+/* Language lives in the floating appbar — never duplicate it in the drawer. */
+.agm-drawer .agm-langs {
+  display: none !important;
+}
+
 .agm-drawer a {
   color: #06101c;
   text-decoration: none;
-  font-size: 18px;
-  padding: 10px 0;
+  font-family: var(--agm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 14px 2px;
   border-bottom: 1px solid rgba(6, 16, 28, 0.08);
+  flex: 0 0 auto;
+}
+
+body.agm-drawer-open {
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 .agm-specs {
@@ -690,6 +735,12 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
 }
 
 @media (max-width: 900px) {
+  html,
+  body.agm-page {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
   .agm-grid,
   .agm-grid-2,
   .agm-grid-4,
@@ -698,11 +749,18 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
   }
 
   .agm-page-main {
-    padding: 88px 16px 48px;
+    padding: calc(var(--agm-appbar-h, 72px) + 20px) 16px 48px;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   html.agm-has-cookie .agm-page-main {
     padding-bottom: 120px;
+  }
+
+  body.agm-page:has(.agm-closer) .agm-page-main,
+  body.agm-page:has(.agm-endfoot) .agm-page-main {
+    padding-bottom: 0;
   }
 
   .agm-page-hero {
@@ -735,9 +793,45 @@ body.agm-page:has(.agm-endfoot) .agm-page-main {
     width: 100%;
   }
 
+  .agm-closer {
+    padding: 40px 16px;
+    overflow-x: clip;
+  }
+
+  .agm-closer-plan,
+  .agm-closer-form {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .agm-closer-form {
+    padding: 20px 16px;
+    border-radius: 22px;
+  }
+
+  .agm-endfoot {
+    min-height: 0;
+  }
+
+  .agm-endfoot-inner {
+    width: 100%;
+    padding: 56px 16px calc(28px + var(--agm-safe-bottom, 0px));
+  }
+
+  .agm-endfoot-inner h2 {
+    font-size: clamp(28px, 8vw, 40px);
+    margin-bottom: 28px;
+  }
+
   .agm-drawer nav {
-    width: min(100vw, 360px);
-    padding: 80px 20px 28px;
+    width: min(100vw, 340px);
+    padding: calc(72px + var(--agm-safe-top, 0px)) 18px calc(24px + var(--agm-safe-bottom, 0px));
+  }
+
+  .agm-drawer a {
+    font-size: 15px;
+    padding: 12px 2px;
   }
 }
 
@@ -1965,6 +2059,10 @@ a.agm-contact-card:focus-visible {
   }
 
   .agm-cookie-bar-copy p {
+    display: none;
+  }
+
+  .agm-cookie-bar-links {
     display: none;
   }
 

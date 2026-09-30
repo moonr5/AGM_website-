@@ -298,11 +298,11 @@ html.agm-has-cookie .agm-hero-inner {
   }
 
   .agm-hero-inner {
-    padding: 88px 16px 120px;
+    padding: calc(var(--agm-appbar-h, 72px) + 16px) 16px 100px;
   }
 
   html.agm-has-cookie .agm-hero-inner {
-    padding-bottom: 168px;
+    padding-bottom: 140px;
   }
 
   .agm-hero h1 {

@@ -308,16 +308,33 @@
     }
     var burger = document.getElementById("burger");
     var drawer = document.getElementById("agm-drawer");
-    if (burger && drawer) {
+    if (burger && drawer && drawer.dataset.agmBound !== "1") {
+      drawer.dataset.agmBound = "1";
       drawer.removeAttribute("hidden");
-      function close() {
-        drawer.classList.remove("is-open");
+      function setOpen(open) {
+        drawer.classList.toggle("is-open", open);
+        document.body.classList.toggle("agm-drawer-open", open);
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
       }
-      burger.addEventListener("click", function () {
-        drawer.classList.toggle("is-open");
+      function close() {
+        setOpen(false);
+      }
+      burger.setAttribute("role", "button");
+      burger.setAttribute("aria-controls", "agm-drawer");
+      burger.setAttribute("aria-expanded", "false");
+      burger.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        setOpen(!drawer.classList.contains("is-open"));
       });
       drawer.addEventListener("click", function (event) {
         if (event.target === drawer) close();
+      });
+      drawer.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", close);
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") close();
       });
     }
     bindDrawingPins();
