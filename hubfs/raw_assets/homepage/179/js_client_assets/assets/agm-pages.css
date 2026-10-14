@@ -1721,6 +1721,7 @@ body.agm-about-page .agm-page-main {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
   min-height: 168px;
   padding: 24px;
   border: 1px solid var(--agm-rule);
@@ -1729,6 +1730,7 @@ body.agm-about-page .agm-page-main {
   text-decoration: none;
   color: inherit;
   box-sizing: border-box;
+  overflow: hidden;
   transition: transform 0.25s var(--agm-ease), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -1748,12 +1750,22 @@ a.agm-contact-card:focus-visible {
 }
 
 .agm-contact-card strong {
+  display: block;
+  max-width: 100%;
   font-family: var(--agm-serif);
-  font-size: clamp(20px, 1.6vw, 26px);
+  font-size: clamp(15px, 1.15vw, 22px);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--agm-navy);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: none;
+}
+
+.agm-contact-card[href^="mailto:"] strong {
+  font-size: clamp(14px, 1.05vw, 18px);
+  letter-spacing: -0.03em;
 }
 
 .agm-contact-card span {

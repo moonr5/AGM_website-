@@ -6,12 +6,12 @@
 
   document.documentElement.classList.add("agm-travelo");
 
-  var CHARTER = "/en/images/services/charter-portrait.webp?v=h2";
-  var BUILD = "/en/images/services/shipbuilding-portrait.webp";
-  var SUPPORT = "/en/images/services/support-portrait.webp";
+  var CHARTER = "/en/images/company-profile/mosaic-charter.webp?v=h11";
+  var BUILD = "/en/images/company-profile/mosaic-build.webp?v=h9";
+  var SUPPORT = "/en/images/company-profile/mosaic-station.webp?v=h10";
   var FLEET = "/en/images/hero/fleet-tile.webp";
-  var YARD = "/en/images/service-backgrounds/frp-shipbuilding-bg.webp";
-  var CREW = "/en/images/company-profile/marine-support.jpg";
+  var YARD = "/en/images/service-backgrounds/frp-shipbuilding-bg.webp?v=h9";
+  var CREW = "/en/images/company-profile/marine-support.jpg?v=h4";
 
   function pageSections() {
     return (
@@ -21,6 +21,12 @@
       "<h2><span>A ship's company,</span><em>and a yard.</em></h2>" +
       '<p class="agm-about-script">From our own berth in Marunda.</p>' +
       '<p class="agm-about-deck">AGM charters crewboats, builds FRP vessels, and supports marine operations from North Jakarta. We are part of the PT. Stratcon Agara Global Group.</p>' +
+      '<div class="agm-about-feats">' +
+      "<div><strong>Ship chartering</strong><span>Crew transfer, tourism and project work</span></div>" +
+      "<div><strong>FRP shipbuilding</strong><span>Built to order at our own yard</span></div>" +
+      "<div><strong>Marine support</strong><span>Shorebase and light logistics</span></div>" +
+      "<div><strong>Repair &amp; maintenance</strong><span>Hull, engine and electrical attendance</span></div>" +
+      "</div>" +
       '<div class="agm-about-meta"><a class="agm-pill" href="/en/about/">More about us</a>' +
       '<span class="agm-about-where">Marunda yard · North Jakarta 14150</span></div>' +
       '<dl class="agm-about-figures">' +
@@ -29,7 +35,7 @@
       "<div><dt>12</dt><dd>Passengers per crewboat</dd></div>" +
       "<div><dt>24/7</dt><dd>Operations desk</dd></div></dl></div>" +
       '<div class="agm-about-mosaic">' +
-      '<figure class="is-hero"><img src="' + CHARTER + '" alt="AGM crewboat on charter" width="640" height="800" loading="lazy" decoding="async"><figcaption>On charter</figcaption></figure>' +
+      '<figure class="is-hero"><img src="' + CHARTER + '" alt="AGM crewboat on charter" width="1600" height="1000" loading="lazy" decoding="async"><figcaption>On charter</figcaption></figure>' +
       '<figure><img src="' + BUILD + '" alt="FRP hull under construction at Marunda" width="640" height="400" loading="lazy" decoding="async"><figcaption>In build</figcaption></figure>' +
       '<figure><img src="' + SUPPORT + '" alt="Marine operations support" width="640" height="400" loading="lazy" decoding="async"><figcaption>On station</figcaption></figure>' +
       "</div></div>" +
@@ -83,7 +89,7 @@
       '<article class="agm-brief-row"><div class="agm-brief-copy">' +
       '<p class="agm-kicker">Company notes</p><h2>Official briefs</h2>' +
       "<p>Charter-ready crewboats, an FRP yard of our own, and operational cover from Marunda — notes from the company's work.</p>" +
-      '</div><figure class="agm-brief-media"><img src="/en/images/company-profile/vessel-charter.jpg?v=h2" alt="AGM crewboat prepared for charter"></figure></article>' +
+      '</div><figure class="agm-brief-media"><img src="/en/images/company-profile/vessel-charter.jpg?v=h11" alt="AGM crewboat prepared for charter"></figure></article>' +
       '<article class="agm-brief-row"><div class="agm-brief-copy">' +
       "<h2>The story behind AGM</h2>" +
       "<p>The same yard that lays the hull keeps the boat on station. Construction, charter, and cover stay under one roof in Marunda.</p>" +

@@ -571,30 +571,39 @@ html.agm-travelo #agm-about.agm-about-stage {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0 0 36px;
+  padding: 0 0 48px;
   overflow: visible;
   isolation: isolate;
   background:
-    radial-gradient(ellipse 65% 55% at 88% 12%, rgba(255, 255, 255, 0.06), transparent 55%),
-    #0a0a0c;
-  color: #f5f5f7;
+    radial-gradient(ellipse 70% 60% at 92% 8%, rgba(120, 180, 220, 0.22), transparent 58%),
+    radial-gradient(ellipse 55% 50% at 8% 90%, rgba(14, 90, 140, 0.08), transparent 55%),
+    linear-gradient(165deg, #f3f7fb 0%, #e8f1f7 42%, #f7fafc 100%);
+  color: var(--agm-navy);
 }
 
 html.agm-travelo #agm-about.agm-about-stage:before {
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: radial-gradient(rgba(11, 28, 51, 0.045) 0.6px, transparent 0.7px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
 }
 
 .agm-about-stage-inner {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
   gap: clamp(28px, 4vw, 56px);
-  align-items: stretch;
-  min-height: 100svh;
+  align-items: center;
+  min-height: 0;
   height: auto;
   max-height: none;
-  padding: 96px var(--agm-inset) 40px;
+  padding: 88px var(--agm-inset) 28px;
   box-sizing: border-box;
 }
 
@@ -607,23 +616,23 @@ html.agm-travelo #agm-about.agm-about-stage:before {
 }
 
 .agm-about-kicker {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font-family: var(--agm-sans);
   font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(245, 245, 247, 0.48);
+  color: #0a62a8;
 }
 
 .agm-about-copy h2 {
   margin: 0;
   font-family: var(--agm-sans);
-  font-size: clamp(34px, 4.4vw, 56px);
+  font-size: clamp(34px, 4.2vw, 52px);
   font-weight: 600;
-  line-height: 1.05;
+  line-height: 1.06;
   letter-spacing: -0.035em;
-  color: #f5f5f7;
+  color: var(--agm-navy);
 }
 
 .agm-about-copy h2 span,
@@ -636,29 +645,29 @@ html.agm-travelo #agm-about.agm-about-stage:before {
   margin-top: 0.06em;
   font-style: normal;
   font-weight: 600;
-  color: rgba(245, 245, 247, 0.72);
+  color: rgba(11, 28, 51, 0.55);
 }
 
 .agm-about-script {
   margin: 14px 0 0;
   font-family: var(--agm-sans);
-  font-size: clamp(16px, 1.4vw, 19px);
+  font-size: clamp(16px, 1.35vw, 19px);
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
   letter-spacing: -0.01em;
-  color: rgba(245, 245, 247, 0.58);
+  color: rgba(11, 28, 51, 0.58);
 }
 
 .agm-about-deck {
-  margin: 16px 0 0;
+  margin: 14px 0 0;
   max-width: 34em;
   font-family: var(--agm-sans);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: -0.005em;
-  color: rgba(245, 245, 247, 0.58);
+  color: rgba(11, 28, 51, 0.62);
 }
 
 .agm-about-meta {
@@ -668,25 +677,25 @@ html.agm-travelo #agm-about.agm-about-stage:before {
   gap: 16px 28px;
   margin-top: 28px;
   padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(11, 28, 51, 0.1);
 }
 
 html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #f5f5f7;
+  background: var(--agm-navy);
+  border-color: var(--agm-navy);
+  color: #fff;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  box-shadow: none;
+  box-shadow: 0 10px 24px rgba(11, 28, 51, 0.16);
   font-weight: 500;
   letter-spacing: 0.02em;
 }
 
 html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
-  background: #f5f5f7;
-  border-color: #f5f5f7;
-  color: #0a0a0c;
-  box-shadow: none;
+  background: #0a62a8;
+  border-color: #0a62a8;
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(10, 98, 168, 0.22);
 }
 
 .agm-about-where {
@@ -697,7 +706,7 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245, 245, 247, 0.42);
+  color: rgba(11, 28, 51, 0.42);
 }
 
 .agm-about-where:before {
@@ -708,7 +717,7 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(245, 245, 247, 0.45);
+  background: #0a62a8;
   transform: translateY(-50%);
   opacity: 1;
 }
@@ -719,7 +728,7 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   gap: 16px 20px;
   margin: 22px 0 0;
   padding: 16px 0 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(11, 28, 51, 0.1);
 }
 
 .agm-about-figures dt {
@@ -728,7 +737,7 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: #f5f5f7;
+  color: var(--agm-navy);
 }
 
 .agm-about-figures dd {
@@ -736,21 +745,27 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   font-family: var(--agm-sans);
   font-size: 13px;
   line-height: 1.4;
-  color: rgba(245, 245, 247, 0.48);
+  color: rgba(11, 28, 51, 0.5);
 }
 
 .agm-about-mosaic {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.35fr 1fr;
   gap: 12px;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 4 / 3.15;
+  height: auto;
+  max-height: min(540px, 64vh);
   min-height: 0;
-  height: 100%;
-  align-self: stretch;
+  align-self: center;
+  justify-self: end;
 }
 
 .agm-about-mosaic .is-hero {
-  grid-row: 1 / span 2;
+  grid-column: 1 / -1;
+  grid-row: 1;
 }
 
 .agm-about-mosaic figure {
@@ -759,7 +774,24 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   min-height: 0;
   overflow: hidden;
   border-radius: 22px;
-  background: #16324f;
+  background: #d7e4ef;
+  box-shadow: 0 16px 36px rgba(11, 28, 51, 0.12);
+  isolation: isolate;
+  border: 1px solid rgba(11, 28, 51, 0.06);
+}
+
+.agm-about-mosaic figure:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 16, 28, 0) 48%,
+    rgba(6, 16, 28, 0.18) 72%,
+    rgba(6, 16, 28, 0.62) 100%
+  );
 }
 
 .agm-about-mosaic img {
@@ -768,25 +800,41 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.8s var(--agm-ease);
 }
 
+.agm-about-mosaic .is-hero img {
+  object-fit: cover;
+  object-position: 50% 48%;
+}
+
+.agm-about-mosaic figure:nth-child(2) img {
+  object-position: 50% 40%;
+}
+
+.agm-about-mosaic figure:nth-child(3) img {
+  object-position: 55% 40%;
+}
+
 .agm-about-mosaic figure:hover img {
-  transform: scale(1.06);
+  transform: scale(1.045);
 }
 
 .agm-about-mosaic figcaption {
   position: absolute;
   left: 16px;
   bottom: 14px;
+  z-index: 2;
   font-family: var(--agm-sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .agm-about-lanes {
@@ -794,20 +842,21 @@ html.agm-travelo #agm-about.agm-about-stage .agm-about-meta .agm-pill:hover {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 12px;
-  padding: 28px var(--agm-inset) 28px;
+  gap: 16px;
+  margin-top: 8px;
+  padding: 20px var(--agm-inset) 8px;
 }
 
 .agm-about-lane {
   position: relative;
   display: block;
-  min-height: min(40svh, 360px);
+  min-height: min(34svh, 300px);
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 20px;
   text-decoration: none;
   color: #fff;
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 14px 32px rgba(11, 28, 51, 0.14);
+  border: 1px solid rgba(11, 28, 51, 0.06);
 }
 
 .agm-about-lane:nth-child(2) {
@@ -1979,13 +2028,23 @@ html.agm-travelo #range ._slLine_ws1t0_76 {
   }
 
   .agm-about-mosaic {
-    grid-template-columns: 1.2fr 1fr 1fr;
-    grid-template-rows: min(28vw, 148px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min(42vw, 200px) min(28vw, 132px);
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
     height: auto;
+    max-height: none;
+    justify-self: stretch;
   }
 
   .agm-about-mosaic .is-hero {
-    grid-row: auto;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .agm-about-mosaic .is-hero img {
+    object-position: 50% 45%;
   }
 
   .agm-about-lanes {
@@ -2798,23 +2857,26 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
   counter-reset: agm-feat;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px 40px;
-  margin: 36px 0 4px;
+  gap: 18px 28px;
+  margin: 26px 0 2px;
 }
 
 .agm-about-feats div {
   counter-increment: agm-feat;
   display: grid;
-  gap: 6px;
-  padding: 2px 0 2px 44px;
+  gap: 4px;
+  padding: 12px 14px 12px 44px;
   position: relative;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(11, 28, 51, 0.06);
 }
 
 .agm-about-feats div:before {
   content: counter(agm-feat, decimal-leading-zero);
   position: absolute;
-  left: 0;
-  top: 3px;
+  left: 12px;
+  top: 14px;
   width: auto;
   height: auto;
   display: block;
@@ -2823,10 +2885,10 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
   background: transparent;
   box-shadow: none;
   font-family: var(--agm-sans);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: rgba(245, 245, 247, 0.38);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #0a62a8;
   box-sizing: border-box;
 }
 
@@ -2836,18 +2898,18 @@ html.agm-travelo #below ._footerSection_ypmp5_1 {
 
 .agm-about-feats strong {
   font-family: var(--agm-sans);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #f5f5f7;
+  color: var(--agm-navy);
 }
 
 .agm-about-feats span {
   font-family: var(--agm-sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.45;
-  color: rgba(245, 245, 247, 0.48);
+  line-height: 1.4;
+  color: rgba(11, 28, 51, 0.52);
 }
 
 .agm-closer {
